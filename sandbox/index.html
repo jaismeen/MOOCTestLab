@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>flowchart.js · Playground</title>
+        <script src="http://raphaeljs.com/raphael.js"></script>
+        <script src="js/flowchart-1.1.3.js"></script>
+        <script>
+            var appndBtn;
+            var nodeString="", linkString="";
+            var piece, chart;
+            var nodeList=new Array();
+            var nodeCount=0;
+            var ddl_SourceNode;
+            var ddl_DestinationNode;
+            
+            window.onload = function () {
+                var btn = document.getElementById("run"),
+                cd = document.getElementById("code");
+                appndBtn=document.getElementById("append");
+                piece=document.getElementById("samplecode");
+                ddl_SourceNode= document.getElementById("sourceNode");
+                ddl_DestinationNode=document.getElementById("destinationNode");
+                
+                ddl_SourceNode[ddl_SourceNode.length] = new Option("start", "start");
+                ddl_SourceNode[ddl_SourceNode.length] = new Option("end", "end");
+                ddl_DestinationNode[ddl_DestinationNode.length] = new Option("start", "start");
+                ddl_DestinationNode[ddl_DestinationNode.length] = new Option("end", "end")
+                nodeCount=nodeCount+2;
+                
+                nodeString= "start=>start: Start \nend=>end: End \n"; 
+                
+                //for (var count =0; count<node.length; count++)
+                //{
+                   // var singleNode=nodeList[count];
+                   // var ddl_Item= document.cre
+               // }
+                
+                (btn.onclick = function () {
+                    var code = cd.value;
+
+                    if (chart) {
+                      chart.clean();
+                    }
+
+                    chart = flowchart.parse(code);
+                    chart.drawSVG('canvas', {
+                      'line-width': 3,
+                      'line-length': 50,
+                      'text-margin': 10,
+                      'font-size': 14,
+                      'font-color': 'black',
+                      'line-color': 'black',
+                      'element-color': 'black',
+                      'fill': 'white',
+                      'yes-text': 'yes',
+                      'no-text': 'no'
+                    });
+                })();
+
+            };
+            function addNode()
+            {
+                var nameNode=document.getElementById("nodename");
+                var contentNode=document.getElementById("content");
+                var ddlNode = document.getElementById("nodetype");
+                var ntype = ddlNode.options[ddlNode.selectedIndex].value;
+                //nodeList[nodeCount]= nameNode.value;
+                //nodeCount=nodeCount +1;
+                
+                 
+                
+                if (ntype== "gnode")
+                {
+                    var tempString= nameNode.value + "=>operation: " + contentNode.value;
+                     ddl_SourceNode[ddl_SourceNode.length] = new Option(nameNode.value, nameNode.value);
+                    ddl_DestinationNode[ddl_DestinationNode.length] = new Option(nameNode.value, nameNode.value);
+                    nodeCount++;
+                }
+                else
+                {
+                    var tempString= nameNode.value + "=>condition: " + contentNode.value;
+                    ddl_SourceNode[ddl_SourceNode.length] = new Option(nameNode.value, nameNode.value);
+                    ddl_SourceNode[ddl_SourceNode.length] = new Option(nameNode.value+ "(yes)", nameNode.value + "(yes)");
+                    ddl_SourceNode[ddl_SourceNode.length] = new Option(nameNode.value+ "(no)", nameNode.value + "(no)");
+                    
+                    ddl_DestinationNode[ddl_DestinationNode.length] = new Option(nameNode.value, nameNode.value);
+                    ddl_DestinationNode[ddl_DestinationNode.length] = new Option(nameNode.value+ "(yes)", nameNode.value + "(yes)");
+                    ddl_DestinationNode[ddl_DestinationNode.length] = new Option(nameNode.value+ "(no)", nameNode.value + "(no)");
+                                        nodeCount=nodeCount +3;
+
+                }
+                
+                nodeString= nodeString + tempString + "\n";		
+
+                alert(nodeString);
+                
+            }
+            
+            function addLink()
+            {
+                var snode=ddl_SourceNode.options[ddl_SourceNode.selectedIndex].value;
+                var dnode=ddl_DestinationNode.options[ddl_DestinationNode.selectedIndex].value;
+                var tempString= snode + "->" + dnode;
+                
+                
+                linkString= linkString + tempString + "\n";
+                alert(linkString);
+                var codeString= nodeString + linkString;
+                
+                alert(codeString);
+                if (chart) {
+                    chart.clean();
+                }
+                
+                chart = flowchart.parse(codeString);
+                chart.drawSVG('canvas', {
+                              'line-width': 3,
+                              'line-length': 50,
+                              'text-margin': 10,
+                              'font-size': 14,
+                              'font-color': 'black',
+                              'line-color': 'black',
+                              'element-color': 'black',
+                              'fill': 'white',
+                              'yes-text': 'yes',
+                              'no-text': 'no'
+                              });
+
+                
+            }
+            
+
+        </script>
+    </head>
+    <body>
+        <label for="createnode">Create Node</label><br>
+        Node Name <input type="text" id = "nodename" name="nodename"><br>
+            Node Content <input type="text" id = "content" name="nodecontent"><br>
+            <label for="lb_nodeType">Node Type</label>
+                <select id="nodetype">
+                <option value="gnode">General Node</option>
+                <option value="cnode">Condition Node</option>
+            </select>
+            <br>
+            <button id="createNode" type="button" onclick="addNode()">Create Node</button><br><br>
+            
+            
+            
+            <label for="createlink">Create Link</label><br>
+                 <label for="lb_sourcenode">Source Node</label>
+                <select id="sourceNode">
+                    </select><br>
+                <label for="lb_destinationnode">Destination Node</label>
+                <select id="destinationNode">
+                </select><br>
+
+
+                <button id="createLink" type="button" onclick="addLink()">Create Link</button><br>
+
+            
+        <div><textarea id="code" style="width: 100%;" rows="11">
+st=>start: Start:>http://www.google.com[blank]
+e=>end:>http://www.google.com
+op1=>operation: My Operation
+sub1=>subroutine: My Subroutine
+cond=>condition: Yes 
+or No?:>http://www.google.com
+io=>inputoutput: catch something...
+
+st->op1->cond
+cond(yes)->io->e
+cond(no)->sub1->op1
+        </textarea></div>
+        <div><button id="run" type="button" >Run</button></div>
+        <div id="canvas"></div>
+    </body>
+</html>
