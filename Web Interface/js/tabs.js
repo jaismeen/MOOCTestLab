@@ -5,8 +5,9 @@ var appndBtn;
             var nodeCount=0;
             var ddl_SourceNode;
             var ddl_DestinationNode;
-            
+
 window.onload=function() {
+
 
     var btn = document.getElementById("run"),
                 cd = document.getElementById("code");
@@ -14,6 +15,9 @@ window.onload=function() {
                 piece=document.getElementById("samplecode");
                 ddl_SourceNode= document.getElementById("sourceNode");
                 ddl_DestinationNode=document.getElementById("destinationNode");
+                document.getElementById("nodeelements").style.display= 'block';
+                document.getElementById("linkelements").style.display= 'none';
+
                 
                 ddl_SourceNode[ddl_SourceNode.length] = new Option("start", "start");
                 ddl_SourceNode[ddl_SourceNode.length] = new Option("end", "end");
@@ -46,8 +50,17 @@ window.onload=function() {
     }
 }
 
+
 function addNode()
             {
+
+                var element;
+    
+        element=document.createElement("label");
+        element.setAttribute("type", "label");
+    element.setAttribute("value", "createnode");
+    element.setAttribute("name", "createnode");
+   
                 var nameNode=document.getElementById("nodename");
                 var contentNode=document.getElementById("content");
                 var ddlNode = document.getElementById("nodetype");

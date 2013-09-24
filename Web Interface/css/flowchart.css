@@ -1,8 +1,11 @@
 
+#codeframe {
+	background: red;
+}
 
 #main_body
 {
-    width: 85%;
+    width: 80%;
     background: red;
     margin: auto;
     margin-top: 100px;
@@ -10,7 +13,7 @@
 }
 #side_panel
 {
-    width: 60%;
+    width: 40%;
     float: left;
 	padding:15px;
 	background-color:#2e2e2e;
@@ -19,16 +22,18 @@
 }
 
 #canvas, #side_panel {
-	height: 500px;
+	min-height: 580px;
 	margin-bottom: 100px;
 }
+
+
+
 #canvas
 {
-    width: 40%;
+    width: 60%;
     float: left;
     border: 1px solid #F0F0F0;
     text-align: center;
-
 
 }
 
@@ -38,6 +43,8 @@
 	color: #F0F0F0;
 
 }
+
+
 
 .tabs{
 	height:30px;
