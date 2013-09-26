@@ -80,7 +80,7 @@ function addNode()
                 
                 nodeString= nodeString + tempString + "\n";   
 
-                alert(nodeString);
+                console.log("nodeString:" + nodeString);
                 
             }
             
@@ -92,10 +92,10 @@ function addNode()
                 
                 
                 linkString= linkString + tempString + "\n";
-                alert(linkString);
+                console.log("linkString: " + linkString);
                 var codeString= nodeString + linkString;
                 
-                alert(codeString);
+                console.log("codeString: " + codeString);
                 if (chart) {
                     chart.clean();
                 }

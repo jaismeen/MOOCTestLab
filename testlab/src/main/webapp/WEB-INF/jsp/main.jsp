@@ -34,37 +34,6 @@
 
     <script>
     
-    $(function() {
-
-    	
-		// init
-		urlHolder.records = '${recordsUrl}';
-		urlHolder.add = '${addUrl}';
-		urlHolder.edit = '${editUrl}';
-		urlHolder.del = '${deleteUrl}';
-
-    });
-    
-            function createUI(ele)
-{
-    var selElement, element;
-    var selection=document.getElementsByName("element");
-    if (selection[0].checked==true)
-    {
-        selElement="Node"; 
-         document.getElementById("nodeelements").style.display='block'; 
-         document.getElementById("linkelements").style.display= 'none';
-
-    }
-    else
-    {
-        selElement="Link";
-        document.getElementById("nodeelements").style.display='none';
-        document.getElementById("linkelements").style.display= 'block';
-    } 
-  
-   
-}
         </script>
 
 
@@ -111,21 +80,19 @@
                     &nbsp
                     &nbsp
                     
-                    <input type="radio" name="element" onclick="createUI()" value="node" checked="checked">  Node
+                    <input type="radio" name="element" onclick="createUI()" value="node">  Node
                     &nbsp
                     &nbsp
                     <input type="radio" name="element" onclick="createUI()" value="link">  Link
-                    
                     <br>
                     <br>
                      <div id="fg_elements">
                      </div>
-
                        <div id="nodeelements">
                    <!-- <<label for="createnode">Create Node</label><br>-->
                     <label class="col-lg-4 control-label">Name</label>
                     <div class="col-lg-6">
-                    <input type="text" class="form-control" id = "nodename" name="nodename">
+                    <input type="text" class="form-control" readonly="readonly" id = "nodename" name="nodename">
                     <br>
                 </div>
                 
@@ -137,9 +104,9 @@
                          
                             <label class="col-lg-4 control-label">Type</label>
                             <div class="col-lg-6">
-                            <select id="nodetype" class="form-control">
+                            <select id="nodetype" class="form-control" onchange="setNodeName()">
                                 <option value="gnode">General Node</option>
-                                <option value="cnode">Condition Node</option>
+                                <option value="cnode" >Condition Node</option>
                             </select>
                         </div>                            <br>
                             <br>
@@ -167,14 +134,53 @@
 
                 </div>
                 <div class="tabpage" id="tabpage_2">
-                        <h2>Delete Element</h2>
-                        <p>Pellentesque habitant morbi tristique senectus...</p>
+                         <br>
+                    &nbsp
+                    &nbsp
+                    
+                   <input type="radio" name="radioelement" onclick="deleteUI()" value="node" checked="checked">  Node
+                    &nbsp
+                    &nbsp
+                    <input type="radio" name="radioelement" onclick="deleteUI()" value="link">  Link
+                    <br>
+                    <br>
+                    
+                       <div id="del_nodeelements">
+                     <label class="col-lg-5 control-label" for="lb_node">Node</label>
+                            
+                             <div class="col-lg-6">
+                                <select class="form-control" id="delNode">
+                            </select>
+                        </div>                    
+                            <button id="delNode" class="btn btn-default" type="button" onclick="delNode()">Delete Node</button><br><br>
+                            </div>
+                            
+
+                            <div id="del_linkelements">
+
+                                <label class="col-lg-5 control-label" for="dellb_sourcenode">Source Node</label>
+                        
+                                <div class="col-lg-6">
+                                    <select class="form-control" id="dds">
+                                    </select>
+                                </div>
+                                <br>
+                                <br>
+                                <br>
+                                <label class="col-lg-5 control-label" for="dellb_destinationnode">Destination Node</label>
+                                    <div class="col-lg-6">
+                                        <select class="form-control" id="ddn">
+                                        </select><br>
+                                    </div>
+                                    <button id="delLink" class="btn btn-default" type="button" onclick="delLink()">Delete Link</button><br>
+                            </div>
+
                 </div>
             </div>
             <br>
 
             <div class="code_area">
-                <iframe class="codeframe" style="background: #F0F0F0; width: 100%; height: 230px" src='<c:url value="/resources/samplecode/test.c"/>' ></iframe>
+                <iframe class="codeframe" style="background: #F0F0F0; width: 100%; height: 230px" src="samplecode/test.c" ></iframe>
                 <br>
                 <br>
                 <button id="submit" stype=" align: right" class="btn btn-default" type="button" onclick="submitHW()">Submit</button>
@@ -190,7 +196,7 @@
    
    
   
-	
+    
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
