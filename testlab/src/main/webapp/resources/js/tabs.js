@@ -13,6 +13,8 @@ var appndBtn;
             var ddlNode, delnode;
             var dn,sn;
 
+            var urlHolder = new Object();
+            
 window.onload=function() {
 
 
@@ -336,22 +338,24 @@ function addNode()
 
             function submitHW()
             {
-                $.post (urlHolder.add, {
-                    codeString: $('#codeString').val() 
-                },
-                function(response) {
-                   if (response!=null)
-                   {
-                        alert ("Homework submitted succesfully");
-                   }
-                    
-                    else
-                    {
-                        alert ("Error: Please try submitting again");
-                    }
-                        
-                }
-                );
+                                
+                $.post (urlHolder.add, { codestr: codeString },
+                        function(response) {
+                        	
+                        	
+                        	alert(response);
+                        	
+                        	
+                           if (response!=null)
+                           {
+                                alert ("Homework submitted succesfully");
+                           }
+                            else
+                            {
+                                alert ("Error: Please try submitting again");
+                            }
+                                
+                        });
             }
 
 // on click of one of tabs

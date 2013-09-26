@@ -33,7 +33,16 @@
     <script src='<c:url value="/resources/js/flowchart-1.1.3.js"/>'></script>
 
     <script>
-    
+    $(function() {
+
+    	
+		// init
+		urlHolder.records = '${recordsUrl}';
+		urlHolder.add = '${addUrl}';
+		urlHolder.edit = '${editUrl}';
+		urlHolder.del = '${deleteUrl}';
+
+    });
         </script>
 
 
@@ -180,7 +189,7 @@
             <br>
 
             <div class="code_area">
-                <iframe class="codeframe" style="background: #F0F0F0; width: 100%; height: 230px" src="samplecode/test.c" ></iframe>
+                <iframe class="codeframe" style="background: #F0F0F0; width: 100%; height: 230px" src='<c:url value="/resources/samplecode/test.c"/>' ></iframe>
                 <br>
                 <br>
                 <button id="submit" stype=" align: right" class="btn btn-default" type="button" onclick="submitHW()">Submit</button>
