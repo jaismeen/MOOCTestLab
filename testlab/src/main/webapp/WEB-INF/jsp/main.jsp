@@ -16,12 +16,8 @@
     <title>Carousel Template for Bootstrap</title>
 
     <!-- Bootstrap core CSS -->
-    <!--  <link href="css/bootstrap.css" rel="stylesheet">
-            <link href="css/flowchart.css" rel="stylesheet">
--->
-	<link rel='stylesheet' type='text/css' media='screen' href='<c:url value="/resources/css/bootstrap.css"/>'/>
-		<link rel='stylesheet' type='text/css' media='screen' href='<c:url value="/resources/css/flowchart.css"/>'/>
-
+    <link href='<c:url value="/resources/css/bootstrap.css"/>' rel="stylesheet">
+            <link href='<c:url value="/resources/css/flowchart.css"/>' rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -30,34 +26,24 @@
     <![endif]-->
 
     <!-- Custom styles for this template -->
-   <!--   <link href="../../resources/css/carousel.css" rel="stylesheet">
-    -->
-    		<link rel='stylesheet' type='text/css' media='screen' href='<c:url value="/resources/css/carousel.css"/>'/>
-    		    <script type='text/javascript' src='<c:url value="/resources/js/jquery-1.6.4.min.js"/>'></script>
-    		<script type='text/javascript' src='<c:url value="/resources/js/tabs.js"/>'></script>
-    		    <script src="http://raphaeljs.com/raphael.js"></script>
-    		<script type='text/javascript' src='<c:url value="/resources/js/flowchart-1.1.3.js"/>'></script>
+    <link href='<c:url value="/resources/css/carousel.css"/>' rel="stylesheet">
+    <script type='text/javascript' src='<c:url value="/resources/js/jquery-1.6.4.min.js"/>'></script>
+    <script src='<c:url value="/resources/js/tabs.js"/>'></script>
+    <script src='<c:url value="/resources/js/raphael.js"/>'></script>
+    <script src='<c:url value="/resources/js/flowchart-1.1.3.js"/>'></script>
 
+    <script>
     
-    <!--  <script src="../../resources/js/tabs.js"></script>
-    <script src="http://raphaeljs.com/raphael.js"></script>
-    <script src="../../resources/js/flowchart-1.1.3.js"></script>
--->
-    <script type='text/javascript'>
-       
     $(function() {
-    	
-    	alert("in init()");
-    	//alert(urlHolder);
+
     	
 		// init
 		urlHolder.records = '${recordsUrl}';
 		urlHolder.add = '${addUrl}';
 		urlHolder.edit = '${editUrl}';
 		urlHolder.del = '${deleteUrl}';
-		
-		alert("out init()");
-    })
+
+    });
     
             function createUI(ele)
 {
@@ -88,7 +74,6 @@
 <!-- NAVBAR
 ================================================== -->
   <body>
-  <%=new java.util.Date() %>
       <div class="navbar-wrapper">
       <div class="container">
         <div class="navbar navbar-inverse navbar-static-top">
@@ -130,10 +115,12 @@
                     &nbsp
                     &nbsp
                     <input type="radio" name="element" onclick="createUI()" value="link">  Link
+                    
                     <br>
                     <br>
                      <div id="fg_elements">
                      </div>
+
                        <div id="nodeelements">
                    <!-- <<label for="createnode">Create Node</label><br>-->
                     <label class="col-lg-4 control-label">Name</label>
@@ -180,67 +167,14 @@
 
                 </div>
                 <div class="tabpage" id="tabpage_2">
-                         <br>
-                    &nbsp
-                    &nbsp
-                    
-                  <!--<input type="radio" name="element" onclick="createUI()" value="node" checked="checked">  Node
-                    &nbsp
-                    &nbsp
-                    <input type="radio" name="element" onclick="createUI()" value="link">  Link
-                    <br>
-                    <br>
-                     <div id="fg_elements">
-                     </div>
-                       <div id="nodeelements">
-                    <label class="col-lg-4 control-label">Name</label>
-                    <div class="col-lg-6">
-                    <input type="text" class="form-control" id = "nodename" name="nodename">
-                    <br>
-                </div>
-                
-                <label class="col-lg-4 control-label">Content</label>
-                    <div class="col-lg-6">
-                    <input type="text" class="form-control" id = "content" name="nodecontent"><br>
-                </div>
-                <br>
-                         
-                            <label class="col-lg-4 control-label">Type</label>
-                            <div class="col-lg-6">
-                            <select id="nodetype" class="form-control">
-                                <option value="gnode">General Node</option>
-                                <option value="cnode">Condition Node</option>
-                            </select>
-                        </div>                            <br>
-                            <br>
-                            <button id="createNode" class="btn btn-default" type="button" onclick="addNode()">Create Node</button><br><br>
-                            </div>
-                            
-                            <div id="linkelements">
-
-                            <label class="col-lg-5 control-label" for="lb_sourcenode">Source Node</label>
-                            
-                             <div class="col-lg-6">
-                                <select class="form-control" id="sourceNode">
-                            </select>
-                        </div>
-                        <br>
-                        <br>
-                        <br>
-                            <label class="col-lg-5 control-label" for="lb_destinationnode">Destination Node</label>
-                             <div class="col-lg-6">
-                                <select class="form-control" id="destinationNode">
-                            </select><br>
-                            </div>
-                            <button id="createLink" class="btn btn-default" type="button" onclick="addLink()">Create Link</button><br>
-                        </div>-->
-
+                        <h2>Delete Element</h2>
+                        <p>Pellentesque habitant morbi tristique senectus...</p>
                 </div>
             </div>
             <br>
 
             <div class="code_area">
-                <iframe class="codeframe" style="background: #F0F0F0; width: 100%; height: 230px" src='<c:url value="/WEB-INF/jsp/samplecode/test.c"/>'></iframe>
+                <iframe class="codeframe" style="background: #F0F0F0; width: 100%; height: 230px" src='<c:url value="/resources/samplecode/test.c"/>' ></iframe>
                 <br>
                 <br>
                 <button id="submit" stype=" align: right" class="btn btn-default" type="button" onclick="submitHW()">Submit</button>

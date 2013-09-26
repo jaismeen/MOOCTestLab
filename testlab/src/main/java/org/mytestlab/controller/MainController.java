@@ -50,14 +50,18 @@ public class MainController {
 	static int tmpName = 1;
 	@RequestMapping(value="/create", method=RequestMethod.POST)
 	public @ResponseBody Set<String> create(
-			@RequestParam String codeString) {
+			@RequestParam String codestr) {
 
+		System.out.println("In create()");
+		
 		FlowGraph fg = new FlowGraph();
 		
-		fg.setName(Integer.toString(tmpName));
-		tmpName++;
+		//fg.setName(Integer.toString(tmpName));
+		//tmpName++;
 		
-		String[] strs = codeString.split("\n");
+		fg.setName(Long.toString(System.currentTimeMillis()));
+		
+		String[] strs = codestr.split("\n");
 		for(int i = 0; i < strs.length; i++) {
 			fg.addCodeString(strs[i]);
 		}
@@ -65,6 +69,11 @@ public class MainController {
 		flowGraphService.create(fg);
 		
 		FlowGraph fg2 = flowGraphService.read(fg.getName());
+		
+		
+		System.out.println("Out create()");
+		
+		
 		if (fg2 != null) {
 			return fg2.getCodeStrings();
 		} else {

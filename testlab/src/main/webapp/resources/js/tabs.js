@@ -56,8 +56,6 @@ window.onload=function() {
 
 function addNode()
             {
-
-	alert("in addNode()");
 	
                 var element;
     
@@ -72,8 +70,7 @@ function addNode()
                 var ntype = ddlNode.options[ddlNode.selectedIndex].value;
                 //nodeList[nodeCount]= nameNode.value;
                 //nodeCount=nodeCount +1;
-                
-                 alert("addNode2");
+
                 
                 if (ntype== "gnode")
                 {
@@ -81,8 +78,7 @@ function addNode()
                      ddl_SourceNode[ddl_SourceNode.length] = new Option(nameNode.value, nameNode.value);
                     ddl_DestinationNode[ddl_DestinationNode.length] = new Option(nameNode.value, nameNode.value);
                     nodeCount++;
-                    
-                    alert("addNode in gnode");
+
                 }
                 else
                 {
@@ -95,10 +91,7 @@ function addNode()
                     ddl_DestinationNode[ddl_DestinationNode.length] = new Option(nameNode.value+ "(yes)", nameNode.value + "(yes)");
                     ddl_DestinationNode[ddl_DestinationNode.length] = new Option(nameNode.value+ "(no)", nameNode.value + "(no)");
                                         nodeCount=nodeCount +3;
-
-                                        
-                    alert("addNode not in gnode");
-                                        
+           
                 }
                 
                 nodeString= nodeString + tempString + "\n";   
@@ -123,7 +116,9 @@ function addNode()
                     chart.clean();
                 }
                 
+               
                 chart = flowchart.parse(codeString);
+                              
                 chart.drawSVG('canvas', {
                               'line-width': 3,
                               'line-length': 50,
@@ -137,18 +132,21 @@ function addNode()
                               'no-text': 'no'
                               });
 
+
             }
 
             function submitHW()
             {
             	
-            	alert("in submitHW()");
             	alert(codeString);
-            	/*
-                $.post (urlHolder.add, {
-                    codeString: codeString
-                },
+            	
+                $.post (urlHolder.add, { codestr: codeString },
                 function(response) {
+                	
+                	
+                	alert(response);
+                	
+                	
                    if (response!=null)
                    {
                         alert ("Homework submitted succesfully");
@@ -158,7 +156,8 @@ function addNode()
                         alert ("Error: Please try submitting again");
                     }
                         
-                }*/
+                });
+
             }
 
 // on click of one of tabs
