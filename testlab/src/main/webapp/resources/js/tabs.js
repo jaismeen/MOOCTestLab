@@ -358,6 +358,42 @@ function addNode()
                         });
             }
 
+//Login function
+function login(var_login)
+{
+	alert("in login");
+	
+    var username=document.getElementById("username");
+    var password=document.getElementById("password");
+    
+    
+    alert("login "+$('#username').val()+", "+$('#password').val()+ ", "+var_login);
+
+    
+    
+        $.post (urlHolder.login, {
+                    username: $('#username').val(),
+                    password: $('#password').val(),
+                    type: var_login 
+                },
+                 function(response) {
+                	
+                	alert("response: "+response);
+                	
+                   if (response!="")
+                   {
+                        alert ("error");
+                   }
+                    
+                    else
+                    {
+                        alert ("success");
+                    }
+                        
+                }
+                );
+}
+
 // on click of one of tabs
 function displayPage() {
     var current = this.parentNode.getAttribute("data-current");
@@ -370,4 +406,32 @@ function displayPage() {
     this.setAttribute("class","tabActiveHeader");
     document.getElementById("tabpage_" + ident).style.display="block";
     this.parentNode.setAttribute("data-current",ident);
+}
+
+function loadTestData()
+{
+                    
+	alert("load test data");
+	
+    $.post (urlHolder.loadTestData, {
+    	type: $('#type option:selected').val()},
+            function(response) {
+            	          	
+            	alert(response);
+                    
+            });
+}
+
+function getTestData()
+{
+                    
+	alert("get test data");
+	
+    $.post (urlHolder.getTestData, {
+    	type: $('#type option:selected').val()},
+            function(response) {
+            	          	
+            	alert(response);
+                    
+            });
 }

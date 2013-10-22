@@ -1,16 +1,21 @@
 package org.mytestlab.controller;
 
+import java.util.ArrayList;
 import java.util.Set;
 
 import org.mytestlab.domain.ConditionNode;
 import org.mytestlab.domain.FlowGraph;
 import org.mytestlab.domain.GenericNode;
+import org.mytestlab.domain.Professor;
 import org.mytestlab.domain.Transition;
 import org.mytestlab.dto.GenericNodeDto;
 import org.mytestlab.dto.GenericNodeListDto;
 import org.mytestlab.dto.GenericNodeMapper;
 import org.mytestlab.service.FlowgraphService;
 import org.mytestlab.service.GenericNodeService;
+import org.mytestlab.service.GradingService;
+import org.mytestlab.service.ProfessorService;
+import org.mytestlab.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -23,6 +28,144 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @RequestMapping("/main")
 public class MainController {
 
+	final int PROFESSOR = 0;
+	final int STUDENT = 1;
+
+	//@Autowired
+	//private FlowgraphService flowGraphService;
+	
+	@Autowired
+	private ProfessorService professorService;
+	
+	@Autowired
+	private StudentService studentService;
+	
+	@Autowired
+	private GradingService gradingService;
+	
+	@RequestMapping
+	public String getMainPage() {
+		return "main";
+	}
+	
+	@RequestMapping(value="/login")
+	public @ResponseBody String login(
+			@RequestParam String username, 
+			@RequestParam String password, 
+			@RequestParam int type) {
+		
+		String str = "";
+		
+		if (type == PROFESSOR) { //professor
+			str = professorService.login(username, password);
+		} else if (type == STUDENT) { //student
+			str = studentService.login(username, password);
+		} else { //unknown type
+			
+		}
+		
+		return str;
+	}
+	
+	@RequestMapping(value="/submitSolution")
+	public @ResponseBody String submitSolution(
+			@RequestParam String username,
+			@RequestParam int type,
+			@RequestParam String assignmentName, 
+			@RequestParam String codeStrings,
+			@RequestParam int cyclomaticNumber) {
+		
+		String str = "";
+		ArrayList<String> arr = new ArrayList<String>();
+		
+		String[] strs = codeStrings.split("\n");
+		for(int i = 0; i < strs.length; i++) {
+			arr.add(strs[i]);
+		}
+		
+		if (type == PROFESSOR) {
+			str = professorService.submitSolution(username, assignmentName, arr, cyclomaticNumber);
+		} else if (type == STUDENT){
+			
+		} else {
+			
+		}
+		
+		return str;
+	}
+	
+	@RequestMapping(value="/gradeAssignment")
+	public @ResponseBody String gradeAssignment(
+			@RequestParam String assignmentName) {
+	
+		String str = "";
+		str = gradingService.gradeAssignment(assignmentName);
+		return str;
+	}
+		
+	@RequestMapping(value="/loadTestData")
+	public @ResponseBody String loadTestData(
+			@RequestParam int type) {
+		
+		String str = "";
+		
+		if (type == PROFESSOR) {
+			str = professorService.loadTestData();
+		} else if (type == STUDENT){
+			str = studentService.loadTestData();
+		} else { //unknown
+			
+		}
+		
+		return str;
+	}
+	
+	@RequestMapping(value="/getTestData")
+	public @ResponseBody String getTestData(
+			@RequestParam int type) {
+		
+		String str = "";
+		
+		if (type == PROFESSOR) {
+			str = professorService.getTestData();
+		} else if (type == STUDENT){
+			str = studentService.getTestData();
+		} else { //unknown
+			
+		}
+		
+		return str;
+	}
+	
+	@RequestMapping(value="/addUser")
+	public @ResponseBody String addUser(
+			@RequestParam String lastname, 
+			@RequestParam String firstname, 
+			@RequestParam String username, 
+			@RequestParam String password, 
+			@RequestParam int type) {
+		
+		String str = "";
+		
+		if (type == PROFESSOR) { //professor
+			// Create new records
+			Professor newProf = new Professor();
+			newProf.setFirstName(firstname);
+			newProf.setLastName(lastname);
+			newProf.setPassword(password);
+			newProf.setUsername(username);
+			
+			//professorRepository.save(jack);
+		} else if (type == STUDENT) { //student
+			
+		} else { //unknown type
+			
+		}
+		
+		return str;
+	}
+	
+	/*
 	@Autowired
 	private GenericNodeService service;
 	
@@ -49,7 +192,7 @@ public class MainController {
 
 	static int tmpName = 1;
 	@RequestMapping(value="/create", method=RequestMethod.POST)
-	public @ResponseBody Set<String> create(
+	public @ResponseBody ArrayList<String> create(
 			@RequestParam String codestr) {
 
 		System.out.println("In create()");
@@ -61,27 +204,38 @@ public class MainController {
 		
 		fg.setName(Long.toString(System.currentTimeMillis()));
 		
+		
+		System.out.println("String from javascript");
+		
 		String[] strs = codestr.split("\n");
 		for(int i = 0; i < strs.length; i++) {
 			fg.addCodeString(strs[i]);
+			
+			System.out.println(strs[i]);
+			
 		}
 		
 		flowGraphService.create(fg);
 		
 		FlowGraph fg2 = flowGraphService.read(fg.getName());
 		
+		System.out.println("String from database");
+		
+		//for (String str: fg2.getCodeStrings()) {
+			//System.out.println(str);
+		//}
+		
+		for(int i = 0; i < fg2.getCodeStrings().size(); i++) {	
+			System.out.println(fg2.getCodeStrings().get(i));
+		}
 		
 		System.out.println("Out create()");
 		
 		
-		if (fg2 != null) {
-			return fg2.getCodeStrings();
-		} else {
-			return null;
-		}
+		return fg2.getCodeStrings();
 	}
 	
-	/*@RequestMapping(value="/create", method=RequestMethod.POST)
+	@RequestMapping(value="/create", method=RequestMethod.POST)
 	public @ResponseBody GenericNodeDto create(
 			@RequestParam String name,
 			@RequestParam String description,
@@ -116,7 +270,7 @@ public class MainController {
 		
 		
 		return GenericNodeMapper.map(service.create(newNode));
-	}*/		
+	}	
 	
 	@RequestMapping(value="/update", method=RequestMethod.POST)
 	public @ResponseBody GenericNodeDto update(
@@ -141,5 +295,5 @@ public class MainController {
 		
 		return service.delete(existingNode);
 	}
-	
+	*/
 }

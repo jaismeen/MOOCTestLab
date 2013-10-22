@@ -1,5 +1,6 @@
 package org.mytestlab.domain;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -15,10 +16,10 @@ public class FlowGraph {
 	@Indexed
 	private String name;
 	
-	private Set<String> codeStrings;
+	private ArrayList<String> codeStrings;
 	
 	public FlowGraph() {
-		codeStrings = new HashSet<String>();
+		codeStrings = new ArrayList<String>();
 	}
 	
 	public Long getId() {
@@ -37,11 +38,11 @@ public class FlowGraph {
 		this.name = name;
 	}
 	
-	public Set<String> getCodeStrings() {
+	public ArrayList<String> getCodeStrings() {
 		return this.codeStrings;
 	}
 	
-	public void setCodeStrings(Set<String> codeStrings) {
+	public void setCodeStrings(ArrayList<String> codeStrings) {
 		this.codeStrings = codeStrings;
 	}
 	
@@ -49,7 +50,7 @@ public class FlowGraph {
 		return this.codeStrings.add(codeString);
 	}
 	
-	public boolean addCodeString(Set<String> codeString) {
+	public boolean addCodeString(ArrayList<String> codeString) {
 		return this.codeStrings.addAll(codeString);
 	}
 	
@@ -57,7 +58,7 @@ public class FlowGraph {
 		return this.codeStrings.remove(codeString);
 	}
 	
-	public boolean removeCodeString(Set<String> codeStrings) {
+	public boolean removeCodeString(ArrayList<String> codeStrings) {
 		return this.codeStrings.removeAll(codeStrings);
 	}
 	

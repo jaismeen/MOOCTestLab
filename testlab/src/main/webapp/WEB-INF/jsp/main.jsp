@@ -5,6 +5,9 @@
 <c:url value="/main/update" var="editUrl"/>
 <c:url value="/main/delete" var="deleteUrl"/>
 
+<c:url value="/main/loadTestData" var="loadTestDataUrl"/>
+<c:url value="/main/getTestData" var="getTestDataUrl"/>
+
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -42,6 +45,9 @@
 		urlHolder.edit = '${editUrl}';
 		urlHolder.del = '${deleteUrl}';
 
+		urlHolder.loadTestData = '${loadTestDataUrl}';
+		urlHolder.getTestData = '${getTestDataUrl}';
+		
     });
         </script>
 
