@@ -1,5 +1,11 @@
 package org.mytestlab.service;
 
+import java.util.ArrayList;
+
+import org.mytestlab.domain.Answer;
+import org.mytestlab.domain.Assignment;
+import org.mytestlab.domain.Professor;
+import org.mytestlab.domain.Solution;
 import org.mytestlab.domain.Student;
 import org.mytestlab.repository.AssignmentRepository;
 import org.mytestlab.repository.StudentRepository;
@@ -22,7 +28,7 @@ public class StudentService {
 		amy.setFirstName("Amy");
 		amy.setLastName("Johnson");
 		amy.setPassword("111");
-		amy.setUsername("amy");
+		amy.setUsername("0002");
 		
 		studentRepository.save(amy);
 		
@@ -62,6 +68,35 @@ public class StudentService {
 		} else if (!stu.getPassword().equals(password)) { //password doesn't match
 			ret = errorMsg;
 		}
+		
+		return ret;
+	}
+	
+	public String submitAnswer(String username, String assignmentName, ArrayList<String> codeStrings, int cyclomaticNumber) {
+		String ret = "";
+		
+		Student stu = studentRepository.findByUsername(username);
+		Assignment assign = assignmentRepository.findByName(assignmentName);
+		
+		if (assign == null) {
+			ret = "Assignment doesn't exist!";
+			return ret;
+		}
+		
+		if (stu == null) {
+			ret = "Student doesn't exist!";
+			return ret;
+		}
+		
+		Answer ans = new Answer(stu, assign);
+		ans.setCodeStrings(codeStrings);
+		ans.setCyclomaticNumber(cyclomaticNumber);
+		
+		stu.addAnswer(ans);
+		assign.addAnswer(ans);
+		
+		studentRepository.save(stu);
+		assignmentRepository.save(assign);
 		
 		return ret;
 	}

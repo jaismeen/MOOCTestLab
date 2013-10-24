@@ -26,7 +26,7 @@ public class ProfessorService {
 		jack.setFirstName("Jack");
 		jack.setLastName("Smith");
 		jack.setPassword("111");
-		jack.setUsername("jack");
+		jack.setUsername("0001");
 		
 		professorRepository.save(jack);
 		
@@ -47,6 +47,13 @@ public class ProfessorService {
 		
 		return ret;
 	}
+	
+	/*
+	public String loadAssignment() {
+		
+		Assignment assign = new Assignment();
+		
+	}*/
 	
 	//Return error string if there is an error.  Return empty string if there is no error.
 	public String login(String username, String password) {
@@ -97,12 +104,19 @@ public class ProfessorService {
 		
 		//points
 		ArrayList<Double> pts = new ArrayList<Double>();
-		double pt = 90 / codeStrings.size();
+		double pt = 90 / (codeStrings.size() - 2); //substract the default start and end node.
 		for (int i = 0; i < codeStrings.size(); i++) {
-			pts.add(pt);
+			if (i < 2) {
+				pts.add(0.0);
+			} else {
+				pts.add(pt);
+			}
 		}
 		sol.setCodeStringsPoints(pts);		
 		sol.setCyclomaticNumberPoint(10);
+		
+		prof.addSolution(sol);
+		assign.setSolution(sol);
 		
 		professorRepository.save(prof);
 		assignmentRepository.save(assign);

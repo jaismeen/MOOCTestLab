@@ -24,8 +24,23 @@ public class Answer {
 	
 	private Double totalPoints;
 
+	public Answer() {
+		codeStrings = new ArrayList<String>();
+		codeStringsPoints = new ArrayList<Double>();
+	}
+	
+	public Answer(Student student, Assignment assignment) {
+		this();
+		this.student = student;
+		this.assignment = assignment;
+	}
+	
 	public ArrayList<String> getCodeStrings() {
 		return codeStrings;
+	}
+	
+	public Student getStudent() {
+		return student;
 	}
 
 	public void setCodeStrings(ArrayList<String> codeStrings) {

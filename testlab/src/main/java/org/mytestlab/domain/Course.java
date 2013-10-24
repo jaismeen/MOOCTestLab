@@ -1,5 +1,6 @@
 package org.mytestlab.domain;
 
+import java.util.HashSet;
 import java.util.Set;
 
 import org.neo4j.graphdb.Direction;
@@ -28,6 +29,11 @@ public class Course {
 	
 	private String description;
 	private GradingScale gradingScale;
+	
+	public Course() {
+		this.students = new HashSet<Student>();
+		this.assignments = new HashSet<Assignment>();
+	}
 	
 	public String getDescription() {
 		return description;
