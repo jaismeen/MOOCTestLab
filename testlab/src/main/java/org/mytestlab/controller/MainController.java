@@ -23,6 +23,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 @RequestMapping("/main")
@@ -31,8 +32,8 @@ public class MainController {
 	final int PROFESSOR = 0;
 	final int STUDENT = 1;
 
-	//@Autowired
-	//private FlowgraphService flowGraphService;
+	@Autowired
+	private FlowgraphService flowGraphService;
 	
 	@Autowired
 	private ProfessorService professorService;
@@ -44,9 +45,21 @@ public class MainController {
 	private GradingService gradingService;
 	
 	@RequestMapping
-	public String getMainPage() {
+	public String MainPage() {
 		return "main";
 	}
+	/*@RequestMapping(value="/StudentLogin")
+	public String StudentLogin()
+	{	
+		return "StudentLogin";
+	}*/
+	@RequestMapping(value = "/StudentLogin", method= RequestMethod.GET)
+    public String StudentLogin() {
+         
+        return "redirect:StudentLogin";
+    }
+   
+	
 	
 	@RequestMapping(value="/login")
 	public @ResponseBody String login(
@@ -188,7 +201,7 @@ public class MainController {
 	@RequestMapping(value="/get")
 	public @ResponseBody GenericNode get(@RequestBody GenericNode node) {
 		return service.read(node);
-	}
+	}*/
 
 	static int tmpName = 1;
 	@RequestMapping(value="/create", method=RequestMethod.POST)
@@ -234,7 +247,7 @@ public class MainController {
 		
 		return fg2.getCodeStrings();
 	}
-	
+	/*
 	@RequestMapping(value="/create", method=RequestMethod.POST)
 	public @ResponseBody GenericNodeDto create(
 			@RequestParam String name,

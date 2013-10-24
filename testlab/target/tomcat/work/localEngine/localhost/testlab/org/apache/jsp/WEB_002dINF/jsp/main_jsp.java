@@ -57,314 +57,275 @@ public final class main_jsp extends org.apache.jasper.runtime.HttpJspBase
       out = pageContext.getOut();
       _jspx_out = out;
 
-      out.write("\r\n");
-      out.write("\r\n");
+      out.write('\n');
+      out.write('\n');
+      out.write('\n');
       if (_jspx_meth_c_005furl_005f0(_jspx_page_context))
         return;
-      out.write('\r');
       out.write('\n');
       if (_jspx_meth_c_005furl_005f1(_jspx_page_context))
         return;
-      out.write('\r');
       out.write('\n');
       if (_jspx_meth_c_005furl_005f2(_jspx_page_context))
         return;
-      out.write('\r');
       out.write('\n');
       if (_jspx_meth_c_005furl_005f3(_jspx_page_context))
         return;
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("<html lang=\"en\">\r\n");
-      out.write("  <head>\r\n");
-      out.write("    <meta charset=\"utf-8\">\r\n");
-      out.write("    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n");
-      out.write("    <meta name=\"description\" content=\"\">\r\n");
-      out.write("    <meta name=\"author\" content=\"\">\r\n");
-      out.write("    <link rel=\"shortcut icon\" href=\"../../assets/ico/favicon.png\">\r\n");
-      out.write("\r\n");
-      out.write("    <title>Carousel Template for Bootstrap</title>\r\n");
-      out.write("\r\n");
-      out.write("    <!-- Bootstrap core CSS -->\r\n");
-      out.write("    <!--  <link href=\"css/bootstrap.css\" rel=\"stylesheet\">\r\n");
-      out.write("            <link href=\"css/flowchart.css\" rel=\"stylesheet\">\r\n");
-      out.write("-->\r\n");
-      out.write("\t<link rel='stylesheet' type='text/css' media='screen' href='");
+      out.write('\n');
+      out.write('\n');
       if (_jspx_meth_c_005furl_005f4(_jspx_page_context))
         return;
-      out.write("'/>\r\n");
-      out.write("\t\t<link rel='stylesheet' type='text/css' media='screen' href='");
+      out.write('\n');
       if (_jspx_meth_c_005furl_005f5(_jspx_page_context))
         return;
-      out.write("'/>\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->\r\n");
-      out.write("    <!--[if lt IE 9]>\r\n");
-      out.write("      <script src=\"../../assets/js/html5shiv.js\"></script>\r\n");
-      out.write("      <script src=\"../../assets/js/respond.min.js\"></script>\r\n");
-      out.write("    <![endif]-->\r\n");
-      out.write("\r\n");
-      out.write("    <!-- Custom styles for this template -->\r\n");
-      out.write("   <!--   <link href=\"../../resources/css/carousel.css\" rel=\"stylesheet\">\r\n");
-      out.write("    -->\r\n");
-      out.write("    \t\t<link rel='stylesheet' type='text/css' media='screen' href='");
+      out.write('\n');
       if (_jspx_meth_c_005furl_005f6(_jspx_page_context))
         return;
-      out.write("'/>\r\n");
-      out.write("    \t\t    <script type='text/javascript' src='");
+      out.write('\n');
       if (_jspx_meth_c_005furl_005f7(_jspx_page_context))
         return;
-      out.write("'></script>\r\n");
-      out.write("    \t\t<script type='text/javascript' src='");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
       if (_jspx_meth_c_005furl_005f8(_jspx_page_context))
         return;
-      out.write("'></script>\r\n");
-      out.write("    \t\t    <script src=\"http://raphaeljs.com/raphael.js\"></script>\r\n");
-      out.write("    \t\t<script type='text/javascript' src='");
+      out.write('\n');
       if (_jspx_meth_c_005furl_005f9(_jspx_page_context))
         return;
-      out.write("'></script>\r\n");
-      out.write("\r\n");
-      out.write("    \r\n");
-      out.write("    <!--  <script src=\"../../resources/js/tabs.js\"></script>\r\n");
-      out.write("    <script src=\"http://raphaeljs.com/raphael.js\"></script>\r\n");
-      out.write("    <script src=\"../../resources/js/flowchart-1.1.3.js\"></script>\r\n");
-      out.write("-->\r\n");
-      out.write("    <script type='text/javascript'>\r\n");
-      out.write("       \r\n");
-      out.write("    $(function() {\r\n");
-      out.write("    \t\r\n");
-      out.write("    \talert(\"in init()\");\r\n");
-      out.write("    \t//alert(urlHolder);\r\n");
-      out.write("    \t\r\n");
-      out.write("\t\t// init\r\n");
-      out.write("\t\turlHolder.records = '");
-      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${recordsUrl}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
-      out.write("';\r\n");
-      out.write("\t\turlHolder.add = '");
-      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${addUrl}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
-      out.write("';\r\n");
-      out.write("\t\turlHolder.edit = '");
-      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${editUrl}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
-      out.write("';\r\n");
-      out.write("\t\turlHolder.del = '");
-      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${deleteUrl}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
-      out.write("';\r\n");
-      out.write("\t\t\r\n");
-      out.write("\t\talert(\"out init()\");\r\n");
-      out.write("    })\r\n");
-      out.write("    \r\n");
-      out.write("            function createUI(ele)\r\n");
-      out.write("{\r\n");
-      out.write("    var selElement, element;\r\n");
-      out.write("    var selection=document.getElementsByName(\"element\");\r\n");
-      out.write("    if (selection[0].checked==true)\r\n");
-      out.write("    {\r\n");
-      out.write("        selElement=\"Node\"; \r\n");
-      out.write("         document.getElementById(\"nodeelements\").style.display='block'; \r\n");
-      out.write("         document.getElementById(\"linkelements\").style.display= 'none';\r\n");
-      out.write("\r\n");
-      out.write("    }\r\n");
-      out.write("    else\r\n");
-      out.write("    {\r\n");
-      out.write("        selElement=\"Link\";\r\n");
-      out.write("        document.getElementById(\"nodeelements\").style.display='none';\r\n");
-      out.write("        document.getElementById(\"linkelements\").style.display= 'block';\r\n");
-      out.write("    } \r\n");
-      out.write("  \r\n");
-      out.write("   \r\n");
-      out.write("}\r\n");
-      out.write("        </script>\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("        \r\n");
-      out.write("       \t\r\n");
-      out.write("        </head>\r\n");
-      out.write("<!-- NAVBAR\r\n");
-      out.write("================================================== -->\r\n");
-      out.write("  <body>\r\n");
-      out.write("  ");
-      out.print(new java.util.Date() );
-      out.write("\r\n");
-      out.write("      <div class=\"navbar-wrapper\">\r\n");
-      out.write("      <div class=\"container\">\r\n");
-      out.write("        <div class=\"navbar navbar-inverse navbar-static-top\">\r\n");
-      out.write("          <div class=\"container\">\r\n");
-      out.write("            <div class=\"navbar-header\">\r\n");
-      out.write("              <button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\".navbar-collapse\">\r\n");
-      out.write("                <span class=\"icon-bar\"></span>\r\n");
-      out.write("                <span class=\"icon-bar\"></span>\r\n");
-      out.write("                <span class=\"icon-bar\"></span>\r\n");
-      out.write("              </button>\r\n");
-      out.write("              <a class=\"navbar-brand\" href=\"#\">Online Test Labs</a>\r\n");
-      out.write("            </div>\r\n");
-      out.write("            <div class=\"navbar-collapse collapse\">\r\n");
-      out.write("              <ul class=\"nav navbar-nav\">\r\n");
-      out.write("                <li class=\"active\"><a href=\"#\">Home</a></li>\r\n");
-      out.write("                <li><a href=\"#about\">Lab</a></li>\r\n");
-      out.write("                <li><a href=\"#contact\">Practice Sessions</a></li>\r\n");
-      out.write("              </ul>\r\n");
-      out.write("            </div>\r\n");
-      out.write("          </div>\r\n");
-      out.write("        </div>\r\n");
-      out.write("      </div>\r\n");
-      out.write("    </div>\r\n");
-      out.write("    <div id=\"main_body\">\r\n");
-      out.write("        <div id=\"side_panel\">\r\n");
-      out.write("            <div class=\"tabs\">\r\n");
-      out.write("                    <ul>\r\n");
-      out.write("                        <li id=\"tabHeader_1\">Create Element</li>\r\n");
-      out.write("                        <li id=\"tabHeader_2\">Delete Element</li>\r\n");
-      out.write("                    </ul>\r\n");
-      out.write("            </div>\r\n");
-      out.write("            <div class=\"tabscontent\">\r\n");
-      out.write("                <div class=\"tabpage\" id=\"tabpage_1\">\r\n");
-      out.write("                    <br>\r\n");
-      out.write("                    &nbsp\r\n");
-      out.write("                    &nbsp\r\n");
-      out.write("                    \r\n");
-      out.write("                    <input type=\"radio\" name=\"element\" onclick=\"createUI()\" value=\"node\" checked=\"checked\">  Node\r\n");
-      out.write("                    &nbsp\r\n");
-      out.write("                    &nbsp\r\n");
-      out.write("                    <input type=\"radio\" name=\"element\" onclick=\"createUI()\" value=\"link\">  Link\r\n");
-      out.write("                    <br>\r\n");
-      out.write("                    <br>\r\n");
-      out.write("                     <div id=\"fg_elements\">\r\n");
-      out.write("                     </div>\r\n");
-      out.write("                       <div id=\"nodeelements\">\r\n");
-      out.write("                   <!-- <<label for=\"createnode\">Create Node</label><br>-->\r\n");
-      out.write("                    <label class=\"col-lg-4 control-label\">Name</label>\r\n");
-      out.write("                    <div class=\"col-lg-6\">\r\n");
-      out.write("                    <input type=\"text\" class=\"form-control\" id = \"nodename\" name=\"nodename\">\r\n");
-      out.write("                    <br>\r\n");
-      out.write("                </div>\r\n");
-      out.write("                \r\n");
-      out.write("                <label class=\"col-lg-4 control-label\">Content</label>\r\n");
-      out.write("                    <div class=\"col-lg-6\">\r\n");
-      out.write("                    <input type=\"text\" class=\"form-control\" id = \"content\" name=\"nodecontent\"><br>\r\n");
-      out.write("                </div>\r\n");
-      out.write("                <br>\r\n");
-      out.write("                         \r\n");
-      out.write("                            <label class=\"col-lg-4 control-label\">Type</label>\r\n");
-      out.write("                            <div class=\"col-lg-6\">\r\n");
-      out.write("                            <select id=\"nodetype\" class=\"form-control\">\r\n");
-      out.write("                                <option value=\"gnode\">General Node</option>\r\n");
-      out.write("                                <option value=\"cnode\">Condition Node</option>\r\n");
-      out.write("                            </select>\r\n");
-      out.write("                        </div>                            <br>\r\n");
-      out.write("                            <br>\r\n");
-      out.write("                            <button id=\"createNode\" class=\"btn btn-default\" type=\"button\" onclick=\"addNode()\">Create Node</button><br><br>\r\n");
-      out.write("                            </div>\r\n");
-      out.write("                            \r\n");
-      out.write("                            <div id=\"linkelements\">\r\n");
-      out.write("\r\n");
-      out.write("                            <label class=\"col-lg-5 control-label\" for=\"lb_sourcenode\">Source Node</label>\r\n");
-      out.write("                            \r\n");
-      out.write("                             <div class=\"col-lg-6\">\r\n");
-      out.write("                                <select class=\"form-control\" id=\"sourceNode\">\r\n");
-      out.write("                            </select>\r\n");
-      out.write("                        </div>\r\n");
-      out.write("                        <br>\r\n");
-      out.write("                        <br>\r\n");
-      out.write("                        <br>\r\n");
-      out.write("                            <label class=\"col-lg-5 control-label\" for=\"lb_destinationnode\">Destination Node</label>\r\n");
-      out.write("                             <div class=\"col-lg-6\">\r\n");
-      out.write("                                <select class=\"form-control\" id=\"destinationNode\">\r\n");
-      out.write("                            </select><br>\r\n");
-      out.write("                            </div>\r\n");
-      out.write("                            <button id=\"createLink\" class=\"btn btn-default\" type=\"button\" onclick=\"addLink()\">Create Link</button><br>\r\n");
-      out.write("                        </div>\r\n");
-      out.write("\r\n");
-      out.write("                </div>\r\n");
-      out.write("                <div class=\"tabpage\" id=\"tabpage_2\">\r\n");
-      out.write("                         <br>\r\n");
-      out.write("                    &nbsp\r\n");
-      out.write("                    &nbsp\r\n");
-      out.write("                    \r\n");
-      out.write("                  <!--<input type=\"radio\" name=\"element\" onclick=\"createUI()\" value=\"node\" checked=\"checked\">  Node\r\n");
-      out.write("                    &nbsp\r\n");
-      out.write("                    &nbsp\r\n");
-      out.write("                    <input type=\"radio\" name=\"element\" onclick=\"createUI()\" value=\"link\">  Link\r\n");
-      out.write("                    <br>\r\n");
-      out.write("                    <br>\r\n");
-      out.write("                     <div id=\"fg_elements\">\r\n");
-      out.write("                     </div>\r\n");
-      out.write("                       <div id=\"nodeelements\">\r\n");
-      out.write("                    <label class=\"col-lg-4 control-label\">Name</label>\r\n");
-      out.write("                    <div class=\"col-lg-6\">\r\n");
-      out.write("                    <input type=\"text\" class=\"form-control\" id = \"nodename\" name=\"nodename\">\r\n");
-      out.write("                    <br>\r\n");
-      out.write("                </div>\r\n");
-      out.write("                \r\n");
-      out.write("                <label class=\"col-lg-4 control-label\">Content</label>\r\n");
-      out.write("                    <div class=\"col-lg-6\">\r\n");
-      out.write("                    <input type=\"text\" class=\"form-control\" id = \"content\" name=\"nodecontent\"><br>\r\n");
-      out.write("                </div>\r\n");
-      out.write("                <br>\r\n");
-      out.write("                         \r\n");
-      out.write("                            <label class=\"col-lg-4 control-label\">Type</label>\r\n");
-      out.write("                            <div class=\"col-lg-6\">\r\n");
-      out.write("                            <select id=\"nodetype\" class=\"form-control\">\r\n");
-      out.write("                                <option value=\"gnode\">General Node</option>\r\n");
-      out.write("                                <option value=\"cnode\">Condition Node</option>\r\n");
-      out.write("                            </select>\r\n");
-      out.write("                        </div>                            <br>\r\n");
-      out.write("                            <br>\r\n");
-      out.write("                            <button id=\"createNode\" class=\"btn btn-default\" type=\"button\" onclick=\"addNode()\">Create Node</button><br><br>\r\n");
-      out.write("                            </div>\r\n");
-      out.write("                            \r\n");
-      out.write("                            <div id=\"linkelements\">\r\n");
-      out.write("\r\n");
-      out.write("                            <label class=\"col-lg-5 control-label\" for=\"lb_sourcenode\">Source Node</label>\r\n");
-      out.write("                            \r\n");
-      out.write("                             <div class=\"col-lg-6\">\r\n");
-      out.write("                                <select class=\"form-control\" id=\"sourceNode\">\r\n");
-      out.write("                            </select>\r\n");
-      out.write("                        </div>\r\n");
-      out.write("                        <br>\r\n");
-      out.write("                        <br>\r\n");
-      out.write("                        <br>\r\n");
-      out.write("                            <label class=\"col-lg-5 control-label\" for=\"lb_destinationnode\">Destination Node</label>\r\n");
-      out.write("                             <div class=\"col-lg-6\">\r\n");
-      out.write("                                <select class=\"form-control\" id=\"destinationNode\">\r\n");
-      out.write("                            </select><br>\r\n");
-      out.write("                            </div>\r\n");
-      out.write("                            <button id=\"createLink\" class=\"btn btn-default\" type=\"button\" onclick=\"addLink()\">Create Link</button><br>\r\n");
-      out.write("                        </div>-->\r\n");
-      out.write("\r\n");
-      out.write("                </div>\r\n");
-      out.write("            </div>\r\n");
-      out.write("            <br>\r\n");
-      out.write("\r\n");
-      out.write("            <div class=\"code_area\">\r\n");
-      out.write("                <iframe class=\"codeframe\" style=\"background: #F0F0F0; width: 100%; height: 230px\" src='");
+      out.write("\n");
+      out.write("<html lang=\"en\">\n");
+      out.write("  <head>\n");
+      out.write("    <meta charset=\"utf-8\">\n");
+      out.write("    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n");
+      out.write("    <meta name=\"description\" content=\"\">\n");
+      out.write("    <meta name=\"author\" content=\"\">\n");
+      out.write("    <link rel=\"shortcut icon\" href=\"../../assets/ico/favicon.png\">\n");
+      out.write("\n");
+      out.write("    <title>Extended MOOC</title>\n");
+      out.write("   <link href='");
       if (_jspx_meth_c_005furl_005f10(_jspx_page_context))
         return;
-      out.write("'></iframe>\r\n");
-      out.write("                <br>\r\n");
-      out.write("                <br>\r\n");
-      out.write("                <button id=\"submit\" stype=\" align: right\" class=\"btn btn-default\" type=\"button\" onclick=\"submitHW()\">Submit</button>\r\n");
-      out.write("            </div>\r\n");
-      out.write("        \r\n");
-      out.write("        </div>\r\n");
-      out.write("\r\n");
-      out.write("        <div id=\"canvas\">\r\n");
-      out.write("             <h1>Drawing Area</h1>\r\n");
-      out.write("        </div>\r\n");
-      out.write("        \r\n");
-      out.write("    </div>\r\n");
-      out.write("   \r\n");
-      out.write("   \r\n");
-      out.write("  \r\n");
-      out.write("\t\r\n");
-      out.write("\r\n");
-      out.write("    <!-- Bootstrap core JavaScript\r\n");
-      out.write("    ================================================== -->\r\n");
-      out.write("    <!-- Placed at the end of the document so the pages load faster -->\r\n");
-      out.write("\r\n");
-      out.write("  </body>\r\n");
-      out.write("</html>");
+      out.write("' rel=\"stylesheet\">\n");
+      out.write("    <link href='");
+      if (_jspx_meth_c_005furl_005f11(_jspx_page_context))
+        return;
+      out.write("' rel=\"stylesheet\">\n");
+      out.write("\n");
+      out.write("    <link href='");
+      if (_jspx_meth_c_005furl_005f12(_jspx_page_context))
+        return;
+      out.write("' rel=\"stylesheet\">\n");
+      out.write("    <script type='text/javascript' src='");
+      if (_jspx_meth_c_005furl_005f13(_jspx_page_context))
+        return;
+      out.write("'></script>\n");
+      out.write("    <script src='");
+      if (_jspx_meth_c_005furl_005f14(_jspx_page_context))
+        return;
+      out.write("'></script>\n");
+      out.write("    <script src='");
+      if (_jspx_meth_c_005furl_005f15(_jspx_page_context))
+        return;
+      out.write("'></script>\n");
+      out.write("    <script src='");
+      if (_jspx_meth_c_005furl_005f16(_jspx_page_context))
+        return;
+      out.write("'></script>\n");
+      out.write("     <script>\n");
+      out.write("    $(function() {\n");
+      out.write("\n");
+      out.write("      \n");
+      out.write("    // init\n");
+      out.write("    urlHolder.records = '");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${recordsUrl}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
+      out.write("';\n");
+      out.write("    urlHolder.add = '");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${addUrl}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
+      out.write("';\n");
+      out.write("    urlHolder.edit = '");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${editUrl}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
+      out.write("';\n");
+      out.write("    urlHolder.del = '");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${deleteUrl}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
+      out.write("';\n");
+      out.write("    urlHolder.gradePractice = '");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${gradePracticeUrl}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
+      out.write("';\n");
+      out.write("    urlHolder.grading = '");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${gradingUrl}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
+      out.write("';\n");
+      out.write("    urlHolder.displayAll = '");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${displayAllUrl}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
+      out.write("';\n");
+      out.write("    urlHolder.submitSolution = '");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${submitSolutionUrl}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
+      out.write("';\n");
+      out.write("    \n");
+      out.write("    urlHolder.loadTestData = '");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${loadTestDataUrl}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
+      out.write("';\n");
+      out.write("    urlHolder.getTestData = '");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${getTestDataUrl}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
+      out.write("';\n");
+      out.write("    \n");
+      out.write("    });\n");
+      out.write("        </script>\n");
+      out.write("  </head>\n");
+      out.write("<!-- NAVBAR\n");
+      out.write("================================================== -->\n");
+      out.write("  <body>\n");
+      out.write("    <div class=\"navbar-wrapper\">\n");
+      out.write("      <div class=\"container\">\n");
+      out.write("\n");
+      out.write("        <div class=\"navbar navbar-inverse navbar-static-top\">\n");
+      out.write("          <div class=\"container\">\n");
+      out.write("            <div class=\"navbar-header\">\n");
+      out.write("              <button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\".navbar-collapse\">\n");
+      out.write("                <span class=\"icon-bar\"></span>\n");
+      out.write("                <span class=\"icon-bar\"></span>\n");
+      out.write("                <span class=\"icon-bar\"></span>\n");
+      out.write("              </button>\n");
+      out.write("              <a class=\"navbar-brand\" href=\"#\">ONLINE TEST LABS</a>\n");
+      out.write("            </div>\n");
+      out.write("           \n");
+      out.write("          </div>\n");
+      out.write("        </div>\n");
+      out.write("\n");
+      out.write("      </div>\n");
+      out.write("    </div>\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("    <!-- Carousel\n");
+      out.write("    ================================================== -->\n");
+      out.write("    <div id=\"myCarousel\" class=\"carousel slide\">\n");
+      out.write("      <!-- Indicators -->\n");
+      out.write("      <ol class=\"carousel-indicators\">\n");
+      out.write("        <li data-target=\"#myCarousel\" data-slide-to=\"0\" class=\"active\"></li>\n");
+      out.write("        <li data-target=\"#myCarousel\" data-slide-to=\"1\"></li>\n");
+      out.write("        <li data-target=\"#myCarousel\" data-slide-to=\"2\"></li>\n");
+      out.write("      </ol>\n");
+      out.write("      <div class=\"carousel-inner\">\n");
+      out.write("        <div class=\"item active\">\n");
+      out.write("          <img src=\"pictures/pic1.JPG\" alt=\"First slide\">\n");
+      out.write("          <div class=\"container\">\n");
+      out.write("            <div class=\"carousel-caption\">\n");
+      out.write("              <h1>Online Test Based Labs: MOOC</h1>\n");
+      out.write("              <p>Welcome to the Online test labs for SJSU Students.</p>\n");
+      out.write("              <p><a class=\"btn btn-lg btn-primary\" href=\"/Users/Jaismeen/Documents/295B/indexcopy.html \" role=\"button\">Go to Test Lab</a></p>\n");
+      out.write("            </div>\n");
+      out.write("          </div>\n");
+      out.write("        </div>\n");
+      out.write("        <div class=\"item\">\n");
+      out.write("          <img src=\"pictures/pic2.jpg\" data-src=\"holder.js/900x500/auto/#666:#6a6a6a/text:Second slide\" alt=\"Second slide\">\n");
+      out.write("          <div class=\"container\">\n");
+      out.write("            <div class=\"carousel-caption\">\n");
+      out.write("              <h1>Another example headline.</h1>\n");
+      out.write("              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>\n");
+      out.write("              <p><a class=\"btn btn-lg btn-primary\" href=\"#\" role=\"button\">Learn more</a></p>\n");
+      out.write("            </div>\n");
+      out.write("          </div>\n");
+      out.write("        </div>\n");
+      out.write("        <div class=\"item\">\n");
+      out.write("          <img src=\"data:image/png;base64,\" data-src=\"holder.js/900x500/auto/#555:#5a5a5a/text:Third slide\" alt=\"Third slide\">\n");
+      out.write("          <div class=\"container\">\n");
+      out.write("            <div class=\"carousel-caption\">\n");
+      out.write("              <h1>One more for good measure.</h1>\n");
+      out.write("              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>\n");
+      out.write("              <p><a class=\"btn btn-lg btn-primary\" href=\"#\" role=\"button\">Browse gallery</a></p>\n");
+      out.write("            </div>\n");
+      out.write("          </div>\n");
+      out.write("        </div>\n");
+      out.write("      </div>\n");
+      out.write("      <a class=\"left carousel-control\" href=\"#myCarousel\" data-slide=\"prev\"><span class=\"glyphicon glyphicon-chevron-left\"></span></a>\n");
+      out.write("      <a class=\"right carousel-control\" href=\"#myCarousel\" data-slide=\"next\"><span class=\"glyphicon glyphicon-chevron-right\"></span></a>\n");
+      out.write("    </div><!-- /.carousel -->\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("    <!-- Marketing messaging and featurettes\n");
+      out.write("    ================================================== -->\n");
+      out.write("    <!-- Wrap the rest of the page in another container to center all the content. -->\n");
+      out.write("\n");
+      out.write("    <div class=\"container marketing\">\n");
+      out.write("\n");
+      out.write("      <!-- Three columns of text below the carousel -->\n");
+      out.write("      <div class=\"row\">\n");
+      out.write("        <div class=\"col-lg-4\">\n");
+      out.write("          <img class=\"img-circle\" src=\"pictures/pic1.jpg\" height=\"50\" width=\"50\"/>\n");
+      out.write("          <h2>Professor</h2>\n");
+      out.write("          <p>Specially designed interface for professors to set testing labs.</p>\n");
+      out.write("          <p><a class=\"btn btn-default\" href=\"ProfessorLogin\" role=\"button\">Login &raquo;</a></p>\n");
+      out.write("        </div><!-- /.col-lg-4 -->\n");
+      out.write("        <div class=\"col-lg-4\">\n");
+      out.write("          <img class=\"img-circle\" src=\"pictures/pic2.jpg\" height=\"50\" width=\"50\" alt=\"Generic placeholder image\">\n");
+      out.write("          <h2>Student</h2>\n");
+      out.write("          <p>Platform for student to perform tests online</p>\n");
+      out.write("          <p><a class=\"btn btn-default\" href=\"StudentLogin\" role=\"button\">Login &raquo;</a></p>\n");
+      out.write("        </div><!-- /.col-lg-4 -->\n");
+      out.write("        <div class=\"col-lg-4\">\n");
+      out.write("          <img class=\"img-circle\" src=\"pictures/pic3.jpg\" height=\"50\" width=\"50\" alt=\"Generic placeholder image\">\n");
+      out.write("          <h2>About Us</h2>\n");
+      out.write("          <p>MOOC inspired test labs</p>\n");
+      out.write("          <p><a class=\"btn btn-default\" href=\"#\" role=\"button\">Take a look &raquo;</a></p>\n");
+      out.write("        </div><!-- /.col-lg-4 -->\n");
+      out.write("      </div><!-- /.row -->\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("      <!-- START THE FEATURETTES -->\n");
+      out.write("\n");
+      out.write("      <hr class=\"featurette-divider\">\n");
+      out.write("\n");
+      out.write("      <div class=\"row featurette\">\n");
+      out.write("        <div class=\"col-md-7\">\n");
+      out.write("          <h2 class=\"featurette-heading\">First featurette heading. <span class=\"text-muted\">It'll blow your mind.</span></h2>\n");
+      out.write("          <p class=\"lead\">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>\n");
+      out.write("        </div>\n");
+      out.write("        <div class=\"col-md-5\">\n");
+      out.write("          <img class=\"featurette-image img-responsive\" src=\"data:image/png;base64,\" data-src=\"holder.js/500x500/auto\" alt=\"Generic placeholder image\">\n");
+      out.write("        </div>\n");
+      out.write("      </div>\n");
+      out.write("\n");
+      out.write("      <hr class=\"featurette-divider\">\n");
+      out.write("\n");
+      out.write("      <div class=\"row featurette\">\n");
+      out.write("        <div class=\"col-md-5\">\n");
+      out.write("          <img class=\"featurette-image img-responsive\" src=\"data:image/png;base64,\" data-src=\"holder.js/500x500/auto\" alt=\"Generic placeholder image\">\n");
+      out.write("        </div>\n");
+      out.write("        <div class=\"col-md-7\">\n");
+      out.write("          <h2 class=\"featurette-heading\">Oh yeah, it's that good. <span class=\"text-muted\">See for yourself.</span></h2>\n");
+      out.write("          <p class=\"lead\">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>\n");
+      out.write("        </div>\n");
+      out.write("      </div>\n");
+      out.write("\n");
+      out.write("      <hr class=\"featurette-divider\">\n");
+      out.write("\n");
+      out.write("      <div class=\"row featurette\">\n");
+      out.write("        <div class=\"col-md-7\">\n");
+      out.write("          <h2 class=\"featurette-heading\">And lastly, this one. <span class=\"text-muted\">Checkmate.</span></h2>\n");
+      out.write("          <p class=\"lead\">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>\n");
+      out.write("        </div>\n");
+      out.write("        <div class=\"col-md-5\">\n");
+      out.write("          <img class=\"featurette-image img-responsive\" src=\"data:image/png;base64,\" data-src=\"holder.js/500x500/auto\" alt=\"Generic placeholder image\">\n");
+      out.write("        </div>\n");
+      out.write("      </div>\n");
+      out.write("\n");
+      out.write("      <hr class=\"featurette-divider\">\n");
+      out.write("\n");
+      out.write("      <!-- /END THE FEATURETTES -->\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("      <!-- FOOTER -->\n");
+      out.write("      <footer>\n");
+      out.write("        <p class=\"pull-right\"><a href=\"#\">Back to top</a></p>\n");
+      out.write("        <p>&copy; 2013 Company, Inc. &middot; <a href=\"#\">Privacy</a> &middot; <a href=\"#\">Terms</a></p>\n");
+      out.write("      </footer>\n");
+      out.write("\n");
+      out.write("    </div><!-- /.container -->\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("  </body>\n");
+      out.write("</html>\n");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;
@@ -385,10 +346,10 @@ public final class main_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.apache.taglibs.standard.tag.rt.core.UrlTag _jspx_th_c_005furl_005f0 = (org.apache.taglibs.standard.tag.rt.core.UrlTag) _005fjspx_005ftagPool_005fc_005furl_0026_005fvar_005fvalue_005fnobody.get(org.apache.taglibs.standard.tag.rt.core.UrlTag.class);
     _jspx_th_c_005furl_005f0.setPageContext(_jspx_page_context);
     _jspx_th_c_005furl_005f0.setParent(null);
-    // /WEB-INF/jsp/main.jsp(3,0) name = value type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
-    _jspx_th_c_005furl_005f0.setValue("/main/records");
-    // /WEB-INF/jsp/main.jsp(3,0) name = var type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
-    _jspx_th_c_005furl_005f0.setVar("recordsUrl");
+    // /WEB-INF/jsp/main.jsp(4,0) name = value type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_c_005furl_005f0.setValue("/main/login");
+    // /WEB-INF/jsp/main.jsp(4,0) name = var type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_c_005furl_005f0.setVar("loginUrl");
     int _jspx_eval_c_005furl_005f0 = _jspx_th_c_005furl_005f0.doStartTag();
     if (_jspx_th_c_005furl_005f0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
       _005fjspx_005ftagPool_005fc_005furl_0026_005fvar_005fvalue_005fnobody.reuse(_jspx_th_c_005furl_005f0);
@@ -406,9 +367,9 @@ public final class main_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.apache.taglibs.standard.tag.rt.core.UrlTag _jspx_th_c_005furl_005f1 = (org.apache.taglibs.standard.tag.rt.core.UrlTag) _005fjspx_005ftagPool_005fc_005furl_0026_005fvar_005fvalue_005fnobody.get(org.apache.taglibs.standard.tag.rt.core.UrlTag.class);
     _jspx_th_c_005furl_005f1.setPageContext(_jspx_page_context);
     _jspx_th_c_005furl_005f1.setParent(null);
-    // /WEB-INF/jsp/main.jsp(4,0) name = value type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/main.jsp(5,0) name = value type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_c_005furl_005f1.setValue("/main/create");
-    // /WEB-INF/jsp/main.jsp(4,0) name = var type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/main.jsp(5,0) name = var type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_c_005furl_005f1.setVar("addUrl");
     int _jspx_eval_c_005furl_005f1 = _jspx_th_c_005furl_005f1.doStartTag();
     if (_jspx_th_c_005furl_005f1.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
@@ -427,9 +388,9 @@ public final class main_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.apache.taglibs.standard.tag.rt.core.UrlTag _jspx_th_c_005furl_005f2 = (org.apache.taglibs.standard.tag.rt.core.UrlTag) _005fjspx_005ftagPool_005fc_005furl_0026_005fvar_005fvalue_005fnobody.get(org.apache.taglibs.standard.tag.rt.core.UrlTag.class);
     _jspx_th_c_005furl_005f2.setPageContext(_jspx_page_context);
     _jspx_th_c_005furl_005f2.setParent(null);
-    // /WEB-INF/jsp/main.jsp(5,0) name = value type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/main.jsp(6,0) name = value type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_c_005furl_005f2.setValue("/main/update");
-    // /WEB-INF/jsp/main.jsp(5,0) name = var type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/main.jsp(6,0) name = var type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_c_005furl_005f2.setVar("editUrl");
     int _jspx_eval_c_005furl_005f2 = _jspx_th_c_005furl_005f2.doStartTag();
     if (_jspx_th_c_005furl_005f2.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
@@ -448,9 +409,9 @@ public final class main_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.apache.taglibs.standard.tag.rt.core.UrlTag _jspx_th_c_005furl_005f3 = (org.apache.taglibs.standard.tag.rt.core.UrlTag) _005fjspx_005ftagPool_005fc_005furl_0026_005fvar_005fvalue_005fnobody.get(org.apache.taglibs.standard.tag.rt.core.UrlTag.class);
     _jspx_th_c_005furl_005f3.setPageContext(_jspx_page_context);
     _jspx_th_c_005furl_005f3.setParent(null);
-    // /WEB-INF/jsp/main.jsp(6,0) name = value type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/main.jsp(7,0) name = value type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_c_005furl_005f3.setValue("/main/delete");
-    // /WEB-INF/jsp/main.jsp(6,0) name = var type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/main.jsp(7,0) name = var type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_c_005furl_005f3.setVar("deleteUrl");
     int _jspx_eval_c_005furl_005f3 = _jspx_th_c_005furl_005f3.doStartTag();
     if (_jspx_th_c_005furl_005f3.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
@@ -466,17 +427,19 @@ public final class main_jsp extends org.apache.jasper.runtime.HttpJspBase
     PageContext pageContext = _jspx_page_context;
     JspWriter out = _jspx_page_context.getOut();
     //  c:url
-    org.apache.taglibs.standard.tag.rt.core.UrlTag _jspx_th_c_005furl_005f4 = (org.apache.taglibs.standard.tag.rt.core.UrlTag) _005fjspx_005ftagPool_005fc_005furl_0026_005fvalue_005fnobody.get(org.apache.taglibs.standard.tag.rt.core.UrlTag.class);
+    org.apache.taglibs.standard.tag.rt.core.UrlTag _jspx_th_c_005furl_005f4 = (org.apache.taglibs.standard.tag.rt.core.UrlTag) _005fjspx_005ftagPool_005fc_005furl_0026_005fvar_005fvalue_005fnobody.get(org.apache.taglibs.standard.tag.rt.core.UrlTag.class);
     _jspx_th_c_005furl_005f4.setPageContext(_jspx_page_context);
     _jspx_th_c_005furl_005f4.setParent(null);
-    // /WEB-INF/jsp/main.jsp(22,61) name = value type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
-    _jspx_th_c_005furl_005f4.setValue("/resources/css/bootstrap.css");
+    // /WEB-INF/jsp/main.jsp(9,0) name = value type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_c_005furl_005f4.setValue("/main/gradePractice");
+    // /WEB-INF/jsp/main.jsp(9,0) name = var type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_c_005furl_005f4.setVar("gradePracticeUrl");
     int _jspx_eval_c_005furl_005f4 = _jspx_th_c_005furl_005f4.doStartTag();
     if (_jspx_th_c_005furl_005f4.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
-      _005fjspx_005ftagPool_005fc_005furl_0026_005fvalue_005fnobody.reuse(_jspx_th_c_005furl_005f4);
+      _005fjspx_005ftagPool_005fc_005furl_0026_005fvar_005fvalue_005fnobody.reuse(_jspx_th_c_005furl_005f4);
       return true;
     }
-    _005fjspx_005ftagPool_005fc_005furl_0026_005fvalue_005fnobody.reuse(_jspx_th_c_005furl_005f4);
+    _005fjspx_005ftagPool_005fc_005furl_0026_005fvar_005fvalue_005fnobody.reuse(_jspx_th_c_005furl_005f4);
     return false;
   }
 
@@ -485,17 +448,19 @@ public final class main_jsp extends org.apache.jasper.runtime.HttpJspBase
     PageContext pageContext = _jspx_page_context;
     JspWriter out = _jspx_page_context.getOut();
     //  c:url
-    org.apache.taglibs.standard.tag.rt.core.UrlTag _jspx_th_c_005furl_005f5 = (org.apache.taglibs.standard.tag.rt.core.UrlTag) _005fjspx_005ftagPool_005fc_005furl_0026_005fvalue_005fnobody.get(org.apache.taglibs.standard.tag.rt.core.UrlTag.class);
+    org.apache.taglibs.standard.tag.rt.core.UrlTag _jspx_th_c_005furl_005f5 = (org.apache.taglibs.standard.tag.rt.core.UrlTag) _005fjspx_005ftagPool_005fc_005furl_0026_005fvar_005fvalue_005fnobody.get(org.apache.taglibs.standard.tag.rt.core.UrlTag.class);
     _jspx_th_c_005furl_005f5.setPageContext(_jspx_page_context);
     _jspx_th_c_005furl_005f5.setParent(null);
-    // /WEB-INF/jsp/main.jsp(23,62) name = value type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
-    _jspx_th_c_005furl_005f5.setValue("/resources/css/flowchart.css");
+    // /WEB-INF/jsp/main.jsp(10,0) name = value type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_c_005furl_005f5.setValue("/main/grading");
+    // /WEB-INF/jsp/main.jsp(10,0) name = var type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_c_005furl_005f5.setVar("gradingUrl");
     int _jspx_eval_c_005furl_005f5 = _jspx_th_c_005furl_005f5.doStartTag();
     if (_jspx_th_c_005furl_005f5.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
-      _005fjspx_005ftagPool_005fc_005furl_0026_005fvalue_005fnobody.reuse(_jspx_th_c_005furl_005f5);
+      _005fjspx_005ftagPool_005fc_005furl_0026_005fvar_005fvalue_005fnobody.reuse(_jspx_th_c_005furl_005f5);
       return true;
     }
-    _005fjspx_005ftagPool_005fc_005furl_0026_005fvalue_005fnobody.reuse(_jspx_th_c_005furl_005f5);
+    _005fjspx_005ftagPool_005fc_005furl_0026_005fvar_005fvalue_005fnobody.reuse(_jspx_th_c_005furl_005f5);
     return false;
   }
 
@@ -504,17 +469,19 @@ public final class main_jsp extends org.apache.jasper.runtime.HttpJspBase
     PageContext pageContext = _jspx_page_context;
     JspWriter out = _jspx_page_context.getOut();
     //  c:url
-    org.apache.taglibs.standard.tag.rt.core.UrlTag _jspx_th_c_005furl_005f6 = (org.apache.taglibs.standard.tag.rt.core.UrlTag) _005fjspx_005ftagPool_005fc_005furl_0026_005fvalue_005fnobody.get(org.apache.taglibs.standard.tag.rt.core.UrlTag.class);
+    org.apache.taglibs.standard.tag.rt.core.UrlTag _jspx_th_c_005furl_005f6 = (org.apache.taglibs.standard.tag.rt.core.UrlTag) _005fjspx_005ftagPool_005fc_005furl_0026_005fvar_005fvalue_005fnobody.get(org.apache.taglibs.standard.tag.rt.core.UrlTag.class);
     _jspx_th_c_005furl_005f6.setPageContext(_jspx_page_context);
     _jspx_th_c_005furl_005f6.setParent(null);
-    // /WEB-INF/jsp/main.jsp(35,66) name = value type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
-    _jspx_th_c_005furl_005f6.setValue("/resources/css/carousel.css");
+    // /WEB-INF/jsp/main.jsp(11,0) name = value type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_c_005furl_005f6.setValue("/main/displayAll");
+    // /WEB-INF/jsp/main.jsp(11,0) name = var type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_c_005furl_005f6.setVar("displayAllUrl");
     int _jspx_eval_c_005furl_005f6 = _jspx_th_c_005furl_005f6.doStartTag();
     if (_jspx_th_c_005furl_005f6.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
-      _005fjspx_005ftagPool_005fc_005furl_0026_005fvalue_005fnobody.reuse(_jspx_th_c_005furl_005f6);
+      _005fjspx_005ftagPool_005fc_005furl_0026_005fvar_005fvalue_005fnobody.reuse(_jspx_th_c_005furl_005f6);
       return true;
     }
-    _005fjspx_005ftagPool_005fc_005furl_0026_005fvalue_005fnobody.reuse(_jspx_th_c_005furl_005f6);
+    _005fjspx_005ftagPool_005fc_005furl_0026_005fvar_005fvalue_005fnobody.reuse(_jspx_th_c_005furl_005f6);
     return false;
   }
 
@@ -523,17 +490,19 @@ public final class main_jsp extends org.apache.jasper.runtime.HttpJspBase
     PageContext pageContext = _jspx_page_context;
     JspWriter out = _jspx_page_context.getOut();
     //  c:url
-    org.apache.taglibs.standard.tag.rt.core.UrlTag _jspx_th_c_005furl_005f7 = (org.apache.taglibs.standard.tag.rt.core.UrlTag) _005fjspx_005ftagPool_005fc_005furl_0026_005fvalue_005fnobody.get(org.apache.taglibs.standard.tag.rt.core.UrlTag.class);
+    org.apache.taglibs.standard.tag.rt.core.UrlTag _jspx_th_c_005furl_005f7 = (org.apache.taglibs.standard.tag.rt.core.UrlTag) _005fjspx_005ftagPool_005fc_005furl_0026_005fvar_005fvalue_005fnobody.get(org.apache.taglibs.standard.tag.rt.core.UrlTag.class);
     _jspx_th_c_005furl_005f7.setPageContext(_jspx_page_context);
     _jspx_th_c_005furl_005f7.setParent(null);
-    // /WEB-INF/jsp/main.jsp(36,46) name = value type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
-    _jspx_th_c_005furl_005f7.setValue("/resources/js/jquery-1.6.4.min.js");
+    // /WEB-INF/jsp/main.jsp(12,0) name = value type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_c_005furl_005f7.setValue("/main/submitSolution");
+    // /WEB-INF/jsp/main.jsp(12,0) name = var type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_c_005furl_005f7.setVar("submitSolutionUrl");
     int _jspx_eval_c_005furl_005f7 = _jspx_th_c_005furl_005f7.doStartTag();
     if (_jspx_th_c_005furl_005f7.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
-      _005fjspx_005ftagPool_005fc_005furl_0026_005fvalue_005fnobody.reuse(_jspx_th_c_005furl_005f7);
+      _005fjspx_005ftagPool_005fc_005furl_0026_005fvar_005fvalue_005fnobody.reuse(_jspx_th_c_005furl_005f7);
       return true;
     }
-    _005fjspx_005ftagPool_005fc_005furl_0026_005fvalue_005fnobody.reuse(_jspx_th_c_005furl_005f7);
+    _005fjspx_005ftagPool_005fc_005furl_0026_005fvar_005fvalue_005fnobody.reuse(_jspx_th_c_005furl_005f7);
     return false;
   }
 
@@ -542,17 +511,19 @@ public final class main_jsp extends org.apache.jasper.runtime.HttpJspBase
     PageContext pageContext = _jspx_page_context;
     JspWriter out = _jspx_page_context.getOut();
     //  c:url
-    org.apache.taglibs.standard.tag.rt.core.UrlTag _jspx_th_c_005furl_005f8 = (org.apache.taglibs.standard.tag.rt.core.UrlTag) _005fjspx_005ftagPool_005fc_005furl_0026_005fvalue_005fnobody.get(org.apache.taglibs.standard.tag.rt.core.UrlTag.class);
+    org.apache.taglibs.standard.tag.rt.core.UrlTag _jspx_th_c_005furl_005f8 = (org.apache.taglibs.standard.tag.rt.core.UrlTag) _005fjspx_005ftagPool_005fc_005furl_0026_005fvar_005fvalue_005fnobody.get(org.apache.taglibs.standard.tag.rt.core.UrlTag.class);
     _jspx_th_c_005furl_005f8.setPageContext(_jspx_page_context);
     _jspx_th_c_005furl_005f8.setParent(null);
-    // /WEB-INF/jsp/main.jsp(37,42) name = value type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
-    _jspx_th_c_005furl_005f8.setValue("/resources/js/tabs.js");
+    // /WEB-INF/jsp/main.jsp(16,0) name = value type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_c_005furl_005f8.setValue("/main/loadTestData");
+    // /WEB-INF/jsp/main.jsp(16,0) name = var type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_c_005furl_005f8.setVar("loadTestDataUrl");
     int _jspx_eval_c_005furl_005f8 = _jspx_th_c_005furl_005f8.doStartTag();
     if (_jspx_th_c_005furl_005f8.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
-      _005fjspx_005ftagPool_005fc_005furl_0026_005fvalue_005fnobody.reuse(_jspx_th_c_005furl_005f8);
+      _005fjspx_005ftagPool_005fc_005furl_0026_005fvar_005fvalue_005fnobody.reuse(_jspx_th_c_005furl_005f8);
       return true;
     }
-    _005fjspx_005ftagPool_005fc_005furl_0026_005fvalue_005fnobody.reuse(_jspx_th_c_005furl_005f8);
+    _005fjspx_005ftagPool_005fc_005furl_0026_005fvar_005fvalue_005fnobody.reuse(_jspx_th_c_005furl_005f8);
     return false;
   }
 
@@ -561,17 +532,19 @@ public final class main_jsp extends org.apache.jasper.runtime.HttpJspBase
     PageContext pageContext = _jspx_page_context;
     JspWriter out = _jspx_page_context.getOut();
     //  c:url
-    org.apache.taglibs.standard.tag.rt.core.UrlTag _jspx_th_c_005furl_005f9 = (org.apache.taglibs.standard.tag.rt.core.UrlTag) _005fjspx_005ftagPool_005fc_005furl_0026_005fvalue_005fnobody.get(org.apache.taglibs.standard.tag.rt.core.UrlTag.class);
+    org.apache.taglibs.standard.tag.rt.core.UrlTag _jspx_th_c_005furl_005f9 = (org.apache.taglibs.standard.tag.rt.core.UrlTag) _005fjspx_005ftagPool_005fc_005furl_0026_005fvar_005fvalue_005fnobody.get(org.apache.taglibs.standard.tag.rt.core.UrlTag.class);
     _jspx_th_c_005furl_005f9.setPageContext(_jspx_page_context);
     _jspx_th_c_005furl_005f9.setParent(null);
-    // /WEB-INF/jsp/main.jsp(39,42) name = value type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
-    _jspx_th_c_005furl_005f9.setValue("/resources/js/flowchart-1.1.3.js");
+    // /WEB-INF/jsp/main.jsp(17,0) name = value type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_c_005furl_005f9.setValue("/main/getTestData");
+    // /WEB-INF/jsp/main.jsp(17,0) name = var type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_c_005furl_005f9.setVar("getTestDataUrl");
     int _jspx_eval_c_005furl_005f9 = _jspx_th_c_005furl_005f9.doStartTag();
     if (_jspx_th_c_005furl_005f9.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
-      _005fjspx_005ftagPool_005fc_005furl_0026_005fvalue_005fnobody.reuse(_jspx_th_c_005furl_005f9);
+      _005fjspx_005ftagPool_005fc_005furl_0026_005fvar_005fvalue_005fnobody.reuse(_jspx_th_c_005furl_005f9);
       return true;
     }
-    _005fjspx_005ftagPool_005fc_005furl_0026_005fvalue_005fnobody.reuse(_jspx_th_c_005furl_005f9);
+    _005fjspx_005ftagPool_005fc_005furl_0026_005fvar_005fvalue_005fnobody.reuse(_jspx_th_c_005furl_005f9);
     return false;
   }
 
@@ -583,14 +556,128 @@ public final class main_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.apache.taglibs.standard.tag.rt.core.UrlTag _jspx_th_c_005furl_005f10 = (org.apache.taglibs.standard.tag.rt.core.UrlTag) _005fjspx_005ftagPool_005fc_005furl_0026_005fvalue_005fnobody.get(org.apache.taglibs.standard.tag.rt.core.UrlTag.class);
     _jspx_th_c_005furl_005f10.setPageContext(_jspx_page_context);
     _jspx_th_c_005furl_005f10.setParent(null);
-    // /WEB-INF/jsp/main.jsp(243,103) name = value type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
-    _jspx_th_c_005furl_005f10.setValue("/WEB-INF/jsp/samplecode/test.c");
+    // /WEB-INF/jsp/main.jsp(27,15) name = value type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_c_005furl_005f10.setValue("/resources/css/bootstrap.css");
     int _jspx_eval_c_005furl_005f10 = _jspx_th_c_005furl_005f10.doStartTag();
     if (_jspx_th_c_005furl_005f10.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
       _005fjspx_005ftagPool_005fc_005furl_0026_005fvalue_005fnobody.reuse(_jspx_th_c_005furl_005f10);
       return true;
     }
     _005fjspx_005ftagPool_005fc_005furl_0026_005fvalue_005fnobody.reuse(_jspx_th_c_005furl_005f10);
+    return false;
+  }
+
+  private boolean _jspx_meth_c_005furl_005f11(PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  c:url
+    org.apache.taglibs.standard.tag.rt.core.UrlTag _jspx_th_c_005furl_005f11 = (org.apache.taglibs.standard.tag.rt.core.UrlTag) _005fjspx_005ftagPool_005fc_005furl_0026_005fvalue_005fnobody.get(org.apache.taglibs.standard.tag.rt.core.UrlTag.class);
+    _jspx_th_c_005furl_005f11.setPageContext(_jspx_page_context);
+    _jspx_th_c_005furl_005f11.setParent(null);
+    // /WEB-INF/jsp/main.jsp(28,16) name = value type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_c_005furl_005f11.setValue("/resources/css/flowchart.css");
+    int _jspx_eval_c_005furl_005f11 = _jspx_th_c_005furl_005f11.doStartTag();
+    if (_jspx_th_c_005furl_005f11.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _005fjspx_005ftagPool_005fc_005furl_0026_005fvalue_005fnobody.reuse(_jspx_th_c_005furl_005f11);
+      return true;
+    }
+    _005fjspx_005ftagPool_005fc_005furl_0026_005fvalue_005fnobody.reuse(_jspx_th_c_005furl_005f11);
+    return false;
+  }
+
+  private boolean _jspx_meth_c_005furl_005f12(PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  c:url
+    org.apache.taglibs.standard.tag.rt.core.UrlTag _jspx_th_c_005furl_005f12 = (org.apache.taglibs.standard.tag.rt.core.UrlTag) _005fjspx_005ftagPool_005fc_005furl_0026_005fvalue_005fnobody.get(org.apache.taglibs.standard.tag.rt.core.UrlTag.class);
+    _jspx_th_c_005furl_005f12.setPageContext(_jspx_page_context);
+    _jspx_th_c_005furl_005f12.setParent(null);
+    // /WEB-INF/jsp/main.jsp(30,16) name = value type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_c_005furl_005f12.setValue("/resources/css/carousel.css");
+    int _jspx_eval_c_005furl_005f12 = _jspx_th_c_005furl_005f12.doStartTag();
+    if (_jspx_th_c_005furl_005f12.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _005fjspx_005ftagPool_005fc_005furl_0026_005fvalue_005fnobody.reuse(_jspx_th_c_005furl_005f12);
+      return true;
+    }
+    _005fjspx_005ftagPool_005fc_005furl_0026_005fvalue_005fnobody.reuse(_jspx_th_c_005furl_005f12);
+    return false;
+  }
+
+  private boolean _jspx_meth_c_005furl_005f13(PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  c:url
+    org.apache.taglibs.standard.tag.rt.core.UrlTag _jspx_th_c_005furl_005f13 = (org.apache.taglibs.standard.tag.rt.core.UrlTag) _005fjspx_005ftagPool_005fc_005furl_0026_005fvalue_005fnobody.get(org.apache.taglibs.standard.tag.rt.core.UrlTag.class);
+    _jspx_th_c_005furl_005f13.setPageContext(_jspx_page_context);
+    _jspx_th_c_005furl_005f13.setParent(null);
+    // /WEB-INF/jsp/main.jsp(31,40) name = value type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_c_005furl_005f13.setValue("/resources/js/jquery-1.6.4.min.js");
+    int _jspx_eval_c_005furl_005f13 = _jspx_th_c_005furl_005f13.doStartTag();
+    if (_jspx_th_c_005furl_005f13.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _005fjspx_005ftagPool_005fc_005furl_0026_005fvalue_005fnobody.reuse(_jspx_th_c_005furl_005f13);
+      return true;
+    }
+    _005fjspx_005ftagPool_005fc_005furl_0026_005fvalue_005fnobody.reuse(_jspx_th_c_005furl_005f13);
+    return false;
+  }
+
+  private boolean _jspx_meth_c_005furl_005f14(PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  c:url
+    org.apache.taglibs.standard.tag.rt.core.UrlTag _jspx_th_c_005furl_005f14 = (org.apache.taglibs.standard.tag.rt.core.UrlTag) _005fjspx_005ftagPool_005fc_005furl_0026_005fvalue_005fnobody.get(org.apache.taglibs.standard.tag.rt.core.UrlTag.class);
+    _jspx_th_c_005furl_005f14.setPageContext(_jspx_page_context);
+    _jspx_th_c_005furl_005f14.setParent(null);
+    // /WEB-INF/jsp/main.jsp(32,17) name = value type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_c_005furl_005f14.setValue("/resources/js/tabs.js");
+    int _jspx_eval_c_005furl_005f14 = _jspx_th_c_005furl_005f14.doStartTag();
+    if (_jspx_th_c_005furl_005f14.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _005fjspx_005ftagPool_005fc_005furl_0026_005fvalue_005fnobody.reuse(_jspx_th_c_005furl_005f14);
+      return true;
+    }
+    _005fjspx_005ftagPool_005fc_005furl_0026_005fvalue_005fnobody.reuse(_jspx_th_c_005furl_005f14);
+    return false;
+  }
+
+  private boolean _jspx_meth_c_005furl_005f15(PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  c:url
+    org.apache.taglibs.standard.tag.rt.core.UrlTag _jspx_th_c_005furl_005f15 = (org.apache.taglibs.standard.tag.rt.core.UrlTag) _005fjspx_005ftagPool_005fc_005furl_0026_005fvalue_005fnobody.get(org.apache.taglibs.standard.tag.rt.core.UrlTag.class);
+    _jspx_th_c_005furl_005f15.setPageContext(_jspx_page_context);
+    _jspx_th_c_005furl_005f15.setParent(null);
+    // /WEB-INF/jsp/main.jsp(33,17) name = value type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_c_005furl_005f15.setValue("/resources/js/raphael.js");
+    int _jspx_eval_c_005furl_005f15 = _jspx_th_c_005furl_005f15.doStartTag();
+    if (_jspx_th_c_005furl_005f15.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _005fjspx_005ftagPool_005fc_005furl_0026_005fvalue_005fnobody.reuse(_jspx_th_c_005furl_005f15);
+      return true;
+    }
+    _005fjspx_005ftagPool_005fc_005furl_0026_005fvalue_005fnobody.reuse(_jspx_th_c_005furl_005f15);
+    return false;
+  }
+
+  private boolean _jspx_meth_c_005furl_005f16(PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  c:url
+    org.apache.taglibs.standard.tag.rt.core.UrlTag _jspx_th_c_005furl_005f16 = (org.apache.taglibs.standard.tag.rt.core.UrlTag) _005fjspx_005ftagPool_005fc_005furl_0026_005fvalue_005fnobody.get(org.apache.taglibs.standard.tag.rt.core.UrlTag.class);
+    _jspx_th_c_005furl_005f16.setPageContext(_jspx_page_context);
+    _jspx_th_c_005furl_005f16.setParent(null);
+    // /WEB-INF/jsp/main.jsp(34,17) name = value type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_c_005furl_005f16.setValue("/resources/js/flowchart-1.1.3.js");
+    int _jspx_eval_c_005furl_005f16 = _jspx_th_c_005furl_005f16.doStartTag();
+    if (_jspx_th_c_005furl_005f16.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _005fjspx_005ftagPool_005fc_005furl_0026_005fvalue_005fnobody.reuse(_jspx_th_c_005furl_005f16);
+      return true;
+    }
+    _005fjspx_005ftagPool_005fc_005furl_0026_005fvalue_005fnobody.reuse(_jspx_th_c_005furl_005f16);
     return false;
   }
 }

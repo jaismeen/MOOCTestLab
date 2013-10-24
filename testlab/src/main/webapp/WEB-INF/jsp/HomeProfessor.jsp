@@ -1,6 +1,4 @@
-
 <%@ taglib uri='http://java.sun.com/jsp/jstl/core' prefix='c' %>
-
 
 <c:url value="/main/login" var="loginUrl"/>
 <c:url value="/main/create" var="addUrl"/>
@@ -9,7 +7,6 @@
 <c:url value="/main/gradePractice" var="gradePracticeUrl"/>
 <c:url value="/main/grading" var="gradingUrl"/>
 <c:url value="/main/displayAll" var="displayAllUrl"/>
-<c:url value="/main/StudentLogin" var="StudentLoginUrl"/>
 
 
 
@@ -24,12 +21,12 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="../../assets/ico/favicon.png">
 
-    <title>Extended MOOC</title>
+    <title>Carousel Template for Bootstrap</title>
 
-    <!-- Bootstrap core CSS -->
+     <!-- Bootstrap core CSS -->
     <link href='<c:url value="/resources/css/bootstrap.css"/>' rel="stylesheet">
-            <link href='<c:url value="/resources/css/flowchart.css"/>' rel="stylesheet">
-<link href='<c:url value="/resources/css/Main.css"/>' rel="stylesheet">
+    <link href='<c:url value="/resources/css/flowchart.css"/>' rel="stylesheet">
+    <link href='<c:url value="/resources/css/Main.css"/>' rel="stylesheet">
 
 
     <!-- Custom styles for this template -->
@@ -38,8 +35,10 @@
     <script src='<c:url value="/resources/js/tabs.js"/>'></script>
     <script src='<c:url value="/resources/js/raphael.js"/>'></script>
     <script src='<c:url value="/resources/js/flowchart-1.1.3.js"/>'></script>
+     <script src='<c:url value="/resources/js/bootstrap.js"/>'></script>
 
-     <script>
+     
+    <script>
     $(function() {
 
       
@@ -58,29 +57,42 @@
     });
         </script>
 
-       	
-        </head>
+  </head>
 <!-- NAVBAR
 ================================================== -->
   <body>
-      <div class="navbar-wrapper">
+    <div class="navbar-wrapper">
+      <div class="container">
+
+        <div class="navbar navbar-inverse navbar-static-top">
           <div class="container">
-            <div class="navbar navbar-inverse navbar-static-top">
-              <div class="container">
-                <div class="navbar-header">
-                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                  </button>
-                  <a class="navbar-brand" href="#">ONLINE TEST LABS</a>
-                </div>
-              </div>
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#">Project name</a>
+            </div>
+            <div class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="SetupLab.html">Setup Lab</a></li>
+                <li><a href="Grading.html">Grades</a></li>
+
+               
+              </ul>
             </div>
           </div>
+        </div>
+
+      </div>
     </div>
 
-<div id="myCarousel" class="carousel slide">
+
+    <!-- Carousel
+    ================================================== -->
+    <div id="myCarousel" class="carousel slide">
       <!-- Indicators -->
       <ol class="carousel-indicators">
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -122,33 +134,21 @@
       <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
       <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
     </div><!-- /.carousel -->
+    <button id="btn_cookie" class="btn btn-default" type="button" onclick="get_cookie('username')">Login</button><br><br>
+
+      
 
 
-    <div id="login_wrapper">
-        <div id="login">
-            <br>
-            <label class="col-lg-4 control-label">Username</label>
-                <div class="col-lg-6">
-                  <input type="text" class="form-control" id = "username" name="username"><br>
-                <br>
-                </div>
-               
-                <label class="col-lg-4 control-label">Password</label>
-                <div class="col-lg-6">
-                    <input type="password" class="form-control" id = "password" name="password"><br>
-                </div>
-                
-                     <button id="btn_login" class="btn btn-default" type="button" onclick="login('1')">Login</button><br><br>
-               
-        </div>
-    </div>
-    
-
+      <!-- FOOTER -->
+     <!-- <footer>
+        <p class="pull-right"><a href="#">Back to top</a></p>
+        <p>&copy; 2013 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+      </footer>-->
 
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-
+   
   </body>
 </html>

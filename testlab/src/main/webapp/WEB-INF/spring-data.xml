@@ -28,6 +28,6 @@
 
   	<neo4j:config storeDirectory="target/temp.db"/>
   	
-    <bean id="LoadTestData" class="org.mytestlab.test.LoadTestData" init-method="init"/>
-  	
+    <!--  <bean id="LoadTestData" class="org.mytestlab.test.LoadTestData" init-method="init"/>
+  	-->
 </beans>

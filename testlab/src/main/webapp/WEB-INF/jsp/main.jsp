@@ -1,13 +1,20 @@
 <%@ taglib uri='http://java.sun.com/jsp/jstl/core' prefix='c' %>
 
-<c:url value="/main/records" var="recordsUrl"/>
+
+<c:url value="/main/login" var="loginUrl"/>
 <c:url value="/main/create" var="addUrl"/>
 <c:url value="/main/update" var="editUrl"/>
 <c:url value="/main/delete" var="deleteUrl"/>
 
+<c:url value="/main/gradePractice" var="gradePracticeUrl"/>
+<c:url value="/main/grading" var="gradingUrl"/>
+<c:url value="/main/displayAll" var="displayAllUrl"/>
+<c:url value="/main/submitSolution" var="submitSolutionUrl"/>
+
+
+
 <c:url value="/main/loadTestData" var="loadTestDataUrl"/>
 <c:url value="/main/getTestData" var="getTestDataUrl"/>
-
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -16,50 +23,41 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="../../assets/ico/favicon.png">
 
-    <title>Carousel Template for Bootstrap</title>
+    <title>Extended MOOC</title>
+   <link href='<c:url value="/resources/css/bootstrap.css"/>' rel="stylesheet">
+    <link href='<c:url value="/resources/css/flowchart.css"/>' rel="stylesheet">
 
-    <!-- Bootstrap core CSS -->
-    <link href='<c:url value="/resources/css/bootstrap.css"/>' rel="stylesheet">
-            <link href='<c:url value="/resources/css/flowchart.css"/>' rel="stylesheet">
-
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="../../assets/js/html5shiv.js"></script>
-      <script src="../../assets/js/respond.min.js"></script>
-    <![endif]-->
-
-    <!-- Custom styles for this template -->
     <link href='<c:url value="/resources/css/carousel.css"/>' rel="stylesheet">
     <script type='text/javascript' src='<c:url value="/resources/js/jquery-1.6.4.min.js"/>'></script>
     <script src='<c:url value="/resources/js/tabs.js"/>'></script>
     <script src='<c:url value="/resources/js/raphael.js"/>'></script>
     <script src='<c:url value="/resources/js/flowchart-1.1.3.js"/>'></script>
-
-    <script>
+     <script>
     $(function() {
 
-    	
-		// init
-		urlHolder.records = '${recordsUrl}';
-		urlHolder.add = '${addUrl}';
-		urlHolder.edit = '${editUrl}';
-		urlHolder.del = '${deleteUrl}';
-
-		urlHolder.loadTestData = '${loadTestDataUrl}';
-		urlHolder.getTestData = '${getTestDataUrl}';
-		
+      
+    // init
+    urlHolder.records = '${recordsUrl}';
+    urlHolder.add = '${addUrl}';
+    urlHolder.edit = '${editUrl}';
+    urlHolder.del = '${deleteUrl}';
+    urlHolder.gradePractice = '${gradePracticeUrl}';
+    urlHolder.grading = '${gradingUrl}';
+    urlHolder.displayAll = '${displayAllUrl}';
+    urlHolder.submitSolution = '${submitSolutionUrl}';
+    
+    urlHolder.loadTestData = '${loadTestDataUrl}';
+    urlHolder.getTestData = '${getTestDataUrl}';
+    
     });
         </script>
-
-
-        
-       	
-        </head>
+  </head>
 <!-- NAVBAR
 ================================================== -->
   <body>
-      <div class="navbar-wrapper">
+    <div class="navbar-wrapper">
       <div class="container">
+
         <div class="navbar navbar-inverse navbar-static-top">
           <div class="container">
             <div class="navbar-header">
@@ -68,154 +66,143 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="#">Online Test Labs</a>
+              <a class="navbar-brand" href="#">ONLINE TEST LABS</a>
             </div>
-            <div class="navbar-collapse collapse">
-              <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="#about">Lab</a></li>
-                <li><a href="#contact">Practice Sessions</a></li>
-              </ul>
+           
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- Carousel
+    ================================================== -->
+    <div id="myCarousel" class="carousel slide">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="item active">
+          <img src="pictures/pic1.JPG" alt="First slide">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Online Test Based Labs: MOOC</h1>
+              <p>Welcome to the Online test labs for SJSU Students.</p>
+              <p><a class="btn btn-lg btn-primary" href="/Users/Jaismeen/Documents/295B/indexcopy.html " role="button">Go to Test Lab</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="pictures/pic2.jpg" data-src="holder.js/900x500/auto/#666:#6a6a6a/text:Second slide" alt="Second slide">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Another example headline.</h1>
+              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+              <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="data:image/png;base64," data-src="holder.js/900x500/auto/#555:#5a5a5a/text:Third slide" alt="Third slide">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>One more for good measure.</h1>
+              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+              <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <div id="main_body">
-        <div id="side_panel">
-            <div class="tabs">
-                    <ul>
-                        <li id="tabHeader_1">Create Element</li>
-                        <li id="tabHeader_2">Delete Element</li>
-                    </ul>
-            </div>
-            <div class="tabscontent">
-                <div class="tabpage" id="tabpage_1">
-                    <br>
-                    &nbsp
-                    &nbsp
-                    
-                    <input type="radio" name="element" onclick="createUI()" value="node">  Node
-                    &nbsp
-                    &nbsp
-                    <input type="radio" name="element" onclick="createUI()" value="link">  Link
-                    <br>
-                    <br>
-                     <div id="fg_elements">
-                     </div>
-                       <div id="nodeelements">
-                   <!-- <<label for="createnode">Create Node</label><br>-->
-                    <label class="col-lg-4 control-label">Name</label>
-                    <div class="col-lg-6">
-                    <input type="text" class="form-control" readonly="readonly" id = "nodename" name="nodename">
-                    <br>
-                </div>
-                
-                <label class="col-lg-4 control-label">Content</label>
-                    <div class="col-lg-6">
-                    <input type="text" class="form-control" id = "content" name="nodecontent"><br>
-                </div>
-                <br>
-                         
-                            <label class="col-lg-4 control-label">Type</label>
-                            <div class="col-lg-6">
-                            <select id="nodetype" class="form-control" onchange="setNodeName()">
-                                <option value="gnode">General Node</option>
-                                <option value="cnode" >Condition Node</option>
-                            </select>
-                        </div>                            <br>
-                            <br>
-                            <button id="createNode" class="btn btn-default" type="button" onclick="addNode()">Create Node</button><br><br>
-                            </div>
-                            
-                            <div id="linkelements">
+      <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+      <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+    </div><!-- /.carousel -->
 
-                            <label class="col-lg-5 control-label" for="lb_sourcenode">Source Node</label>
-                            
-                             <div class="col-lg-6">
-                                <select class="form-control" id="sourceNode">
-                            </select>
-                        </div>
-                        <br>
-                        <br>
-                        <br>
-                            <label class="col-lg-5 control-label" for="lb_destinationnode">Destination Node</label>
-                             <div class="col-lg-6">
-                                <select class="form-control" id="destinationNode">
-                            </select><br>
-                            </div>
-                            <button id="createLink" class="btn btn-default" type="button" onclick="addLink()">Create Link</button><br>
-                        </div>
 
-                </div>
-                <div class="tabpage" id="tabpage_2">
-                         <br>
-                    &nbsp
-                    &nbsp
-                    
-                   <input type="radio" name="radioelement" onclick="deleteUI()" value="node" checked="checked">  Node
-                    &nbsp
-                    &nbsp
-                    <input type="radio" name="radioelement" onclick="deleteUI()" value="link">  Link
-                    <br>
-                    <br>
-                    
-                       <div id="del_nodeelements">
-                     <label class="col-lg-5 control-label" for="lb_node">Node</label>
-                            
-                             <div class="col-lg-6">
-                                <select class="form-control" id="delNode">
-                            </select>
-                        </div>                    
-                            <button id="delNode" class="btn btn-default" type="button" onclick="delNode()">Delete Node</button><br><br>
-                            </div>
-                            
 
-                            <div id="del_linkelements">
-
-                                <label class="col-lg-5 control-label" for="dellb_sourcenode">Source Node</label>
-                        
-                                <div class="col-lg-6">
-                                    <select class="form-control" id="dds">
-                                    </select>
-                                </div>
-                                <br>
-                                <br>
-                                <br>
-                                <label class="col-lg-5 control-label" for="dellb_destinationnode">Destination Node</label>
-                                    <div class="col-lg-6">
-                                        <select class="form-control" id="ddn">
-                                        </select><br>
-                                    </div>
-                                    <button id="delLink" class="btn btn-default" type="button" onclick="delLink()">Delete Link</button><br>
-                            </div>
-
-                </div>
-            </div>
-            <br>
-
-            <div class="code_area">
-                <iframe class="codeframe" style="background: #F0F0F0; width: 100%; height: 230px" src='<c:url value="/resources/samplecode/test.c"/>' ></iframe>
-                <br>
-                <br>
-                <button id="submit" stype=" align: right" class="btn btn-default" type="button" onclick="submitHW()">Submit</button>
-            </div>
-        
-        </div>
-
-        <div id="canvas">
-             <h1>Drawing Area</h1>
-        </div>
-        
-    </div>
-   
-   
-  
-    
-
-    <!-- Bootstrap core JavaScript
+    <!-- Marketing messaging and featurettes
     ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
+    <!-- Wrap the rest of the page in another container to center all the content. -->
+
+    <div class="container marketing">
+
+      <!-- Three columns of text below the carousel -->
+      <div class="row">
+        <div class="col-lg-4">
+          <img class="img-circle" src="pictures/pic1.jpg" height="50" width="50"/>
+          <h2>Professor</h2>
+          <p>Specially designed interface for professors to set testing labs.</p>
+          <p><a class="btn btn-default" href="ProfessorLogin" role="button">Login &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img class="img-circle" src="pictures/pic2.jpg" height="50" width="50" alt="Generic placeholder image">
+          <h2>Student</h2>
+          <p>Platform for student to perform tests online</p>
+          <p><a class="btn btn-default" href="StudentLogin" role="button">Login &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img class="img-circle" src="pictures/pic3.jpg" height="50" width="50" alt="Generic placeholder image">
+          <h2>About Us</h2>
+          <p>MOOC inspired test labs</p>
+          <p><a class="btn btn-default" href="#" role="button">Take a look &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+      </div><!-- /.row -->
+
+
+      <!-- START THE FEATURETTES -->
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It'll blow your mind.</span></h2>
+          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+        </div>
+        <div class="col-md-5">
+          <img class="featurette-image img-responsive" src="data:image/png;base64," data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-5">
+          <img class="featurette-image img-responsive" src="data:image/png;base64," data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+        </div>
+        <div class="col-md-7">
+          <h2 class="featurette-heading">Oh yeah, it's that good. <span class="text-muted">See for yourself.</span></h2>
+          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
+          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+        </div>
+        <div class="col-md-5">
+          <img class="featurette-image img-responsive" src="data:image/png;base64," data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <!-- /END THE FEATURETTES -->
+
+
+      <!-- FOOTER -->
+      <footer>
+        <p class="pull-right"><a href="#">Back to top</a></p>
+        <p>&copy; 2013 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+      </footer>
+
+    </div><!-- /.container -->
+
 
   </body>
 </html>
