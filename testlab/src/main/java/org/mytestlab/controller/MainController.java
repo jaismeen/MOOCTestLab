@@ -26,9 +26,33 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-@RequestMapping("/main")
 public class MainController {
+	
+	   @RequestMapping(value = "/main", method = RequestMethod.GET)
+	   public String main() {
+		   return "main";
+	   }
+	   
+	   
+	   @RequestMapping(value = "/HomeProfessor", method = RequestMethod.GET)
+	   public String HomeProfessor() {
+	     
+	      return "HomeProfessor";
+	   }
 
+	   @RequestMapping(value = "/StudentLogin", method = RequestMethod.GET)
+	   public String StudentLogin() {
+	     
+	      return "StudentLogin";
+	   }
+	   
+	   @RequestMapping(value = "/HomeStudent", method = RequestMethod.GET)
+	   public String HomeStudent() {
+	     
+	      return "HomeStudent";
+	   }
+	   
+	   
 	final int PROFESSOR = 0;
 	final int STUDENT = 1;
 
@@ -44,20 +68,20 @@ public class MainController {
 	@Autowired
 	private GradingService gradingService;
 	
-	@RequestMapping
+	/*@RequestMapping
 	public String MainPage() {
 		return "main";
 	}
-	/*@RequestMapping(value="/StudentLogin")
+	@RequestMapping(value="/StudentLogin")
 	public String StudentLogin()
 	{	
 		return "StudentLogin";
 	}*/
-	@RequestMapping(value = "/StudentLogin", method= RequestMethod.GET)
+	/*@RequestMapping(value = "/StudentLogin", method= RequestMethod.GET)
     public String StudentLogin() {
          
         return "redirect:StudentLogin";
-    }
+    }*/
    
 	
 	

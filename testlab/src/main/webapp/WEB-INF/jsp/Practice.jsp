@@ -176,7 +176,7 @@
                 <iframe id="cf" class="codeframe" style="background: #F0F0F0; width: 100%; height: 230px"></iframe>
                 <script>
                   var practiceID=get_practiceID();
-                  var URL="<c:url value=/resources/samplecode/"+ practiceID + ".c";
+                  var URL="<c:url value=/resources/samplecode/"+ practiceID + ".c/>";
                   var code_frame=document.getElementById('cf');
                   code_frame.src=URL;
 

@@ -426,7 +426,7 @@ function gradePractice()
 
     $.post (urlHolder.gradePractice, {
         assignmentName: $('#practice_id').val(),
-        codestr: codeString},
+        codestr: $('#codeString').val(),
             cyclomaticNumber: cyclomaticNumber},
             function(response) {
                     alert("Score is::" + response);        
