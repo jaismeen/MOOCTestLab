@@ -64,6 +64,38 @@ window.onload=function() {
         tabs[i].onclick=displayPage;
     }
 }
+
+//Setting the cookies for the username=session id
+function set_cookie(key,value1)
+{
+
+
+    alert('inside set cookie');
+    window.sessionStorage.setItem("username", value1);
+
+}
+
+//Function to get the username from the cookies set
+function get_cookie(key)
+{
+
+    var stringValue = window.sessionStorage.getItem("username");
+    alert(stringValue);
+    return stringValue;
+
+}
+
+function set_practiceID(practice_id)
+{
+    window.sessionStorage.setItem("LatestPractice", practice_id);
+}
+
+function get_practiceID()
+{
+    var practice_id=window.sessionStorage.getItem("LatestPractice");
+    return practice_id;
+}
+
 function createUI()
 {
 
@@ -353,6 +385,148 @@ function addNode()
                 }
                 );
             }
+
+//Login function
+function login(var_login)
+{
+    var username=document.getElementById("username");
+    var password=document.getElementById("password");
+        $.post (urlHolder.add, {
+                    username: $('#username').val(),
+                    password: $('#password').val(),
+                    type: $('#var_login').val() 
+                },
+                 function(response) {
+                   if (response!=null)
+                   {
+                        alert (response);
+                        location.reload();
+                   }
+                    
+                    else
+                    {
+                        set_cookie("username",username);
+                        if(var_login==1)
+                        window.location.href="HomeStudent.html";
+                        else
+                        window.location.href="HomeProfessor.html";
+
+                        
+                    }
+                        
+                }
+                );
+}
+
+/*function login(var_login)
+{
+    var username=document.getElementById("username").value;
+    var password=document.getElementById("password").value;
+    set_cookie('username',username);
+                        window.location.href="/Users/Jaismeen/Documents/295B/code/Web Interface/HomeStudent.html";
+}*/
+
+function gradePractice()
+{
+    var practice_id=get_practiceID();
+
+    $.post (urlHolder.gradePractice, {
+        assignmentName: $('#practice_id').val(),
+        codestr: codeString},
+            function(response) {
+                //I need score from the gradePractice            
+                if (response == "") {
+                    alert("success");
+                } else {
+                    alert(response);
+                }
+                    
+            });
+}
+
+function grading()
+{//It will grade all the assignments
+
+    $.post (urlHolder.grading, {},
+            function(response) {
+                            
+                if (response == "") {
+                    alert("success");
+                } else {
+                    alert(response);
+                }
+
+            });
+}
+
+function displayAll()
+{//right now, this function shows all the grades for all the assignments.
+
+    //$.post (urlHolder.displayAll, {},
+            //function(response) {
+                            
+               // alert(response);
+               var response="Assignment1;jaismeen;kaur;78";
+               var student_scores=new Array();
+               student_scores=response.split(";");
+                
+
+
+                                            // get handle on div
+                            var container = document.getElementById('score_area');
+                            // create table element
+                            var table = document.createElement('table');
+                            var tbody = document.createElement('tbody');
+                            // loop array
+
+                            for (i = 1; i < student_scores.length; i++) {
+                                
+                                var row = document.createElement('tr');
+                                for (var b = i; b < (i+3); b++) {
+                                    // create td element
+                                    var cell = document.createElement('td');
+                                    // set text
+                                    cell.textContent = student_scores[b];
+                                    // append td to tr
+                                    row.appendChild(cell);
+                                }
+                               
+                                //append tr to tbody
+                                tbody.appendChild(row);
+                                i=b;
+                            }
+                            // append tbody to table
+                            table.appendChild(tbody);
+                            // append table to container
+                            container.appendChild(table);
+
+                    //Assignment Number;firstname;lastname;score;
+           // });
+}
+
+function submitSolution(var_login)
+{
+
+    $.post (urlHolder.submitSolution, {
+        username: $('#username').val(),
+        type: var_login,
+        assignmentName: $('#assignmentList option:selected').val(),
+        codeStrings: codeString,
+        cyclomaticNumber: $('#cyclomaticNumber').val()
+
+    },
+            function(response) {
+                            
+                if (response == "") {
+                    alert("success");
+                } else {
+                    alert(response);
+                }
+
+            });
+}
+
+
 
 // on click of one of tabs
 function displayPage() {
