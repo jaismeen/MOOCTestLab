@@ -86,7 +86,7 @@ public class MainController {
 		if (type == PROFESSOR) {
 			str = professorService.submitSolution(username, assignmentName, arr, cyclomaticNumber);
 		} else if (type == STUDENT){
-			
+			str = studentService.submitAnswer(username, assignmentName, arr, cyclomaticNumber);
 		} else {
 			
 		}
@@ -94,15 +94,41 @@ public class MainController {
 		return str;
 	}
 	
-	@RequestMapping(value="/gradeAssignment")
-	public @ResponseBody String gradeAssignment(
-			@RequestParam String assignmentName) {
+	@RequestMapping(value="/grading")
+	public @ResponseBody String grading() {
+
+		String str = "";
+		str = gradingService.gradeAssignment();
+		return str;
+	}
+		
+	@RequestMapping(value="/gradePractice")
+	public @ResponseBody String gradePractice(
+			@RequestParam String assignmentName,
+			@RequestParam String codestr,
+			@RequestParam int cyclomaticNumber) {
 	
+		String str = "";
+		ArrayList<String> arr = new ArrayList<String>();
+		
+		String[] strs = codestr.split("\n");
+		for(int i = 0; i < strs.length; i++) {
+			arr.add(strs[i]);
+		}
+		
+		str = Double.toString(gradingService.gradePractice(assignmentName, arr, cyclomaticNumber));
+		return str;
+	}
+	
+	@RequestMapping(value="/displayAll")
+	public @ResponseBody String displayAll() {
+	
+		String assignmentName = "p1";
 		String str = "";
 		str = gradingService.gradeAssignment(assignmentName);
 		return str;
 	}
-		
+	
 	@RequestMapping(value="/loadTestData")
 	public @ResponseBody String loadTestData(
 			@RequestParam int type) {

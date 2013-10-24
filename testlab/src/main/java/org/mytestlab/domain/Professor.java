@@ -1,5 +1,6 @@
 package org.mytestlab.domain;
 
+import java.util.HashSet;
 import java.util.Set;
 
 import org.springframework.data.neo4j.annotation.Fetch;
@@ -28,9 +29,12 @@ public class Professor {
 	@RelatedTo(type="TEACHES_IN")
 	private Course course;
 	
-	public Professor() {}
+	public Professor() {
+		this.solutions = new HashSet<Solution>();
+	}
 	
 	public Professor(String username, String password, String firstName, String lastName) {
+		this();
 		this.username = username;
 		this.password = password;
 		this.firstName = firstName;
@@ -38,12 +42,14 @@ public class Professor {
 	}
 	
 	public Professor(String username, String firstName, String lastName) {
+		this();
 		this.username = username;
 		this.firstName = firstName;
 		this.lastName = lastName;
 	}
 
 	public Professor(String username) {
+		this();
 		this.username = username;
 	}
 	
@@ -87,4 +93,7 @@ public class Professor {
 		this.password = password;
 	}
 
+	public void addSolution(Solution sol) {
+		this.solutions.add(sol);
+	}
 }

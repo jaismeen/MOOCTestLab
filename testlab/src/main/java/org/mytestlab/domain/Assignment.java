@@ -1,5 +1,6 @@
 package org.mytestlab.domain;
 
+import java.util.HashSet;
 import java.util.Set;
 
 import org.neo4j.graphdb.Direction;
@@ -32,6 +33,10 @@ public class Assignment {
 	private String filePath;
 	private CodeType codeType;
 	
+	public Assignment() {
+		answers = new HashSet<Answer>();
+	}
+	
 	public String getDescription() {
 		return description;
 	}
@@ -63,5 +68,13 @@ public class Assignment {
 	
 	public void setCodeType(CodeType codeType) {
 		this.codeType = codeType;
+	}
+	
+	public void addAnswer(Answer ans) {
+		this.answers.add(ans);
+	}
+	
+	public void setSolution(Solution sol) {
+		this.solution = sol;
 	}
 }

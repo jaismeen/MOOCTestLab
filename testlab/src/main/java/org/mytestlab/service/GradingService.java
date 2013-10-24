@@ -1,10 +1,14 @@
 package org.mytestlab.service;
 
+import java.util.ArrayList;
+
 import org.mytestlab.domain.Answer;
 import org.mytestlab.domain.Assignment;
 import org.mytestlab.domain.Solution;
+import org.mytestlab.domain.Student;
 import org.mytestlab.repository.AssignmentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.neo4j.conversion.EndResult;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -12,6 +16,17 @@ public class GradingService {
 
 	@Autowired
 	private AssignmentRepository assignmentRepository;
+	
+	public String gradeAssignment() {
+		String str = "";
+		
+		EndResult<Assignment> assignments = assignmentRepository.findAll();
+		for (Assignment assign: assignments) {
+			gradeAssignment(assign.getName());
+		}
+		
+		return str;
+	}
 	
 	public String gradeAssignment(String assignmentName) {
 		String str = "", tmp1 = "", tmp2 = "";
@@ -22,7 +37,7 @@ public class GradingService {
 		for (Answer an : assign.getAnswers()) {
 			an.getCodeStringsPoints().clear();
 			an.setTotalPoints(0.0);
-			for (int i = 0; i < an.getCodeStrings().size(); i++) {
+			for (int i = 2; i < an.getCodeStrings().size(); i++) {
 				tmp1 = an.getCodeStrings().get(i).replaceAll("\\s+", "");
 				tmp2 = sol.getCodeStrings().get(i).replaceAll("\\s+", "");
 				if (tmp1.equals(tmp2)) {
@@ -34,6 +49,7 @@ public class GradingService {
 			}
 			if (an.getCyclomaticNumber() == sol.getCyclomaticNumber()) {
 				an.setCyclomaticNumberPoint(sol.getCyclomaticNumberPoint());
+				an.setTotalPoints(an.getTotalPoints()+an.getCyclomaticNumberPoint());
 			} else {
 				an.setCyclomaticNumberPoint(0.0);
 			}
@@ -42,5 +58,54 @@ public class GradingService {
 		assignmentRepository.save(assign);
 		
 		return str;
+	}
+	
+	public String displayAllGrades() {
+		String str = "";
+		
+		EndResult<Assignment> assignments = assignmentRepository.findAll();
+		for (Assignment assign: assignments) {
+			str = displayGrades(assign.getName(), str);
+		}
+		
+		return str;
+	}
+	
+	public String displayGrades(String assignmentName, String str) {
+		Student stu;
+		
+		Assignment assign = assignmentRepository.findByName(assignmentName);
+		
+		for (Answer ans : assign.getAnswers()) {
+			stu = ans.getStudent();
+			str+=stu.getUsername()+";"+stu.getFirstName()+";"+stu.getLastName()+";"+ans.getTotalPoints().toString()+":";
+		}
+		
+		return str;
+	}
+	
+	public Double gradePractice(String assignmentName, ArrayList<String> codeStrArr, int cyclomaticNumber) {
+		String tmp1 = "", tmp2 = "";
+		Double totalPoints = 0.0;
+		
+		Assignment assign = assignmentRepository.findByName(assignmentName);
+		Solution sol = assign.getSolution();
+		
+		for (int i = 2; i < codeStrArr.size(); i++) {
+			tmp1 = codeStrArr.get(i).replaceAll("\\s+", "");
+			tmp2 = sol.getCodeStrings().get(i).replaceAll("\\s+", "");
+			if (tmp1.equals(tmp2)) {
+				totalPoints += sol.getCodeStringsPoints().get(i);
+			} else {
+				//no points added
+			}
+		}
+		if (cyclomaticNumber == sol.getCyclomaticNumber()) {
+			totalPoints += sol.getCyclomaticNumberPoint();
+		} else {
+			//no points added
+		}
+		
+		return totalPoints;
 	}
 }

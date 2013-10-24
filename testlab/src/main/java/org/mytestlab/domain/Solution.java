@@ -22,7 +22,13 @@ public class Solution {
 	private int cyclomaticNumber;
 	private double cyclomaticNumberPoint;
 	
+	public Solution() {
+		codeStrings = new ArrayList<String>();
+		codeStringsPoints = new ArrayList<Double>();
+	}
+	
 	public Solution(Professor professor, Assignment assignment) {
+		this();
 		this.professor = professor;
 		this.assignment = assignment;
 	}

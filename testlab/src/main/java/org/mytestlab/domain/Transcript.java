@@ -1,5 +1,6 @@
 package org.mytestlab.domain;
 
+import java.util.HashSet;
 import java.util.Set;
 
 import org.neo4j.graphdb.Direction;
@@ -18,7 +19,7 @@ public class Transcript {
 	@Fetch @RelatedTo(type = "HAS_TRANSCRIPT", direction = Direction.INCOMING) @Indexed(unique=true)
 	private Student student;
 	
-	private Set<CourseStudentInfo> courses;
+	private Set<CourseStudentInfo> courses = new HashSet<CourseStudentInfo>();
 
 	public Set<CourseStudentInfo> getCourses() {
 		return courses;
