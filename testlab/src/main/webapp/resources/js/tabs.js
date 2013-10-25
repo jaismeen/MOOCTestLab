@@ -71,7 +71,7 @@ function set_cookie(key,value1)
 {
 
 
-    alert('inside set cookie');
+    //alert('inside set cookie');
     window.sessionStorage.setItem("username", value1);
 
 }
@@ -81,7 +81,7 @@ function get_cookie(key)
 {
 
     var stringValue = window.sessionStorage.getItem("username");
-    alert(stringValue);
+   alert(stringValue);
     return stringValue;
 
 }
@@ -237,7 +237,7 @@ function addNode()
                 
                 linkString[num_links]=tempString + "\n";
                 num_links++;
-                alert(linkString);
+                //alert(linkString);
 
                 codeString="";
                 for(var counter=0;counter<num_nodes;counter++)    
@@ -366,40 +366,56 @@ function addNode()
 
             }
 
-            function submitHW()
+        
+            
+     /*       function login(var_login)
             {
+            	alert("in login");
+            	
+                var username=document.getElementById("username");
+                var password=document.getElementById("password");
+                
+                
+                alert("login "+$('#username').val()+", "+$('#password').val()+ ", "+var_login);
+
+                
+                
+                    $.post (urlHolder.login, {
+                                username: $('#username').val(),
+                                password: $('#password').val(),
+                                type: var_login 
+                            },
+                             function(response) {
+                            	
+                            	alert("response: "+response);
+                            	
+                               if (response!="")
+                               {
+                                    alert ("error");
+                               }
                                 
-                $.post (urlHolder.add, { codestr: codeString },
-                        function(response) {
-                        	
-                        	
-                        	alert(response);
-                        	
-                        	
-                           if (response!=null)
-                           {
-                                alert ("Homework submitted succesfully");
-                           }
-                            else
-                            {
-                                alert ("Error: Please try submitting again");
+                                else
+                                {
+                                    alert ("success");
+                                }
+                                    
                             }
-                                
-                        });
-            }
+                            );
+            }*/
 
 //Login function
 function login(var_login)
 {
     var username=document.getElementById("username");
     var password=document.getElementById("password");
-        $.post (urlHolder.add, {
+   // alert(username + password + var_login);
+        $.post (urlHolder.login, {
                     username: $('#username').val(),
                     password: $('#password').val(),
-                    type: $('#var_login').val() 
+                    type: var_login 
                 },
                  function(response) {
-                   if (response!=null)
+                   if (response!="")
                    {
                         alert (response);
                         location.reload();
@@ -407,11 +423,11 @@ function login(var_login)
                     
                     else
                     {
-                        set_cookie("username",username);
+                        set_cookie("username",username.value);
                         if(var_login==1)
-                        window.location.href="HomeStudent.html";
+                        window.location.href="HomeStudent";
                         else
-                        window.location.href="HomeProfessor.html";
+                        window.location.href="HomeProfessor";
 
                         
                     }
@@ -423,11 +439,14 @@ function login(var_login)
 function gradePractice()
 {
     var practice_id=get_practiceID();
+    var cyclomaticNumber='0';
+    alert("Your score in this practice is: 78");
 
-    $.post (urlHolder.gradePractice, {
-        assignmentName: $('#practice_id').val(),
-        codestr: codeString},
-            cyclomaticNumber: cyclomaticNumber},
+  $.post (urlHolder.gradePractice, {
+        assignmentName: practice_id,
+        codestr: codeString,
+            cyclomaticNumber: cyclomaticNumber
+        },
             function(response) {
                     alert("Score is::" + response);        
                 //The response is the score of the practice.
@@ -441,7 +460,7 @@ function grading()
             function(response) {
                             
                 if (response == "") {
-                    alert("success");
+                    alert("Grading Done!");
                 } else {
                     alert(response);
                 }
@@ -452,12 +471,13 @@ function grading()
 function displayAll()
 {//right now, this function shows all the grades for all the assignments.
 
-    $.post (urlHolder.displayAll, {},
-            function(response) {
-                            
+   /* $.post (urlHolder.displayAll, {},
+            function(response) {*/
+                   var response="Assignment1;Jack;Smith;87";         
                 var student_scores=new Array();
                 student_scores=response.split(";");
-
+                
+                
 
                                             // get handle on div
                             var container = document.getElementById('score_area');
@@ -488,27 +508,36 @@ function displayAll()
                             container.appendChild(table);
 
                     //Assignment Number;firstname;lastname;score;
-            });
+          //  });
 }
+
 
 function submitSolution(var_login)
 {
-
-    $.post (urlHolder.submitSolution, {
-        username: $('#username').val(),
-        type: var_login,
-        assignmentName: $('#assignmentList option:selected').val(),
-        codeStrings: codeString,
-        cyclomaticNumber: $('#cyclomaticNumber').val()
-
+	
+	var username=get_cookie("username");
+	
+	 var practice_id='P1';
+	 var cyclomaticNumber=3;
+	
+	/* if (var_login=='1')
+	alert(username + "  Your assignment is submitted successfully");
+	 else
+		 alert("Solution submitted for grading");*/
+   $.post (urlHolder.submitSolution, {
+    	username: username,
+    	type: var_login,
+    	assignmentName: practice_id,
+        codestr: codeString,
+            cyclomaticNumber: cyclomaticNumber
     },
             function(response) {
-                            
-                if (response == "") {
-                    alert("success");
-                } else {
-                    alert(response);
-                }
+            	          	
+    			if (response == "") {
+    				alert("success");
+    			} else {
+    				alert(response);
+    			}
 
             });
 }
@@ -532,9 +561,10 @@ function loadTestData()
 {
                     
 	alert("load test data");
-	
+	var type='0';
     $.post (urlHolder.loadTestData, {
-    	type: $('#type option:selected').val()},
+    	type: type
+    	},
             function(response) {
             	          	
             	alert(response);
@@ -548,7 +578,8 @@ function getTestData()
 	alert("get test data");
 	
     $.post (urlHolder.getTestData, {
-    	type: $('#type option:selected').val()},
+    	type: $('#type option:selected').val()
+    	},
             function(response) {
             	          	
             	alert(response);

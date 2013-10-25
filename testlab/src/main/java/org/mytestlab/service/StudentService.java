@@ -23,7 +23,7 @@ public class StudentService {
 	
 	public String loadTestData() {
 		String ret = "";
-		
+		System.out.println("hi");
 		Student amy = new Student();
 		amy.setFirstName("Amy");
 		amy.setLastName("Johnson");
@@ -32,7 +32,7 @@ public class StudentService {
 		
 		studentRepository.save(amy);
 		
-		Student newAmy = studentRepository.findByUsername("amy");
+		Student newAmy = studentRepository.findByUsername("0002");
 		
 		ret = "New Amy's name: "+newAmy.getFirstName()+" "+newAmy.getLastName();
 		System.out.println(ret);

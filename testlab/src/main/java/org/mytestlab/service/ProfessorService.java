@@ -30,7 +30,7 @@ public class ProfessorService {
 		
 		professorRepository.save(jack);
 		
-		Professor newJack = professorRepository.findByUsername("jack");
+		Professor newJack = professorRepository.findByUsername("0001");
 		
 		ret = "New Jack's name: "+newJack.getFirstName()+" "+newJack.getLastName();
 		System.out.println(ret);
@@ -89,15 +89,15 @@ public class ProfessorService {
 		Assignment assign = assignmentRepository.findByName(assignmentName);
 		
 		if (assign == null) {
-			ret = "Assignment doesn't exist!";
-			return ret;
+			assign = new Assignment(assignmentName);
+			assignmentRepository.save(assign);
 		}
 		
 		if (prof == null) {
 			ret = "Professor doesn't exist!";
 			return ret;
 		}
-		
+
 		Solution sol = new Solution(prof, assign);
 		sol.setCodeStrings(codeStrings);
 		sol.setCyclomaticNumber(cyclomaticNumber);

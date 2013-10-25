@@ -37,6 +37,10 @@ public class Assignment {
 		answers = new HashSet<Answer>();
 	}
 	
+	public Assignment(String name) {
+		this.name = name;
+	}
+	
 	public String getDescription() {
 		return description;
 	}
@@ -64,6 +68,10 @@ public class Assignment {
 	
 	public String getName() {
 		return name;
+	}
+	
+	public void setName(String name) {
+		this.name=name;
 	}
 	
 	public void setCodeType(CodeType codeType) {

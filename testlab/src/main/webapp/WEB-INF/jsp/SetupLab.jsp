@@ -1,3 +1,18 @@
+<%@ taglib uri='http://java.sun.com/jsp/jstl/core' prefix='c' %>
+
+
+<c:url value="/login" var="loginUrl"/>
+<c:url value="/create" var="addUrl"/>
+<c:url value="/update" var="editUrl"/>
+<c:url value="/delete" var="deleteUrl"/>
+<c:url value="/gradePractice" var="gradePracticeUrl"/>
+<c:url value="/grading" var="gradingUrl"/>
+<c:url value="/displayAll" var="displayAllUrl"/>
+<c:url value="/StudentLogin" var="StudentLoginUrl"/>
+<c:url value="/submitSolution" var="submitSolutionUrl"/>
+
+<c:url value="/loadTestData" var="loadTestDataUrl"/>
+<c:url value="/getTestData" var="getTestDataUrl"/>
 
 <html lang="en">
   <head>
@@ -7,37 +22,44 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="../../assets/ico/favicon.png">
 
-    <title>Carousel Template for Bootstrap</title>
+    <title>Extended MOOC</title>
+   <link href='<c:url value="/resources/css/bootstrap.css"/>' rel="stylesheet">
+    <link href='<c:url value="/resources/css/flowchart.css"/>' rel="stylesheet">
+    <link href='<c:url value="/resources/css/Main.css"/>' rel="stylesheet">
 
-    <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.css" rel="stylesheet">
-            <link href="css/flowchart.css" rel="stylesheet">
+    <link href='<c:url value="/resources/css/carousel.css"/>' rel="stylesheet">
+    <script type='text/javascript' src='<c:url value="/resources/js/jquery-1.6.4.min.js"/>'></script>
+    <script src='<c:url value="/resources/js/tabs.js"/>'></script>
+    <script src='<c:url value="/resources/js/raphael.js"/>'></script>
+    <script src='<c:url value="/resources/js/flowchart-1.1.3.js"/>'></script>
+      <script>
+    $(function() {
 
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="../../assets/js/html5shiv.js"></script>
-      <script src="../../assets/js/respond.min.js"></script>
-    <![endif]-->
+      
+    // init
+    urlHolder.login = '${loginUrl}';
+    urlHolder.add = '${addUrl}';
+    urlHolder.edit = '${editUrl}';
+    urlHolder.del = '${deleteUrl}';
+    
+    urlHolder.loadTestData = '${loadTestDataUrl}';
+    urlHolder.getTestData = '${getTestDataUrl}';
 
-    <!-- Custom styles for this template -->
-    <link href="css/carousel.css" rel="stylesheet">
-    <script src="js/tabs.js"></script>
-    <script src="http://raphaeljs.com/raphael.js"></script>
-    <script src="js/flowchart-1.1.3.js"></script>
-
-    <script>
-            
-        </script>
-
-
-        
+    urlHolder.gradePractice = '${gradePracticeUrl}';
+    urlHolder.grading = '${gradingUrl}';
+    urlHolder.displayAll = '${displayAllUrl}';
+    urlHolder.submitSolution = '${submitSolutionUrl}';
+    
+    });
+        </script> 
        	
         </head>
 <!-- NAVBAR
 ================================================== -->
   <body>
-      <div class="navbar-wrapper">
+    <div class="navbar-wrapper">
       <div class="container">
+
         <div class="navbar navbar-inverse navbar-static-top">
           <div class="container">
             <div class="navbar-header">
@@ -46,17 +68,20 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="#">Online Test Labs</a>
+              <a class="navbar-brand" href="#">ONLINE TEST LABS</a>
             </div>
             <div class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
                 <li class="active"><a href="#">Home</a></li>
-                <li><a href="#about">Lab</a></li>
-                <li><a href="#contact">Practice Sessions</a></li>
+                <li><a href="SetupLab">Setup Lab</a></li>
+                <li><a href="Grading">Grades</a></li>
+
+               
               </ul>
             </div>
           </div>
         </div>
+
       </div>
     </div>
     <div id="main_body">
@@ -173,10 +198,10 @@
             <br>
 
             <div class="code_area">
-                <iframe class="codeframe" style="background: #F0F0F0; width: 100%; height: 230px" src="samplecode/test.c" ></iframe>
+                <iframe class="codeframe" style="background: #F0F0F0; width: 100%; height: 230px" src='<c:url value="/resources/samplecode/P1.c"/>' ></iframe>
                 <br>
                 <br>
-                <button id="submit" stype=" align: right" class="btn btn-default" type="button" onclick="submitHW()">Submit</button>
+                <button id="submit" style=" align: right" class="btn btn-default" type="button" onclick="submitSolution('0')">Submit</button>
             </div>
         
         </div>

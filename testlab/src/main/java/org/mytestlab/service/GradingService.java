@@ -73,12 +73,14 @@ public class GradingService {
 	
 	public String displayGrades(String assignmentName, String str) {
 		Student stu;
+		String delimiter = ";";
 		
 		Assignment assign = assignmentRepository.findByName(assignmentName);
+		str+=assignmentName+delimiter;
 		
 		for (Answer ans : assign.getAnswers()) {
 			stu = ans.getStudent();
-			str+=stu.getUsername()+";"+stu.getFirstName()+";"+stu.getLastName()+";"+ans.getTotalPoints().toString()+":";
+			str+=stu.getFirstName()+delimiter+stu.getLastName()+delimiter+ans.getTotalPoints().toString()+delimiter;
 		}
 		
 		return str;

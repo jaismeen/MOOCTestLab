@@ -1,17 +1,17 @@
 <%@ taglib uri='http://java.sun.com/jsp/jstl/core' prefix='c' %>
 
-<c:url value="/main/login" var="loginUrl"/>
-<c:url value="/main/create" var="addUrl"/>
-<c:url value="/main/update" var="editUrl"/>
-<c:url value="/main/delete" var="deleteUrl"/>
-<c:url value="/main/gradePractice" var="gradePracticeUrl"/>
-<c:url value="/main/grading" var="gradingUrl"/>
-<c:url value="/main/displayAll" var="displayAllUrl"/>
+<c:url value="/login" var="loginUrl"/>
+<c:url value="/create" var="addUrl"/>
+<c:url value="/update" var="editUrl"/>
+<c:url value="/delete" var="deleteUrl"/>
+<c:url value="/gradePractice" var="gradePracticeUrl"/>
+<c:url value="/grading" var="gradingUrl"/>
+<c:url value="/displayAll" var="displayAllUrl"/>
+<c:url value="/submitSolution" var="submitSolutionUrl"/>
 
 
-
-<c:url value="/main/loadTestData" var="loadTestDataUrl"/>
-<c:url value="/main/getTestData" var="getTestDataUrl"/>
+<c:url value="/loadTestData" var="loadTestDataUrl"/>
+<c:url value="/getTestData" var="getTestDataUrl"/>
 
 <html lang="en">
   <head>
@@ -21,7 +21,7 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="../../assets/ico/favicon.png">
 
-    <title>Carousel Template for Bootstrap</title>
+    <title>Extended MOOC</title>
 
     <!-- Bootstrap core CSS -->
     <link href='<c:url value="/resources/css/bootstrap.css"/>' rel="stylesheet">
@@ -39,6 +39,7 @@
     	
 		// init
 		urlHolder.records = '${recordsUrl}';
+		 urlHolder.login = '${loginUrl}';
 		urlHolder.add = '${addUrl}';
 		urlHolder.edit = '${editUrl}';
 		urlHolder.del = '${deleteUrl}';
@@ -47,7 +48,8 @@
         urlHolder.displayAll = '${displayAllUrl}';
 
 		urlHolder.loadTestData = '${loadTestDataUrl}';
-		urlHolder.getTestData = '${getTestDataUrl}';
+		urlHolder.getTestData = '${getTestDataUrl}'; 
+		urlHolder.submitSolution = '${submitSolutionUrl}';
 		
     });
         </script>
@@ -199,7 +201,7 @@
                 <iframe class="codeframe" style="background: #F0F0F0; width: 100%; height: 230px" src='<c:url value="/resources/samplecode/P1.c"/>' ></iframe>
                 <br>
                 <br>
-                <button id="submit" stype=" align: right" class="btn btn-default" type="button" onclick="submitHW()">Submit</button>
+                <button id="submit" style=" align: right" class="btn btn-default" type="button" onclick="submitSolution('1')">Submit</button>
             </div>
         
         </div>

@@ -26,14 +26,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-@RequestMapping("/main")
+//@RequestMapping("/main")
 public class MainController {
 
-	final int PROFESSOR = 0;
-	final int STUDENT = 1;
-
-	@Autowired
-	private FlowgraphService flowGraphService;
+	//@Autowired
+	//private FlowgraphService flowGraphService;
 	
 	@Autowired
 	private ProfessorService professorService;
@@ -44,7 +41,64 @@ public class MainController {
 	@Autowired
 	private GradingService gradingService;
 	
-	@RequestMapping
+	@RequestMapping(value = "/main", method= RequestMethod.GET)
+    public String main() {
+         
+        return "main";
+    }
+	@RequestMapping(value = "/StudentLogin", method= RequestMethod.GET)
+    public String StudentLogin() {
+         
+        return "StudentLogin";
+    }
+   
+	@RequestMapping(value = "/HomeProfessor", method= RequestMethod.GET)
+    public String HomeProfessor() {
+         
+        return "HomeProfessor";
+    }
+   
+	@RequestMapping(value = "/PracticeList", method= RequestMethod.GET)
+    public String PracticeList() {
+         
+        return "PracticeList";
+    }
+	@RequestMapping(value = "/Practice", method= RequestMethod.GET)
+    public String Practice() {
+         
+        return "Practice";
+    }
+	@RequestMapping(value = "/HomeStudent", method= RequestMethod.GET)
+    public String HomeStudent() {
+         
+        return "HomeStudent";
+    }
+	@RequestMapping(value = "/ProfessorLogin", method= RequestMethod.GET)
+    public String ProfessorLogin() {
+         
+        return "ProfessorLogin";
+    }
+	@RequestMapping(value = "/SetupLab", method= RequestMethod.GET)
+    public String SetupLab() {
+         
+        return "SetupLab";
+    }
+	@RequestMapping(value = "/Grading", method= RequestMethod.GET)
+    public String Grading() {
+         
+        return "Grading";
+    }
+	@RequestMapping(value = "/FlowChart", method= RequestMethod.GET)
+    public String FlowChart() {
+         
+        return "FlowChart";
+    }
+	final int PROFESSOR = 0;
+	final int STUDENT = 1;
+
+	
+	
+	/*@RequestMapping
 	public String MainPage() {
 		return "main";
 	}
@@ -53,13 +107,6 @@ public class MainController {
 	{	
 		return "StudentLogin";
 	}*/
-	@RequestMapping(value = "/StudentLogin", method= RequestMethod.GET)
-    public String StudentLogin() {
-         
-        return "redirect:StudentLogin";
-    }
-   
-	
 	
 	@RequestMapping(value="/login")
 	public @ResponseBody String login(
@@ -86,7 +133,8 @@ public class MainController {
 			@RequestParam int type,
 			@RequestParam String assignmentName, 
 			@RequestParam String codeStrings,
-			@RequestParam int cyclomaticNumber) {
+			@RequestParam int cyclomaticNumber)
+			 {
 		
 		String str = "";
 		ArrayList<String> arr = new ArrayList<String>();
@@ -136,9 +184,8 @@ public class MainController {
 	@RequestMapping(value="/displayAll")
 	public @ResponseBody String displayAll() {
 	
-		String assignmentName = "p1";
 		String str = "";
-		str = gradingService.gradeAssignment(assignmentName);
+		str = gradingService.displayAllGrades();
 		return str;
 	}
 	
@@ -229,7 +276,7 @@ public class MainController {
 		return service.read(node);
 	}*/
 
-	static int tmpName = 1;
+	/*static int tmpName = 1;
 	@RequestMapping(value="/create", method=RequestMethod.POST)
 	public @ResponseBody ArrayList<String> create(
 			@RequestParam String codestr) {

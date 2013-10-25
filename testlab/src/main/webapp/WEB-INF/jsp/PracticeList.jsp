@@ -1,3 +1,17 @@
+<%@ taglib uri='http://java.sun.com/jsp/jstl/core' prefix='c' %>
+
+
+<c:url value="/login" var="loginUrl"/>
+<c:url value="/create" var="addUrl"/>
+<c:url value="/update" var="editUrl"/>
+<c:url value="/delete" var="deleteUrl"/>
+<c:url value="/gradePractice" var="gradePracticeUrl"/>
+<c:url value="/grading" var="gradingUrl"/>
+<c:url value="/displayAll" var="displayAllUrl"/>
+<c:url value="/StudentLogin" var="StudentLoginUrl"/>
+
+<c:url value="/loadTestData" var="loadTestDataUrl"/>
+<c:url value="/getTestData" var="getTestDataUrl"/>
 
 <html lang="en">
   <head>
@@ -7,32 +21,35 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="../../assets/ico/favicon.png">
 
-    <title>Carousel Template for Bootstrap</title>
+    <title>Extended MOOC</title>
+   <link href='<c:url value="/resources/css/bootstrap.css"/>' rel="stylesheet">
+    <link href='<c:url value="/resources/css/flowchart.css"/>' rel="stylesheet">
 
-    <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.css" rel="stylesheet">
-            <link href="css/flowchart.css" rel="stylesheet">
-             <link href="css/Main.css" rel="stylesheet">
+    <link href='<c:url value="/resources/css/carousel.css"/>' rel="stylesheet">
+    <script type='text/javascript' src='<c:url value="/resources/js/jquery-1.6.4.min.js"/>'></script>
+    <script src='<c:url value="/resources/js/tabs.js"/>'></script>
+    <script src='<c:url value="/resources/js/raphael.js"/>'></script>
+    <script src='<c:url value="/resources/js/flowchart-1.1.3.js"/>'></script>
+      <script>
+    $(function() {
 
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="../../assets/js/html5shiv.js"></script>
-      <script src="../../assets/js/respond.min.js"></script>
-    <![endif]-->
+      
+    // init
+    urlHolder.login = '${loginUrl}';
+    urlHolder.add = '${addUrl}';
+    urlHolder.edit = '${editUrl}';
+    urlHolder.del = '${deleteUrl}';
+    
+    urlHolder.loadTestData = '${loadTestDataUrl}';
+    urlHolder.getTestData = '${getTestDataUrl}';
 
-    <!-- Custom styles for this template -->
-    <link href="css/carousel.css" rel="stylesheet">
-    <script src="js/tabs.js"></script>
-    <script src="http://raphaeljs.com/raphael.js"></script>
-    <script src="js/flowchart-1.1.3.js"></script>
-
-    <script>
-            
-        </script>
-
-
-        
-       	
+    urlHolder.gradePractice = '${gradePracticeUrl}';
+    urlHolder.grading = '${gradingUrl}';
+    urlHolder.displayAll = '${displayAllUrl}';
+    urlHolder.submitSolution = '${submitSolutionUrl}';
+    
+    });
+        </script> 	
         </head>
 <!-- NAVBAR
 ================================================== -->
@@ -93,15 +110,15 @@
           </div>
         </div>
       </div>
-      <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
-      <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+      <!--  <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+      <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a> -->
     </div><!-- /.carousel -->
 
     <div id="PracList">
-    <a id="P1" href="Practice.html" onclick="set_practiceID('P1')">Practice Session 1</a><br>
-    <a id="P2" href="Practice.html" onclick="set_practiceID('P2')">Practice Session 2</a><br>
-    <a id="P3" href="Practice.html" onclick="set_practiceID('P3')">Practice Session 3</a><br>
-    <a id="P4" href="Practice.html" onclick="set_practiceID('P4')">Practice Session 4</a><br>
+    <a id="P1" href="Practice" onclick="set_practiceID('P1')">Practice Session 1</a><br>
+    <a id="P2" href="Practice" onclick="set_practiceID('P2')">Practice Session 2</a><br>
+    <a id="P3" href="Practice" onclick="set_practiceID('P3')">Practice Session 3</a><br>
+    <a id="P4" href="Practice" onclick="set_practiceID('P4')">Practice Session 4</a><br>
     </div>
 
 
