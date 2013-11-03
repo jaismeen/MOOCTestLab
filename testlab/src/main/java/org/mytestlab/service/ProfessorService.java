@@ -1,6 +1,7 @@
 package org.mytestlab.service;
 
 import java.util.ArrayList;
+import java.util.Set;
 
 import org.mytestlab.domain.Assignment;
 import org.mytestlab.domain.Professor;
@@ -83,6 +84,11 @@ public class ProfessorService {
 	}
 	
 	public String submitSolution(String username, String assignmentName, ArrayList<String> codeStrings, int cyclomaticNumber) {
+		
+		
+		System.out.println("in ProfessorService.submitSolution()");
+		
+		
 		String ret = "";
 		
 		Professor prof = professorRepository.findByUsername(username);
@@ -98,6 +104,10 @@ public class ProfessorService {
 			return ret;
 		}
 
+		
+		System.out.println("Assignment Name: "+assign.getName());
+		
+		
 		Solution sol = new Solution(prof, assign);
 		sol.setCodeStrings(codeStrings);
 		sol.setCyclomaticNumber(cyclomaticNumber);
@@ -118,10 +128,42 @@ public class ProfessorService {
 		prof.addSolution(sol);
 		assign.setSolution(sol);
 		
-		professorRepository.save(prof);
+		Professor prof1 = professorRepository.save(prof);
 		assignmentRepository.save(assign);
 		
+		
+		System.out.println("Number of solutions: "+prof.getSolutions().size());
+		
+		Professor prof2 = professorRepository.findByUsername(username);
+		System.out.println("Number of saved solutions1: "+prof1.getSolutions().size());
+		System.out.println("Number of saved solutions2: "+prof2.getSolutions().size());
+		
+		
+		System.out.println("out ProfessorService.submitSolution()");
+		
 		return ret;
+	}
+	
+	public void printSolutions(String username) {
+		
+		Professor prof = professorRepository.findByUsername(username);
+
+		
+		System.out.println("Number of solutions: "+prof.getSolutions().size());
+		
+		
+		for (Solution sol : prof.getSolutions()){
+			System.out.println("Assignment Name: "+sol.getAssignment().getName());
+			System.out.println("Code String");
+			for (int i = 0; i < sol.getCodeStrings().size(); i++) {
+				System.out.println(sol.getCodeStrings().get(i));
+			}
+			System.out.println("Code String Points");
+			for (int i = 0; i < sol.getCodeStringsPoints().size(); i++) {
+				System.out.println(sol.getCodeStringsPoints().get(i));
+			}
+			System.out.println("Cyclomatic Number: "+sol.getCyclomaticNumber()+", Points: "+sol.getCyclomaticNumberPoint());
+		}
 	}
 	
 }

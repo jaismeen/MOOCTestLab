@@ -136,6 +136,10 @@ public class MainController {
 			@RequestParam int cyclomaticNumber)
 			 {
 		
+		
+		System.out.println("in MainController.submitSolution()");
+		
+		
 		String str = "";
 		ArrayList<String> arr = new ArrayList<String>();
 		
@@ -152,6 +156,11 @@ public class MainController {
 			
 		}
 		
+		
+		
+		System.out.println("out MainController.submitSolution()");
+		
+		
 		return str;
 	}
 	
@@ -159,7 +168,13 @@ public class MainController {
 	public @ResponseBody String grading() {
 
 		String str = "";
-		str = gradingService.gradeAssignment();
+		try {
+		
+			str = gradingService.gradeAssignment();
+		
+		} catch (Exception ex) {
+			str = ex.toString();
+		}
 		return str;
 	}
 		
@@ -185,7 +200,45 @@ public class MainController {
 	public @ResponseBody String displayAll() {
 	
 		String str = "";
-		str = gradingService.displayAllGrades();
+		try {
+		
+			str = gradingService.displayAllGrades();
+		
+		} catch (Exception ex) {
+			str = ex.toString();
+		}
+		return str;
+	}
+	
+	@RequestMapping(value="/printProfessorSolutions")
+	public @ResponseBody String printProfessorSolutions(
+			@RequestParam String username) {
+		String str = "";
+		try {
+			
+			System.out.println("Professor's username: "+username);
+			
+			professorService.printSolutions(username);
+			
+		} catch (Exception ex) {
+			str = ex.toString();
+		}
+		return str;
+	}
+	
+	@RequestMapping(value="/printStudentAnswers")
+	public @ResponseBody String printStudentAnswers(
+			@RequestParam String username) {
+		String str = "";
+		try {
+			
+			System.out.println("Student's username: "+username);
+			
+			studentService.printAnswers(username);
+			
+		} catch (Exception ex) {
+			str = ex.toString();
+		}
 		return str;
 	}
 	

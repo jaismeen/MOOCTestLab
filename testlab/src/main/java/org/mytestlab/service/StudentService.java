@@ -7,6 +7,7 @@ import org.mytestlab.domain.Assignment;
 import org.mytestlab.domain.Professor;
 import org.mytestlab.domain.Solution;
 import org.mytestlab.domain.Student;
+import org.mytestlab.repository.AnswerRepository;
 import org.mytestlab.repository.AssignmentRepository;
 import org.mytestlab.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +21,9 @@ public class StudentService {
 	
 	@Autowired
 	private AssignmentRepository assignmentRepository;
+	
+	@Autowired
+	private AnswerRepository answerRepository;
 	
 	public String loadTestData() {
 		String ret = "";
@@ -73,6 +77,11 @@ public class StudentService {
 	}
 	
 	public String submitAnswer(String username, String assignmentName, ArrayList<String> codeStrings, int cyclomaticNumber) {
+		
+		
+		System.out.println("in StudentService.submitSolution()");
+		
+		
 		String ret = "";
 		
 		Student stu = studentRepository.findByUsername(username);
@@ -88,6 +97,12 @@ public class StudentService {
 			return ret;
 		}
 		
+		
+		
+		System.out.println("Assignment Name: "+assign.getName());
+		
+		
+		
 		Answer ans = new Answer(stu, assign);
 		ans.setCodeStrings(codeStrings);
 		ans.setCyclomaticNumber(cyclomaticNumber);
@@ -95,9 +110,48 @@ public class StudentService {
 		stu.addAnswer(ans);
 		assign.addAnswer(ans);
 		
-		studentRepository.save(stu);
+		Student stu1 = studentRepository.save(stu);
 		assignmentRepository.save(assign);
 		
+		
+		
+		System.out.println("FirstName: "+ans.getStudent().getFirstName());
+		System.out.println("LastName: "+ans.getStudent().getLastName());
+		//System.out.println("Total Points: "+ans.getTotalPoints().toString());
+		
+		System.out.println("Number of solutions: "+stu.getAnswers().size());
+		
+		Student stu2 = studentRepository.findByUsername(username);
+		System.out.println("Number of saved solutions1: "+stu1.getAnswers().size());
+		System.out.println("Number of saved solutions2: "+stu2.getAnswers().size());
+		
+		
+		System.out.println("out StudentService.submitSolution()");
+		
+		
+		
 		return ret;
+	}
+	
+	public void printAnswers(String username) {
+		
+		Student stu = studentRepository.findByUsername(username);
+
+		
+		System.out.println("Number of solutions: "+stu.getAnswers().size());
+		
+		
+		for (Answer ans : stu.getAnswers()){
+			System.out.println("Assignment Name: "+ans.getAssignment().getName());
+			System.out.println("Code String");
+			for (int i = 0; i < ans.getCodeStrings().size(); i++) {
+				System.out.println(ans.getCodeStrings().get(i));
+			}
+			System.out.println("Code String Points");
+			for (int i = 0; i < ans.getCodeStringsPoints().size(); i++) {
+				System.out.println(ans.getCodeStringsPoints().get(i));
+			}
+			System.out.println("Cyclomatic Number: "+ans.getCyclomaticNumber()+", Points: "+ans.getCyclomaticNumberPoint());
+		}
 	}
 }

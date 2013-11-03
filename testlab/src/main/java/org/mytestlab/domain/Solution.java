@@ -58,4 +58,11 @@ public class Solution {
 		this.cyclomaticNumberPoint = cyclomaticNumberPoint;
 	}
 	
+	public Assignment getAssignment() {
+		return this.assignment;
+	}
+	
+	public Professor getProfessor() {
+		return this.professor;
+	}
 }

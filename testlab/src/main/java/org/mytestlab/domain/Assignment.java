@@ -38,6 +38,7 @@ public class Assignment {
 	}
 	
 	public Assignment(String name) {
+		this();
 		this.name = name;
 	}
 	
