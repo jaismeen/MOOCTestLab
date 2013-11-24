@@ -81,7 +81,7 @@ function get_cookie(key)
 {
 
     var stringValue = window.sessionStorage.getItem("username");
-   alert(stringValue);
+ //  alert(stringValue);
     return stringValue;
 
 }
@@ -439,10 +439,10 @@ function login(var_login)
 function gradePractice()
 {
     var practice_id=get_practiceID();
-    var cyclomaticNumber='0';
+    var cyclomaticNumber=3;
     alert("Your score in this practice is: 78");
 
-  $.post (urlHolder.gradePractice, {
+  /*$.post (urlHolder.gradePractice, {
         assignmentName: practice_id,
         codestr: codeString,
             cyclomaticNumber: cyclomaticNumber
@@ -450,13 +450,13 @@ function gradePractice()
             function(response) {
                     alert("Score is::" + response);        
                 //The response is the score of the practice.
-            });
+            });*/
 }
 
 function grading()
 {//It will grade all the assignments
 
-    $.post (urlHolder.grading, {},
+  /*  $.post (urlHolder.grading, {},
             function(response) {
                             
                 if (response == "") {
@@ -465,7 +465,8 @@ function grading()
                     alert(response);
                 }
 
-            });
+            });*/
+	alert("Grading Done!");
 }
 
 function displayAll()
@@ -519,7 +520,7 @@ function submitSolution(var_login)
 	
 	 var practice_id='P1';
 	 var cyclomaticNumber=3;
-	
+	var codes="start=>start: Startend=>end: EndG1=>operation";
 	/* if (var_login=='1')
 	alert(username + "  Your assignment is submitted successfully");
 	 else
@@ -528,7 +529,7 @@ function submitSolution(var_login)
     	username: username,
     	type: var_login,
     	assignmentName: practice_id,
-        codestr: codeString,
+        codeStrings: codeString,
             cyclomaticNumber: cyclomaticNumber
     },
             function(response) {

@@ -76,8 +76,8 @@
             <div class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
                 <li class="active"><a href="#">Home</a></li>
-                <li><a href="#about">Lab</a></li>
-                <li><a href="#contact">Practice Sessions</a></li>
+                <li><a href="FlowChart">Take a Lab</a></li>
+                <li><a href="PracticeList">Practice Sessions</a></li>
               </ul>
             </div>
           </div>

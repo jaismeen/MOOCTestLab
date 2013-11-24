@@ -84,10 +84,11 @@ public class ProfessorService {
 	
 	public String submitSolution(String username, String assignmentName, ArrayList<String> codeStrings, int cyclomaticNumber) {
 		String ret = "";
-		
+		System.out.println("inside professorservice");
 		Professor prof = professorRepository.findByUsername(username);
 		Assignment assign = assignmentRepository.findByName(assignmentName);
-		
+		System.out.println("inside professorservice1");
+
 		if (assign == null) {
 			assign = new Assignment(assignmentName);
 			assignmentRepository.save(assign);

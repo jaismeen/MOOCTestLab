@@ -97,7 +97,7 @@
           </div>
         </div>
         <div class="item">
-          <img src="pictures/pic2.jpg" data-src="holder.js/900x500/auto/#666:#6a6a6a/text:Second slide" alt="Second slide">
+         <!--  <img src="pictures/pic2.jpg" data-src="holder.js/900x500/auto/#666:#6a6a6a/text:Second slide" alt="Second slide"> -->
           <div class="container">
             <div class="carousel-caption">
               <h1>Another example headline.</h1>
@@ -132,19 +132,19 @@
       <!-- Three columns of text below the carousel -->
       <div class="row">
         <div class="col-lg-4">
-          <img class="img-circle" src='<c:url value="/resources/pictures/pic1.jpg"/>' height="50" width="50"/>
+        <!--   <img class="img-circle" src='<c:url value="/resources/pictures/pic1.jpg"/>' height="50" width="50"/> -->
           <h2>Professor</h2>
           <p>Specially designed interface for professors to set testing labs.</p>
           <p><a class="btn btn-default" href="ProfessorLogin" role="button">Login &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
-          <img class="img-circle" src='<c:url value="/resources/pictures/pic2.jpg"/>' height="50" width="50" alt="Generic placeholder image">
+        <!--   <img class="img-circle" src='<c:url value="/resources/pictures/pic2.jpg"/>' height="50" width="50" alt="Generic placeholder image"> -->
           <h2>Student</h2>
           <p>Platform for student to perform tests online</p>
           <p><a class="btn btn-default" href="StudentLogin" role="button">Login &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
-          <img class="img-circle" src="picture/pic3.jpg" height="50" width="50" alt="Generic placeholder image">
+        <!--   <img class="img-circle" src="picture/pic3.jpg" height="50" width="50" alt="Generic placeholder image"> -->
           <h2>About Us</h2>
           <p>MOOC inspired test labs</p>
           <p><a class="btn btn-default" href="#" role="button">Take a look &raquo;</a></p>

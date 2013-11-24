@@ -133,7 +133,8 @@ public class MainController {
 			@RequestParam int type,
 			@RequestParam String assignmentName, 
 			@RequestParam String codeStrings,
-			@RequestParam int cyclomaticNumber)
+			@RequestParam int cyclomaticNumber
+			)
 			 {
 		
 		String str = "";
@@ -151,7 +152,7 @@ public class MainController {
 		} else {
 			
 		}
-		
+
 		return str;
 	}
 	
