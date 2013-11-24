@@ -93,7 +93,15 @@ public class Professor {
 		this.password = password;
 	}
 
-	public void addSolution(Solution sol) {
-		this.solutions.add(sol);
+	public boolean addSolution(Solution sol) {
+		return this.solutions.add(sol);
+	}
+	
+	public boolean removeSolution(Solution sol) {
+		return this.solutions.remove(sol);
+	}
+	
+	public Set<Solution> getSolutions() {
+		return solutions;
 	}
 }

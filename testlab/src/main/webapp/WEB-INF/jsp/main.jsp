@@ -97,7 +97,7 @@
           </div>
         </div>
         <div class="item">
-         <!--  <img src="pictures/pic2.jpg" data-src="holder.js/900x500/auto/#666:#6a6a6a/text:Second slide" alt="Second slide"> -->
+         <img src="pictures/pic2.JPG" data-src="holder.js/900x500/auto/#666:#6a6a6a/text:Second slide" alt="Second slide">
           <div class="container">
             <div class="carousel-caption">
               <h1>Another example headline.</h1>

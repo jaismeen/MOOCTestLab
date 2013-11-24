@@ -52,6 +52,7 @@ public class Student {
 	}
 
 	public Student(String username) {
+		this();
 		this.username = username;
 	}
 	
@@ -95,7 +96,15 @@ public class Student {
 		this.password = password;
 	}
 	
-	public void addAnswer(Answer ans) {
-		this.answers.add(ans);
+	public boolean addAnswer(Answer ans) {
+		return this.answers.add(ans);
+	}
+	
+	public boolean removeAnswer(Answer ans) {
+		return this.answers.remove(ans);
+	}
+	
+	public Set<Answer> getAnswers() {
+		return this.answers;
 	}
 }

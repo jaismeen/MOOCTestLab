@@ -3,6 +3,7 @@ package org.mytestlab.domain;
 import java.util.ArrayList;
 
 import org.springframework.data.neo4j.annotation.EndNode;
+import org.springframework.data.neo4j.annotation.Fetch;
 import org.springframework.data.neo4j.annotation.GraphId;
 import org.springframework.data.neo4j.annotation.RelationshipEntity;
 import org.springframework.data.neo4j.annotation.StartNode;
@@ -13,7 +14,7 @@ public class Answer {
 	@GraphId
 	private Long id;
 	
-	@StartNode Student student;
+	@Fetch @StartNode Student student;
 	@EndNode Assignment assignment;
 	
 	private ArrayList<String> codeStrings;
@@ -22,7 +23,7 @@ public class Answer {
 	private int cyclomaticNumber;
 	private double cyclomaticNumberPoint;
 	
-	private Double totalPoints;
+	@Fetch private Double totalPoints;
 
 	public Answer() {
 		codeStrings = new ArrayList<String>();
@@ -79,4 +80,8 @@ public class Answer {
 		this.cyclomaticNumberPoint = cyclomaticNumberPoint;
 	}
 
+	public Assignment getAssignment() {
+		return this.assignment;
+	}
+	
 }
