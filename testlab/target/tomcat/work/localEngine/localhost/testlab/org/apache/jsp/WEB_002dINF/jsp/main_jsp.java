@@ -209,118 +209,55 @@ public final class main_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("      </ol>\n");
       out.write("      <div class=\"carousel-inner\">\n");
       out.write("        <div class=\"item active\">\n");
-      out.write("          <img src=\"pictures/pic1.JPG\" alt=\"First slide\">\n");
+      out.write("          <img src='");
+      if (_jspx_meth_c_005furl_005f18(_jspx_page_context))
+        return;
+      out.write("' alt=\"Jaismeen slide\">\n");
       out.write("          <div class=\"container\">\n");
       out.write("            <div class=\"carousel-caption\">\n");
-      out.write("              <h1>Online Test Based Labs: MOOC</h1>\n");
-      out.write("              <p>Welcome to the Online test labs for SJSU Students.</p>\n");
-      out.write("             <!--   <p><a class=\"btn btn-lg btn-primary\" href=\"#\" onclick=\"loadTestData()\" role=\"button\">Go to Test Lab</a></p>-->\n");
+      out.write("              <h1>Extended MOOC: Online Software Testing labs</h1>\n");
+      out.write("              <p>Welcome to the Online software test labs for SJSU Students!!</p>\n");
       out.write("            </div>\n");
       out.write("          </div>\n");
       out.write("        </div>\n");
-      out.write("        <div class=\"item\">\n");
-      out.write("         <!--  <img src=\"pictures/pic2.jpg\" data-src=\"holder.js/900x500/auto/#666:#6a6a6a/text:Second slide\" alt=\"Second slide\"> -->\n");
-      out.write("          <div class=\"container\">\n");
-      out.write("            <div class=\"carousel-caption\">\n");
-      out.write("              <h1>Another example headline.</h1>\n");
-      out.write("              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>\n");
-      out.write("              <p><a class=\"btn btn-lg btn-primary\" href=\"#\" role=\"button\">Learn more</a></p>\n");
-      out.write("            </div>\n");
-      out.write("          </div>\n");
-      out.write("        </div>\n");
-      out.write("        <div class=\"item\">\n");
-      out.write("          <img src=\"data:image/png;base64,\" data-src=\"holder.js/900x500/auto/#555:#5a5a5a/text:Third slide\" alt=\"Third slide\">\n");
-      out.write("          <div class=\"container\">\n");
-      out.write("            <div class=\"carousel-caption\">\n");
-      out.write("              <h1>One more for good measure.</h1>\n");
-      out.write("              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>\n");
-      out.write("              <p><a class=\"btn btn-lg btn-primary\" href=\"#\" role=\"button\">Browse gallery</a></p>\n");
-      out.write("            </div>\n");
-      out.write("          </div>\n");
-      out.write("        </div>\n");
+      out.write("        \n");
+      out.write("       \n");
       out.write("      </div>\n");
-      out.write("     <!--   <a class=\"left carousel-control\" href=\"#myCarousel\" data-slide=\"prev\"><span class=\"glyphicon glyphicon-chevron-left\"></span></a>\n");
-      out.write("      <a class=\"right carousel-control\" href=\"#myCarousel\" data-slide=\"next\"><span class=\"glyphicon glyphicon-chevron-right\"></span></a>-->\n");
-      out.write("    </div><!-- /.carousel -->\n");
       out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("    <!-- Marketing messaging and featurettes\n");
-      out.write("    ================================================== -->\n");
-      out.write("    <!-- Wrap the rest of the page in another container to center all the content. -->\n");
       out.write("\n");
       out.write("    <div class=\"container marketing\">\n");
       out.write("\n");
       out.write("      <!-- Three columns of text below the carousel -->\n");
       out.write("      <div class=\"row\">\n");
       out.write("        <div class=\"col-lg-4\">\n");
-      out.write("        <!--   <img class=\"img-circle\" src='");
-      if (_jspx_meth_c_005furl_005f18(_jspx_page_context))
+      out.write("         <img class=\"img-circle\" src='");
+      if (_jspx_meth_c_005furl_005f19(_jspx_page_context))
         return;
-      out.write("' height=\"50\" width=\"50\"/> -->\n");
+      out.write("' height=\"50\" width=\"50\"/>\n");
       out.write("          <h2>Professor</h2>\n");
       out.write("          <p>Specially designed interface for professors to set testing labs.</p>\n");
       out.write("          <p><a class=\"btn btn-default\" href=\"ProfessorLogin\" role=\"button\">Login &raquo;</a></p>\n");
       out.write("        </div><!-- /.col-lg-4 -->\n");
       out.write("        <div class=\"col-lg-4\">\n");
-      out.write("        <!--   <img class=\"img-circle\" src='");
-      if (_jspx_meth_c_005furl_005f19(_jspx_page_context))
+      out.write("          <img class=\"img-circle\" src='");
+      if (_jspx_meth_c_005furl_005f20(_jspx_page_context))
         return;
-      out.write("' height=\"50\" width=\"50\" alt=\"Generic placeholder image\"> -->\n");
+      out.write("' height=\"50\" width=\"50\" alt=\"Generic placeholder image\">\n");
       out.write("          <h2>Student</h2>\n");
       out.write("          <p>Platform for student to perform tests online</p>\n");
       out.write("          <p><a class=\"btn btn-default\" href=\"StudentLogin\" role=\"button\">Login &raquo;</a></p>\n");
       out.write("        </div><!-- /.col-lg-4 -->\n");
       out.write("        <div class=\"col-lg-4\">\n");
-      out.write("        <!--   <img class=\"img-circle\" src=\"picture/pic3.jpg\" height=\"50\" width=\"50\" alt=\"Generic placeholder image\"> -->\n");
+      out.write("        <img class=\"img-circle\" src='");
+      if (_jspx_meth_c_005furl_005f21(_jspx_page_context))
+        return;
+      out.write("' height=\"50\" width=\"50\" alt=\"Generic placeholder image\">\n");
       out.write("          <h2>About Us</h2>\n");
       out.write("          <p>MOOC inspired test labs</p>\n");
       out.write("          <p><a class=\"btn btn-default\" href=\"#\" role=\"button\">Take a look &raquo;</a></p>\n");
       out.write("        </div><!-- /.col-lg-4 -->\n");
       out.write("      </div><!-- /.row -->\n");
       out.write("\n");
-      out.write("\n");
-      out.write("      <!-- START THE FEATURETTES -->\n");
-      out.write("\n");
-      out.write("      <hr class=\"featurette-divider\">\n");
-      out.write("\n");
-      out.write("      <div class=\"row featurette\">\n");
-      out.write("        <div class=\"col-md-7\">\n");
-      out.write("          <h2 class=\"featurette-heading\">First featurette heading. <span class=\"text-muted\">It'll blow your mind.</span></h2>\n");
-      out.write("          <p class=\"lead\">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>\n");
-      out.write("        </div>\n");
-      out.write("        <div class=\"col-md-5\">\n");
-      out.write("          <img class=\"featurette-image img-responsive\" src=\"data:image/png;base64,\" data-src=\"holder.js/500x500/auto\" alt=\"Generic placeholder image\">\n");
-      out.write("        </div>\n");
-      out.write("      </div>\n");
-      out.write("\n");
-      out.write("      <hr class=\"featurette-divider\">\n");
-      out.write("\n");
-      out.write("      <div class=\"row featurette\">\n");
-      out.write("        <div class=\"col-md-5\">\n");
-      out.write("          <img class=\"featurette-image img-responsive\" src=\"data:image/png;base64,\" data-src=\"holder.js/500x500/auto\" alt=\"Generic placeholder image\">\n");
-      out.write("        </div>\n");
-      out.write("        <div class=\"col-md-7\">\n");
-      out.write("          <h2 class=\"featurette-heading\">Oh yeah, it's that good. <span class=\"text-muted\">See for yourself.</span></h2>\n");
-      out.write("          <p class=\"lead\">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>\n");
-      out.write("        </div>\n");
-      out.write("      </div>\n");
-      out.write("\n");
-      out.write("      <hr class=\"featurette-divider\">\n");
-      out.write("\n");
-      out.write("      <div class=\"row featurette\">\n");
-      out.write("        <div class=\"col-md-7\">\n");
-      out.write("          <h2 class=\"featurette-heading\">And lastly, this one. <span class=\"text-muted\">Checkmate.</span></h2>\n");
-      out.write("          <p class=\"lead\">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>\n");
-      out.write("        </div>\n");
-      out.write("        <div class=\"col-md-5\">\n");
-      out.write("          <img class=\"featurette-image img-responsive\" src=\"data:image/png;base64,\" data-src=\"holder.js/500x500/auto\" alt=\"Generic placeholder image\">\n");
-      out.write("        </div>\n");
-      out.write("      </div>\n");
-      out.write("\n");
-      out.write("      <hr class=\"featurette-divider\">\n");
-      out.write("\n");
-      out.write("      <!-- /END THE FEATURETTES -->\n");
       out.write("\n");
       out.write("\n");
       out.write("      <!-- FOOTER -->\n");
@@ -718,8 +655,8 @@ public final class main_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.apache.taglibs.standard.tag.rt.core.UrlTag _jspx_th_c_005furl_005f18 = (org.apache.taglibs.standard.tag.rt.core.UrlTag) _005fjspx_005ftagPool_005fc_005furl_0026_005fvalue_005fnobody.get(org.apache.taglibs.standard.tag.rt.core.UrlTag.class);
     _jspx_th_c_005furl_005f18.setPageContext(_jspx_page_context);
     _jspx_th_c_005furl_005f18.setParent(null);
-    // /WEB-INF/jsp/main.jsp(135,44) name = value type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
-    _jspx_th_c_005furl_005f18.setValue("/resources/pictures/pic1.jpg");
+    // /WEB-INF/jsp/main.jsp(90,20) name = value type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_c_005furl_005f18.setValue("/resources/pictures/pic1.JPG");
     int _jspx_eval_c_005furl_005f18 = _jspx_th_c_005furl_005f18.doStartTag();
     if (_jspx_th_c_005furl_005f18.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
       _005fjspx_005ftagPool_005fc_005furl_0026_005fvalue_005fnobody.reuse(_jspx_th_c_005furl_005f18);
@@ -737,14 +674,52 @@ public final class main_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.apache.taglibs.standard.tag.rt.core.UrlTag _jspx_th_c_005furl_005f19 = (org.apache.taglibs.standard.tag.rt.core.UrlTag) _005fjspx_005ftagPool_005fc_005furl_0026_005fvalue_005fnobody.get(org.apache.taglibs.standard.tag.rt.core.UrlTag.class);
     _jspx_th_c_005furl_005f19.setPageContext(_jspx_page_context);
     _jspx_th_c_005furl_005f19.setParent(null);
-    // /WEB-INF/jsp/main.jsp(141,44) name = value type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
-    _jspx_th_c_005furl_005f19.setValue("/resources/pictures/pic2.jpg");
+    // /WEB-INF/jsp/main.jsp(108,38) name = value type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_c_005furl_005f19.setValue("/resources/pictures/pic1.JPG");
     int _jspx_eval_c_005furl_005f19 = _jspx_th_c_005furl_005f19.doStartTag();
     if (_jspx_th_c_005furl_005f19.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
       _005fjspx_005ftagPool_005fc_005furl_0026_005fvalue_005fnobody.reuse(_jspx_th_c_005furl_005f19);
       return true;
     }
     _005fjspx_005ftagPool_005fc_005furl_0026_005fvalue_005fnobody.reuse(_jspx_th_c_005furl_005f19);
+    return false;
+  }
+
+  private boolean _jspx_meth_c_005furl_005f20(PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  c:url
+    org.apache.taglibs.standard.tag.rt.core.UrlTag _jspx_th_c_005furl_005f20 = (org.apache.taglibs.standard.tag.rt.core.UrlTag) _005fjspx_005ftagPool_005fc_005furl_0026_005fvalue_005fnobody.get(org.apache.taglibs.standard.tag.rt.core.UrlTag.class);
+    _jspx_th_c_005furl_005f20.setPageContext(_jspx_page_context);
+    _jspx_th_c_005furl_005f20.setParent(null);
+    // /WEB-INF/jsp/main.jsp(114,39) name = value type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_c_005furl_005f20.setValue("/resources/pictures/pic2.JPG");
+    int _jspx_eval_c_005furl_005f20 = _jspx_th_c_005furl_005f20.doStartTag();
+    if (_jspx_th_c_005furl_005f20.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _005fjspx_005ftagPool_005fc_005furl_0026_005fvalue_005fnobody.reuse(_jspx_th_c_005furl_005f20);
+      return true;
+    }
+    _005fjspx_005ftagPool_005fc_005furl_0026_005fvalue_005fnobody.reuse(_jspx_th_c_005furl_005f20);
+    return false;
+  }
+
+  private boolean _jspx_meth_c_005furl_005f21(PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  c:url
+    org.apache.taglibs.standard.tag.rt.core.UrlTag _jspx_th_c_005furl_005f21 = (org.apache.taglibs.standard.tag.rt.core.UrlTag) _005fjspx_005ftagPool_005fc_005furl_0026_005fvalue_005fnobody.get(org.apache.taglibs.standard.tag.rt.core.UrlTag.class);
+    _jspx_th_c_005furl_005f21.setPageContext(_jspx_page_context);
+    _jspx_th_c_005furl_005f21.setParent(null);
+    // /WEB-INF/jsp/main.jsp(120,37) name = value type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_c_005furl_005f21.setValue("/resources/pictures/pic3.JPG");
+    int _jspx_eval_c_005furl_005f21 = _jspx_th_c_005furl_005f21.doStartTag();
+    if (_jspx_th_c_005furl_005f21.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _005fjspx_005ftagPool_005fc_005furl_0026_005fvalue_005fnobody.reuse(_jspx_th_c_005furl_005f21);
+      return true;
+    }
+    _005fjspx_005ftagPool_005fc_005furl_0026_005fvalue_005fnobody.reuse(_jspx_th_c_005furl_005f21);
     return false;
   }
 }

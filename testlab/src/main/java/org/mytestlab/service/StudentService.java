@@ -46,7 +46,7 @@ public class StudentService {
 	
 	public String getTestData() {
 		
-		Student newAmy = studentRepository.findByUsername("amy");
+		Student newAmy = studentRepository.findByUsername("0002");
 		
 		String ret = "New Amy's name: "+newAmy.getFirstName()+" "+newAmy.getLastName();
 		System.out.println(ret);

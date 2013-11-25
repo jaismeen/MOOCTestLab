@@ -156,16 +156,16 @@ public class MainController {
 		} else {
 			
 		}
-<<<<<<< HEAD
+//<<<<<<< HEAD
 
-=======
+//=======
 		
 		
 		
 		System.out.println("out MainController.submitSolution()");
 		
 		
->>>>>>> 11aff0cdb9d43bf70d250b78c69112646651b10c
+//>>>>>>> 11aff0cdb9d43bf70d250b78c69112646651b10c
 		return str;
 	}
 	

@@ -199,11 +199,7 @@ function addNode()
                     ddl_DestinationNode[ddl_DestinationNode.length] = new Option(nameNode.value+ "(no)" + "-" + contentNode.value, nameNode.value + "(no)");
                       
                       delnode[delnode.length]= new Option(nameNode.value + "-" + contentNode.value, nameNode.value);
-                     //del_snode[del_snode.length]= new Option(nameNode.value + "-" + contentNode.value, nameNode.value);
-                     //del_dnode[del_dnode.length]= new Option(nameNode.value + "-" + contentNode.value, nameNode.value);
-                    //delnode[delnode.length]= new Option(nameNode.value + "-" + contentNode.value, nameNode.value) 
-                    //delNode[delNode.length] = new Option(nameNode.value+ "(yes)" + "-" + contentNode.value, nameNode.value + "(yes)");
-                    //delNode[delNode.length] = new Option(nameNode.value+ "(no)" + "-" + contentNode.value, nameNode.value + "(no)");                 //nodeCount=nodeCount +3;
+              
 
                 }
                 elementArray[num_elements]=tempString;
@@ -215,16 +211,12 @@ function addNode()
                      sn[sn.length]=new Option(nameNode.value + "-" + contentNode.value, nameNode.value);
 
                 nodeString[num_nodes]= tempString + "\n";
-                //alert (nodeString[num_nodes]);  
-                //nodeString=nodeString.replace(',','');
+              
                 
                 nodeList[count]=nameNode.value + "::" + contentNode.value;
                 count++;
                 nodeCount++; 
                 num_nodes++;
-
-                //alert(nodeString);
-                //console.log(num_elements + "  " + elementArray[0]);
 
             }
             
@@ -292,14 +284,10 @@ function addNode()
                 {
                     if (nodeString[counter].search(nodeName)!=-1)
                     {
-                        //alert (elementArray[counter])
                         found=counter;
                         break;
                     }
                 }
-                        //alert("found at" + found);
-
-                        //while (nodeString[found]!=null)
                         for (var counter=found; counter<num_nodes-1;counter++)
                         {
 
@@ -366,42 +354,6 @@ function addNode()
 
             }
 
-        
-            
-     /*       function login(var_login)
-            {
-            	alert("in login");
-            	
-                var username=document.getElementById("username");
-                var password=document.getElementById("password");
-                
-                
-                alert("login "+$('#username').val()+", "+$('#password').val()+ ", "+var_login);
-
-                
-                
-                    $.post (urlHolder.login, {
-                                username: $('#username').val(),
-                                password: $('#password').val(),
-                                type: var_login 
-                            },
-                             function(response) {
-                            	
-                            	alert("response: "+response);
-                            	
-                               if (response!="")
-                               {
-                                    alert ("error");
-                               }
-                                
-                                else
-                                {
-                                    alert ("success");
-                                }
-                                    
-                            }
-                            );
-            }*/
 
 //Login function
 function login(var_login)
@@ -440,9 +392,9 @@ function gradePractice()
 {
     var practice_id=get_practiceID();
     var cyclomaticNumber=3;
-    alert("Your score in this practice is: 78");
+    //alert("Your score in this practice is: 78");
 
-  /*$.post (urlHolder.gradePractice, {
+  $.post (urlHolder.gradePractice, {
         assignmentName: practice_id,
         codestr: codeString,
             cyclomaticNumber: cyclomaticNumber
@@ -450,13 +402,13 @@ function gradePractice()
             function(response) {
                     alert("Score is::" + response);        
                 //The response is the score of the practice.
-            });*/
+            });
 }
 
 function grading()
 {//It will grade all the assignments
 
-  /*  $.post (urlHolder.grading, {},
+   $.post (urlHolder.grading, {},
             function(response) {
                             
                 if (response == "") {
@@ -465,16 +417,16 @@ function grading()
                     alert(response);
                 }
 
-            });*/
-	alert("Grading Done!");
+            });
+	//alert("Grading Done!");
 }
 
 function displayAll()
 {//right now, this function shows all the grades for all the assignments.
 
-   /* $.post (urlHolder.displayAll, {},
-            function(response) {*/
-                   var response="Assignment1;Jack;Smith;87";         
+    $.post (urlHolder.displayAll, {},
+            function(response) {
+                   //var response="Assignment1;Jack;Smith;87";         
                 var student_scores=new Array();
                 student_scores=response.split(";");
                 
@@ -509,7 +461,7 @@ function displayAll()
                             container.appendChild(table);
 
                     //Assignment Number;firstname;lastname;score;
-          //  });
+           });
 }
 
 

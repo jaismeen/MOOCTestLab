@@ -41,7 +41,7 @@ public class ProfessorService {
 	
 	public String getTestData() {
 		
-		Professor newJack = professorRepository.findByUsername("jack");
+		Professor newJack = professorRepository.findByUsername("0001");
 		
 		String ret = "New Jack's name: "+newJack.getFirstName()+" "+newJack.getLastName();
 		System.out.println(ret);
