@@ -116,12 +116,16 @@ public class MainController {
 		
 		String str = "";
 		
-		if (type == PROFESSOR) { //professor
-			str = professorService.login(username, password);
-		} else if (type == STUDENT) { //student
-			str = studentService.login(username, password);
-		} else { //unknown type
-			
+		try {
+			if (type == PROFESSOR) { //professor
+				str = professorService.login(username, password);
+			} else if (type == STUDENT) { //student
+				str = studentService.login(username, password);
+			} else { //unknown type
+				
+			}
+		} catch (Exception ex) {
+			str = ex.toString();
 		}
 		
 		return str;
@@ -136,36 +140,28 @@ public class MainController {
 			@RequestParam int cyclomaticNumber
 			)
 			 {
-		
-		
-		System.out.println("in MainController.submitSolution()");
-		
-		
-		String str = "";
-		ArrayList<String> arr = new ArrayList<String>();
-		
-		String[] strs = codeStrings.split("\n");
-		for(int i = 0; i < strs.length; i++) {
-			arr.add(strs[i]);
-		}
-		
-		if (type == PROFESSOR) {
-			str = professorService.submitSolution(username, assignmentName, arr, cyclomaticNumber);
-		} else if (type == STUDENT){
-			str = studentService.submitAnswer(username, assignmentName, arr, cyclomaticNumber);
-		} else {
-			
-		}
-//<<<<<<< HEAD
 
-//=======
+		String str = "";
 		
+		try {
+			ArrayList<String> arr = new ArrayList<String>();
+			
+			String[] strs = codeStrings.split("\n");
+			for(int i = 0; i < strs.length; i++) {
+				arr.add(strs[i]);
+			}
+			
+			if (type == PROFESSOR) {
+				str = professorService.submitSolution(username, assignmentName, arr, cyclomaticNumber);
+			} else if (type == STUDENT){
+				str = studentService.submitAnswer(username, assignmentName, arr, cyclomaticNumber);
+			} else {
+				
+			}
+		} catch (Exception ex) {
+			str = ex.toString();
+		}
 		
-		
-		System.out.println("out MainController.submitSolution()");
-		
-		
-//>>>>>>> 11aff0cdb9d43bf70d250b78c69112646651b10c
 		return str;
 	}
 	
@@ -190,14 +186,24 @@ public class MainController {
 			@RequestParam int cyclomaticNumber) {
 	
 		String str = "";
-		ArrayList<String> arr = new ArrayList<String>();
+		try {
+			ArrayList<String> arr = new ArrayList<String>();
+			
+			String[] strs = codestr.split("\n");
+			for(int i = 0; i < strs.length; i++) {
+				arr.add(strs[i]);
+			}
+			
+			Double score = gradingService.gradePractice(assignmentName, arr, cyclomaticNumber);
+			if (score >= 0.0) {
+				str = Double.toString(score);
+			} else {
+				str = "Not Available.";
+			}
 		
-		String[] strs = codestr.split("\n");
-		for(int i = 0; i < strs.length; i++) {
-			arr.add(strs[i]);
+		} catch (Exception ex) {
+			str = ex.toString();
 		}
-		
-		str = Double.toString(gradingService.gradePractice(assignmentName, arr, cyclomaticNumber));
 		return str;
 	}
 	
@@ -252,15 +258,17 @@ public class MainController {
 			@RequestParam int type) {
 		
 		String str = "";
-		
-		if (type == PROFESSOR) {
-			str = professorService.loadTestData();
-		} else if (type == STUDENT){
-			str = studentService.loadTestData();
-		} else { //unknown
-			
+		try {
+			if (type == PROFESSOR) {
+				str = professorService.loadTestData();
+			} else if (type == STUDENT){
+				str = studentService.loadTestData();
+			} else { //unknown
+				
+			}
+		} catch (Exception ex) {
+			str = ex.toString();
 		}
-		
 		return str;
 	}
 	
@@ -269,15 +277,17 @@ public class MainController {
 			@RequestParam int type) {
 		
 		String str = "";
-		
-		if (type == PROFESSOR) {
-			str = professorService.getTestData();
-		} else if (type == STUDENT){
-			str = studentService.getTestData();
-		} else { //unknown
-			
+		try {
+			if (type == PROFESSOR) {
+				str = professorService.getTestData();
+			} else if (type == STUDENT){
+				str = studentService.getTestData();
+			} else { //unknown
+				
+			}
+		} catch (Exception ex) {
+			str = ex.toString();
 		}
-		
 		return str;
 	}
 	
@@ -290,154 +300,25 @@ public class MainController {
 			@RequestParam int type) {
 		
 		String str = "";
-		
-		if (type == PROFESSOR) { //professor
-			// Create new records
-			Professor newProf = new Professor();
-			newProf.setFirstName(firstname);
-			newProf.setLastName(lastname);
-			newProf.setPassword(password);
-			newProf.setUsername(username);
-			
-			//professorRepository.save(jack);
-		} else if (type == STUDENT) { //student
-			
-		} else { //unknown type
-			
+		try {
+			if (type == PROFESSOR) { //professor
+				// Create new records
+				Professor newProf = new Professor();
+				newProf.setFirstName(firstname);
+				newProf.setLastName(lastname);
+				newProf.setPassword(password);
+				newProf.setUsername(username);
+				
+				//professorRepository.save(jack);
+			} else if (type == STUDENT) { //student
+				
+			} else { //unknown type
+				
+			}
+		} catch (Exception ex) {
+			str = ex.toString();
 		}
-		
 		return str;
 	}
-	
-	/*
-	@Autowired
-	private GenericNodeService service;
-	
-	@Autowired
-	private FlowgraphService flowGraphService;
-	
-	@RequestMapping
-	public String getMainPage() {
-		return "main";
-	}
-	
-	@RequestMapping(value="/records")
-	public @ResponseBody GenericNodeListDto getNodes() {
-		
-		GenericNodeListDto nodeListDto = new GenericNodeListDto();
-		nodeListDto.setNodes(GenericNodeMapper.map(service.readAll()));
-		return nodeListDto;
-	}
-	
-	@RequestMapping(value="/get")
-	public @ResponseBody GenericNode get(@RequestBody GenericNode node) {
-		return service.read(node);
-	}*/
 
-	/*static int tmpName = 1;
-	@RequestMapping(value="/create", method=RequestMethod.POST)
-	public @ResponseBody ArrayList<String> create(
-			@RequestParam String codestr) {
-
-		System.out.println("In create()");
-		
-		FlowGraph fg = new FlowGraph();
-		
-		//fg.setName(Integer.toString(tmpName));
-		//tmpName++;
-		
-		fg.setName(Long.toString(System.currentTimeMillis()));
-		
-		
-		System.out.println("String from javascript");
-		
-		String[] strs = codestr.split("\n");
-		for(int i = 0; i < strs.length; i++) {
-			fg.addCodeString(strs[i]);
-			
-			System.out.println(strs[i]);
-			
-		}
-		
-		flowGraphService.create(fg);
-		
-		FlowGraph fg2 = flowGraphService.read(fg.getName());
-		
-		System.out.println("String from database");
-		
-		//for (String str: fg2.getCodeStrings()) {
-			//System.out.println(str);
-		//}
-		
-		for(int i = 0; i < fg2.getCodeStrings().size(); i++) {	
-			System.out.println(fg2.getCodeStrings().get(i));
-		}
-		
-		System.out.println("Out create()");
-		
-		
-		return fg2.getCodeStrings();
-	}
-	/*
-	@RequestMapping(value="/create", method=RequestMethod.POST)
-	public @ResponseBody GenericNodeDto create(
-			@RequestParam String name,
-			@RequestParam String description,
-			@RequestParam Integer type) {
-
-		GenericNode newNode;
-		Transition newTransition = new Transition("tmpTransition");
-		
-		if(type==1) {
-			newNode = new ConditionNode(name, description);
-			
-			System.out.println("Create condition node");
-			
-		} else {
-			newNode = new GenericNode(name, description);
-		}
-		
-		newNode.setOutgoingRelationship(newTransition);
-		
-		
-		//System.out.println("Add incoming relationship");
-		
-		//Transition newTransition2 = new Transition("test2"+name);	
-		//newNode.addIncomingRelationship(newTransition2);
-		
-		//System.out.println("Added incoming relationship");
-		
-		//newNode.setTest("test"+description);
-		
-		
-		System.out.println("Create node in service");
-		
-		
-		return GenericNodeMapper.map(service.create(newNode));
-	}	
-	
-	@RequestMapping(value="/update", method=RequestMethod.POST)
-	public @ResponseBody GenericNodeDto update(
-			@RequestParam String name,
-			@RequestParam String description,
-			@RequestParam String transitionName) {
-
-		Transition newTransition = new Transition(transitionName);
-		
-		GenericNode existingNode = new GenericNode(name, description);
-		existingNode.setOutgoingRelationship(newTransition);
-		
-		return GenericNodeMapper.map(service.update(existingNode));
-	}
-	
-	@RequestMapping(value="/delete", method=RequestMethod.POST)
-	public @ResponseBody Boolean delete(
-			@RequestParam String name) {
-
-		GenericNode existingNode = new GenericNode();
-		existingNode.setName(name);
-		
-		return service.delete(existingNode);
-	}
-	*/
 }

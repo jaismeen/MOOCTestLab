@@ -1,6 +1,7 @@
 package org.mytestlab.service;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Set;
 
 import org.mytestlab.domain.Assignment;
@@ -59,57 +60,47 @@ public class ProfessorService {
 	//Return error string if there is an error.  Return empty string if there is no error.
 	public String login(String username, String password) {
 		String ret = "";
-		String errorMsg = "Incorrect user name and password!";
-		
+		String errorMsg = "Please enter your Username and Password.";
+		String errorMsg2 = "The username doesn't exist.";
+		String errorMsg3 = "Wrong password!";
+
 		if (username == null ||
 			(username != null && username.isEmpty()) || 
 			password == null ||
 			(password != null && password.isEmpty())) {
-			ret = errorMsg + " 1";
+			ret = errorMsg;
+			return ret;
 		}
-		
-		
-		System.out.println("username:"+username);
-		System.out.println("password:"+password);
-		
-		
+
 		Professor prof = professorRepository.findByUsername(username);
 		if (prof == null) { //can't find username
-			ret = errorMsg;
+			ret = errorMsg2;
 		} else if (!prof.getPassword().equals(password)) { //password doesn't match
-			ret = errorMsg;
+			ret = errorMsg3;
 		}
 		
 		return ret;
 	}
 	
 	public String submitSolution(String username, String assignmentName, ArrayList<String> codeStrings, int cyclomaticNumber) {
-		
-		
-		System.out.println("in ProfessorService.submitSolution()");
-		
-		
+
 		String ret = "";
-		System.out.println("inside professorservice");
+		String solutionName = assignmentName+"_"+username;
+		
 		Professor prof = professorRepository.findByUsername(username);
 		Assignment assign = assignmentRepository.findByName(assignmentName);
-		System.out.println("inside professorservice1");
-
-		if (assign == null) {
-			assign = new Assignment(assignmentName);
-			assignmentRepository.save(assign);
-		}
 		
 		if (prof == null) {
 			ret = "Professor doesn't exist!";
 			return ret;
 		}
+		
+		if (assign == null) {
+			assign = new Assignment(assignmentName);
+			assignmentRepository.save(assign);
+		}
 
-		
-		System.out.println("Assignment Name: "+assign.getName());
-		
-		
-		Solution sol = new Solution(prof, assign);
+		Solution sol = new Solution(solutionName, prof, assign);
 		sol.setCodeStrings(codeStrings);
 		sol.setCyclomaticNumber(cyclomaticNumber);
 		
@@ -125,23 +116,22 @@ public class ProfessorService {
 		}
 		sol.setCodeStringsPoints(pts);		
 		sol.setCyclomaticNumberPoint(10);
-		
+
+		//remove the old solution if it already exists.
+		Set<Solution> sols = prof.getSolutions();
+		for (Solution so : sols) {
+			if (so.getName().equals(sol.getName())) {
+				prof.removeSolution(so);
+				break;
+			}
+		}
 		prof.addSolution(sol);
+		
 		assign.setSolution(sol);
 		
-		Professor prof1 = professorRepository.save(prof);
+		professorRepository.save(prof);
 		assignmentRepository.save(assign);
-		
-		
-		System.out.println("Number of solutions: "+prof.getSolutions().size());
-		
-		Professor prof2 = professorRepository.findByUsername(username);
-		System.out.println("Number of saved solutions1: "+prof1.getSolutions().size());
-		System.out.println("Number of saved solutions2: "+prof2.getSolutions().size());
-		
-		
-		System.out.println("out ProfessorService.submitSolution()");
-		
+
 		return ret;
 	}
 	
@@ -149,10 +139,6 @@ public class ProfessorService {
 		
 		Professor prof = professorRepository.findByUsername(username);
 
-		
-		System.out.println("Number of solutions: "+prof.getSolutions().size());
-		
-		
 		for (Solution sol : prof.getSolutions()){
 			System.out.println("Assignment Name: "+sol.getAssignment().getName());
 			System.out.println("Code String");

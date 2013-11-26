@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import org.springframework.data.neo4j.annotation.EndNode;
 import org.springframework.data.neo4j.annotation.Fetch;
 import org.springframework.data.neo4j.annotation.GraphId;
+import org.springframework.data.neo4j.annotation.Indexed;
 import org.springframework.data.neo4j.annotation.RelationshipEntity;
 import org.springframework.data.neo4j.annotation.StartNode;
 
@@ -14,8 +15,11 @@ public class Answer {
 	@GraphId
 	private Long id;
 	
+	@Indexed(unique=true)
+	private String name;
+	
 	@Fetch @StartNode Student student;
-	@EndNode Assignment assignment;
+	@Fetch @EndNode Assignment assignment;
 	
 	private ArrayList<String> codeStrings;
 	private ArrayList<Double> codeStringsPoints;
@@ -23,15 +27,21 @@ public class Answer {
 	private int cyclomaticNumber;
 	private double cyclomaticNumberPoint;
 	
-	@Fetch private Double totalPoints;
+	private Double totalPoints;
 
 	public Answer() {
 		codeStrings = new ArrayList<String>();
 		codeStringsPoints = new ArrayList<Double>();
 	}
 	
-	public Answer(Student student, Assignment assignment) {
+	public Answer(String name) {
 		this();
+		this.name=name;
+	}
+	
+	public Answer(String name, Student student, Assignment assignment) {
+		this();
+		this.name = name;
 		this.student = student;
 		this.assignment = assignment;
 	}
@@ -84,4 +94,11 @@ public class Answer {
 		return this.assignment;
 	}
 	
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
 }

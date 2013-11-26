@@ -3,7 +3,9 @@ package org.mytestlab.domain;
 import java.util.ArrayList;
 
 import org.springframework.data.neo4j.annotation.EndNode;
+import org.springframework.data.neo4j.annotation.Fetch;
 import org.springframework.data.neo4j.annotation.GraphId;
+import org.springframework.data.neo4j.annotation.Indexed;
 import org.springframework.data.neo4j.annotation.RelationshipEntity;
 import org.springframework.data.neo4j.annotation.StartNode;
 
@@ -13,8 +15,11 @@ public class Solution {
 	@GraphId
 	private Long id;
 	
+	@Indexed(unique=true)
+	private String name;
+	
 	@StartNode Professor professor;
-	@EndNode Assignment assignment;
+	@Fetch @EndNode Assignment assignment;
 	
 	private ArrayList<String> codeStrings;
 	private ArrayList<Double> codeStringsPoints;
@@ -27,8 +32,14 @@ public class Solution {
 		codeStringsPoints = new ArrayList<Double>();
 	}
 	
-	public Solution(Professor professor, Assignment assignment) {
+	public Solution(String name) {
 		this();
+		this.name=name;
+	}
+	
+	public Solution(String name, Professor professor, Assignment assignment) {
+		this();
+		this.name=name;
 		this.professor = professor;
 		this.assignment = assignment;
 	}
@@ -64,5 +75,13 @@ public class Solution {
 	
 	public Professor getProfessor() {
 		return this.professor;
+	}
+	
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 }

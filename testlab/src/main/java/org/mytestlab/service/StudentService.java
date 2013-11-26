@@ -4,13 +4,12 @@ import java.util.ArrayList;
 
 import org.mytestlab.domain.Answer;
 import org.mytestlab.domain.Assignment;
-import org.mytestlab.domain.Professor;
-import org.mytestlab.domain.Solution;
 import org.mytestlab.domain.Student;
 import org.mytestlab.repository.AnswerRepository;
 import org.mytestlab.repository.AssignmentRepository;
 import org.mytestlab.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.neo4j.conversion.EndResult;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -27,7 +26,7 @@ public class StudentService {
 	
 	public String loadTestData() {
 		String ret = "";
-		System.out.println("hi");
+
 		Student amy = new Student();
 		amy.setFirstName("Amy");
 		amy.setLastName("Johnson");
@@ -57,78 +56,71 @@ public class StudentService {
 	//Return error string if there is an error.  Return empty string if there is no error.
 	public String login(String username, String password) {
 		String ret = "";
-		String errorMsg = "Incorrect user name and password!";
+		String errorMsg = "Please enter your Username and Password.";
+		String errorMsg2 = "The username doesn't exist.";
+		String errorMsg3 = "Wrong password!";
 		
 		if (username == null ||
 			(username != null && username.isEmpty()) || 
 			password == null ||
 			(password != null && password.isEmpty())) {
-			ret = errorMsg + " 1";
+			ret = errorMsg;
+			return ret;
 		}
 		
 		Student stu = studentRepository.findByUsername(username);
 		if (stu == null) { //can't find username
-			ret = errorMsg;
+			ret = errorMsg2;
 		} else if (!stu.getPassword().equals(password)) { //password doesn't match
-			ret = errorMsg;
+			ret = errorMsg3;
 		}
 		
 		return ret;
 	}
 	
 	public String submitAnswer(String username, String assignmentName, ArrayList<String> codeStrings, int cyclomaticNumber) {
-		
-		
-		System.out.println("in StudentService.submitSolution()");
-		
-		
+
 		String ret = "";
+		String answerName = assignmentName+"_"+username;
 		
 		Student stu = studentRepository.findByUsername(username);
 		Assignment assign = assignmentRepository.findByName(assignmentName);
+		Answer ans = null;
+
+		EndResult<Answer> anss = answerRepository.findAll();
+		for (Answer an : anss) {
+			if (answerName.equals(an.getName())) {
+				ans = an;
+				break;
+			}
+		}
+
+		if (stu == null) {
+			ret = "Student doesn't exist!";
+			return ret;
+		}
 		
 		if (assign == null) {
 			ret = "Assignment doesn't exist!";
 			return ret;
 		}
 		
-		if (stu == null) {
-			ret = "Student doesn't exist!";
-			return ret;
+		if (ans == null) {
+
+			ans = new Answer(answerName, stu, assign);
+			ans.setCodeStrings(codeStrings);
+			ans.setCyclomaticNumber(cyclomaticNumber);
+			
+			stu.addAnswer(ans);
+			assign.addAnswer(ans);
+			
+			answerRepository.save(ans);
+			studentRepository.save(stu);
+			assignmentRepository.save(assign);
+			
+		} else {
+			ret = "Resubmission is not allowed.";
 		}
-		
-		
-		
-		System.out.println("Assignment Name: "+assign.getName());
-		
-		
-		
-		Answer ans = new Answer(stu, assign);
-		ans.setCodeStrings(codeStrings);
-		ans.setCyclomaticNumber(cyclomaticNumber);
-		
-		stu.addAnswer(ans);
-		assign.addAnswer(ans);
-		
-		Student stu1 = studentRepository.save(stu);
-		assignmentRepository.save(assign);
-		
-		
-		
-		System.out.println("FirstName: "+ans.getStudent().getFirstName());
-		System.out.println("LastName: "+ans.getStudent().getLastName());
-		//System.out.println("Total Points: "+ans.getTotalPoints().toString());
-		
-		System.out.println("Number of solutions: "+stu.getAnswers().size());
-		
-		Student stu2 = studentRepository.findByUsername(username);
-		System.out.println("Number of saved solutions1: "+stu1.getAnswers().size());
-		System.out.println("Number of saved solutions2: "+stu2.getAnswers().size());
-		
-		
-		System.out.println("out StudentService.submitSolution()");
-		
-		
 		
 		return ret;
 	}
@@ -137,10 +129,6 @@ public class StudentService {
 		
 		Student stu = studentRepository.findByUsername(username);
 
-		
-		System.out.println("Number of solutions: "+stu.getAnswers().size());
-		
-		
 		for (Answer ans : stu.getAnswers()){
 			System.out.println("Assignment Name: "+ans.getAssignment().getName());
 			System.out.println("Code String");
