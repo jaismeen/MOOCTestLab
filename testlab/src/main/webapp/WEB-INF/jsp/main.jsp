@@ -60,66 +60,49 @@
 
         <div class="navbar navbar-inverse navbar-static-top">
           <div class="container">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-              <a class="navbar-brand" href="#">ONLINE TEST LABS</a>
-            </div>
-           
+            <div class="navbar-header"> 
+             <div class="movingText"> 
+			<marquee  behavior="scroll" direction="right">WELCOME TO ONLINE SOFTWARE TEST LABS!!</marquee>
+			</div>
+            </div>         
           </div>
         </div>
-
       </div>
     </div>
 
 
     <!-- Carousel
     ================================================== -->
-    <div id="myCarousel" class="carousel slide">
-      <!-- Indicators -->
-      <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#myCarousel" data-slide-to="1"></li>
-        <li data-target="#myCarousel" data-slide-to="2"></li>
-      </ol>
+    <div id="myCarousel" class="carousel slide"> 
       <div class="carousel-inner">
         <div class="item active">
-          <img src='<c:url value="/resources/pictures/pic1.JPG"/>' alt="Jaismeen slide">
-          <div class="container">
-            <div class="carousel-caption">
-              <h1>Extended MOOC: Online Software Testing labs</h1>
-              <p>Welcome to the Online software test labs for SJSU Students!!</p>
-            </div>
-          </div>
+          <img src='<c:url value="/resources/pictures/Home.jpg"/>' alt="Jaismeen slide">
         </div>
-        
-       
+             
       </div>
-
+      <hr>
+	<br><br><br><br><br><br>
 
     <div class="container marketing">
 
       <!-- Three columns of text below the carousel -->
       <div class="row">
         <div class="col-lg-4">
-         <img class="img-circle" src='<c:url value="/resources/pictures/pic1.JPG"/>' height="50" width="50"/>
+         <img class="img-circle" src='<c:url value="/resources/pictures/Instructor.jpg"/>' height="100" width="100"/>
           <h2>Professor</h2>
-          <p>Specially designed interface for professors to set testing labs.</p>
+          <p>Special interface for Instructors to set Test Labs.</p>
           <p><a class="btn btn-default" href="ProfessorLogin" role="button">Login &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
-          <img class="img-circle" src='<c:url value="/resources/pictures/pic2.JPG"/>' height="50" width="50" alt="Generic placeholder image">
+          <img class="img-circle" src='<c:url value="/resources/pictures/Student.jpg"/>' height="100" width="100" alt="Generic placeholder image">
           <h2>Student</h2>
-          <p>Platform for student to perform tests online</p>
+          <p>Platform for student to perform Labs online</p>
           <p><a class="btn btn-default" href="StudentLogin" role="button">Login &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
-        <img class="img-circle" src='<c:url value="/resources/pictures/pic3.JPG"/>' height="50" width="50" alt="Generic placeholder image">
+        <img class="img-circle" src='<c:url value="/resources/pictures/About.jpg"/>' height="100" width="100" alt="Generic placeholder image">
           <h2>About Us</h2>
-          <p>MOOC inspired test labs</p>
+          <p>MOOC inspired software test labs</p>
           <p><a class="btn btn-default" href="#" role="button">Take a look &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
       </div><!-- /.row -->
@@ -128,6 +111,9 @@
 
       <!-- FOOTER -->
       <footer>
+      <br>
+      <br>
+      <br>
         <p class="pull-right"><a href="#">Back to top</a></p>
         <p>&copy; 2013 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
       </footer>

@@ -66,18 +66,14 @@
         <div class="navbar navbar-inverse navbar-static-top">
           <div class="container">
             <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
               <a class="navbar-brand" href="#">Online Test Labs</a>
             </div>
             <div class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
+                <li class="active"><a href="HomeStudent">Home</a></li>
                 <li><a href="FlowChart">Take a Lab</a></li>
                 <li><a href="PracticeList">Practice Sessions</a></li>
+                 <li><a href="StudentLogin">Logout</a></li>
               </ul>
             </div>
           </div>
@@ -90,6 +86,7 @@
                     <ul>
                         <li id="tabHeader_1">Create Element</li>
                         <li id="tabHeader_2">Delete Element</li>
+                        <li id="tabHeader_3">Cyclomatic Number</li>
                     </ul>
             </div>
             <div class="tabscontent">
@@ -194,6 +191,16 @@
                             </div>
 
                 </div>
+                <div class="tabpage" id="tabpage_3">
+                <div id="ccElements">
+                   <br><br><br>
+                    <label class="col-lg-4 control-label">Cyclomatic Number</label>
+                    <div class="col-lg-6">
+                    <input type="text" class="form-control" id = "ccNumber" name="ccNumber">
+                	<br><br><br><br><br><br><br>
+                	</div>
+                </div>
+                <br><br><br>
             </div>
             <br>
 
@@ -203,15 +210,14 @@
                 <br>
                 <button id="submit" style=" align: right" class="btn btn-default" type="button" onclick="submitSolution('1')">Submit</button>
             </div>
-        
         </div>
 
-        <div id="canvas">
-             <h1>Drawing Area</h1>
-        </div>
+        
         
     </div>
-   
+   <div id="canvas">
+             <h1>Drawing Area</h1>
+        </div>
    
   
     

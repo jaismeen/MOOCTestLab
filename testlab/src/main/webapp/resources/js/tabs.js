@@ -130,9 +130,7 @@ function deleteUI()
     if (selection[0].checked==true)
     {
         selElement="Node"; 
-       // var nn=document.getElementById("nodename");
-        //nodeCount++;
-        //nn.value="G" + (nodeCount+1);
+
 
          document.getElementById("del_nodeelements").style.display='block'; 
          document.getElementById("del_linkelements").style.display= 'none';
@@ -170,12 +168,7 @@ function addNode()
                 var delnode= document.getElementById("delNode");
                
                 var ntype = ddlNode.options[ddlNode.selectedIndex].value;
-                
-                //nodeList[nodeCount]= nameNode.value;
-                //nodeCount=nodeCount +1;
-                
-                 
-                
+        
                 if (ntype== "gnode")
                 {
                     var tempString= nameNode.value + "=>operation: " + contentNode.value;
@@ -217,6 +210,7 @@ function addNode()
                 count++;
                 nodeCount++; 
                 num_nodes++;
+                alert("Node added");
 
             }
             
@@ -241,7 +235,7 @@ function addNode()
                 elementArray[num_elements]=tempString;
                 num_elements++;
 
-                alert(codeString);
+                alert("Link added");
                 if (chart) {
                     chart.clean();
                 }
@@ -275,7 +269,7 @@ function addNode()
                 ddl_DestinationNode.remove(delIndex+1);
                 dn.remove(delIndex);
                 sn.remove(delIndex);
-                alert(delValue);
+                alert("Node " + delValue + "deleted");
                 var nodeName= delValue.substr(0,2);
                 var found=0;
 
@@ -296,7 +290,7 @@ function addNode()
 
                         num_nodes--;
 
-                        alert("nodeString" + nodeString);
+                        //alert("nodeString" + nodeString);
 
                 for (var counter=0; counter<num_links;counter++)
                 {
@@ -320,7 +314,7 @@ function addNode()
                         
                         
                 }
-                    alert ("linkString" + linkString);
+                    //alert ("linkString" + linkString);
                     codeString="";
                 for(var counter=0;counter<num_nodes;counter++)    
                     codeString= codeString + nodeString[counter];
@@ -328,7 +322,7 @@ function addNode()
                 for(var counter=0;counter<num_links;counter++)    
                     codeString= codeString + linkString[counter];
 
-                alert("codeString" + codeString);
+                //alert("codeString" + codeString);
 
                  if (chart) {
                     chart.clean();
@@ -349,8 +343,6 @@ function addNode()
                               'yes-text': 'yes',
                               'no-text': 'no'
                               });
-
-
 
             }
 
@@ -380,10 +372,8 @@ function login(var_login)
                         window.location.href="HomeStudent";
                         else
                         window.location.href="HomeProfessor";
-
                         
-                    }
-                        
+                    }                       
                 }
                 );
 }
@@ -391,13 +381,13 @@ function login(var_login)
 function gradePractice()
 {
     var practice_id=get_practiceID();
-    var cyclomaticNumber=3;
-    //alert("Your score in this practice is: 78");
+    var cyclomaticNumber=document.getElementById("ccNumber");
+    alert(cyclomaticNumber.value);
 
   $.post (urlHolder.gradePractice, {
         assignmentName: practice_id,
         codestr: codeString,
-            cyclomaticNumber: cyclomaticNumber
+            cyclomaticNumber: $('#cyclomaticNumber').val()
         },
             function(response) {
                     alert("Score is::" + response);        
@@ -418,15 +408,13 @@ function grading()
                 }
 
             });
-	//alert("Grading Done!");
 }
 
 function displayAll()
 {//right now, this function shows all the grades for all the assignments.
 
     $.post (urlHolder.displayAll, {},
-            function(response) {
-                   //var response="Assignment1;Jack;Smith;87";         
+            function(response) {       
                 var student_scores=new Array();
                 student_scores=response.split(";");
                 
@@ -437,14 +425,31 @@ function displayAll()
                             // create table element
                             var table = document.createElement('table');
                             var tbody = document.createElement('tbody');
+                          
                             // loop array
-
+                            //Giving headings to the table
+                            
+                            var row = document.createElement('tr');
+                            
+                            var cell = document.createElement('td');
+                            cell.textContent = " First Name ";
+                            row.appendChild(cell);
+                            
+                            var cell = document.createElement('td');
+                            cell.textContent = " Last Name ";
+                            row.appendChild(cell);
+                            
+                            var cell = document.createElement('td');
+                            cell.textContent = " Scores ";
+                            row.appendChild(cell);
+                            
+                            tbody.appendChild(row);
                             for (i = 1; i < student_scores.length; i++) {
                                 
-                                var row = document.createElement('tr');
+                                 row = document.createElement('tr');
                                 for (var b = i; b < (i+3); b++) {
                                     // create td element
-                                    var cell = document.createElement('td');
+                                     cell = document.createElement('td');
                                     // set text
                                     cell.textContent = student_scores[b];
                                     // append td to tr
@@ -459,6 +464,7 @@ function displayAll()
                             table.appendChild(tbody);
                             // append table to container
                             container.appendChild(table);
+                            table.setAttribute("border", "2");
 
                     //Assignment Number;firstname;lastname;score;
            });
@@ -471,23 +477,20 @@ function submitSolution(var_login)
 	var username=get_cookie("username");
 	
 	 var practice_id='P1';
-	 var cyclomaticNumber=3;
-	var codes="start=>start: Startend=>end: EndG1=>operation";
-	/* if (var_login=='1')
-	alert(username + "  Your assignment is submitted successfully");
-	 else
-		 alert("Solution submitted for grading");*/
+	 var cyclomaticNumber=document.getElementById("ccNumber");
+	 cyclomaticNumber=cyclomaticNumber.value;
+	 
    $.post (urlHolder.submitSolution, {
     	username: username,
     	type: var_login,
     	assignmentName: practice_id,
         codeStrings: codeString,
-            cyclomaticNumber: cyclomaticNumber
+        cyclomaticNumber: cyclomaticNumber
     },
             function(response) {
             	          	
     			if (response == "") {
-    				alert("success");
+    				alert("Solution Submitted Successfully");
     			} else {
     				alert(response);
     			}

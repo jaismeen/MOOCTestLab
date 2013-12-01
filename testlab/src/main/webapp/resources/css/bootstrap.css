@@ -4150,6 +4150,13 @@ textarea.input-group-sm > .input-group-btn > .btn {
   clear: both;
 }
 
+.movingText{
+	float: left;
+	width: 1100px;
+	text-align: center;
+	color: #FFFFFF;
+	margin-top: 20px;
+}
 .navbar-collapse:before,
 .navbar-collapse:after {
   display: table;
@@ -6118,6 +6125,7 @@ body.modal-open,
 .carousel-inner > .item {
   position: relative;
   display: none;
+  margin-top: 65px;
   -webkit-transition: 0.6s ease-in-out left;
           transition: 0.6s ease-in-out left;
 }

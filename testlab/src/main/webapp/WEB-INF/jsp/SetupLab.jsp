@@ -72,9 +72,10 @@
             </div>
             <div class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
+                <li class="active"><a href="HomeProfessor">Home</a></li>
                 <li><a href="SetupLab">Setup Lab</a></li>
                 <li><a href="Grading">Grades</a></li>
+                 <li><a href="ProfessorLogin">Logout</a></li>
 
                
               </ul>

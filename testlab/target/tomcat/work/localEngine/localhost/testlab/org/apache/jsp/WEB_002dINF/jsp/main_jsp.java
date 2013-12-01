@@ -182,48 +182,31 @@ public final class main_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\n");
       out.write("        <div class=\"navbar navbar-inverse navbar-static-top\">\n");
       out.write("          <div class=\"container\">\n");
-      out.write("            <div class=\"navbar-header\">\n");
-      out.write("              <button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\".navbar-collapse\">\n");
-      out.write("                <span class=\"icon-bar\"></span>\n");
-      out.write("                <span class=\"icon-bar\"></span>\n");
-      out.write("                <span class=\"icon-bar\"></span>\n");
-      out.write("              </button>\n");
-      out.write("              <a class=\"navbar-brand\" href=\"#\">ONLINE TEST LABS</a>\n");
-      out.write("            </div>\n");
-      out.write("           \n");
+      out.write("            <div class=\"navbar-header\"> \n");
+      out.write("             <div class=\"movingText\"> \n");
+      out.write("\t\t\t<marquee  behavior=\"scroll\" direction=\"right\">WELCOME TO ONLINE SOFTWARE TEST LABS!!</marquee>\n");
+      out.write("\t\t\t</div>\n");
+      out.write("            </div>         \n");
       out.write("          </div>\n");
       out.write("        </div>\n");
-      out.write("\n");
       out.write("      </div>\n");
       out.write("    </div>\n");
       out.write("\n");
       out.write("\n");
       out.write("    <!-- Carousel\n");
       out.write("    ================================================== -->\n");
-      out.write("    <div id=\"myCarousel\" class=\"carousel slide\">\n");
-      out.write("      <!-- Indicators -->\n");
-      out.write("      <ol class=\"carousel-indicators\">\n");
-      out.write("        <li data-target=\"#myCarousel\" data-slide-to=\"0\" class=\"active\"></li>\n");
-      out.write("        <li data-target=\"#myCarousel\" data-slide-to=\"1\"></li>\n");
-      out.write("        <li data-target=\"#myCarousel\" data-slide-to=\"2\"></li>\n");
-      out.write("      </ol>\n");
+      out.write("    <div id=\"myCarousel\" class=\"carousel slide\"> \n");
       out.write("      <div class=\"carousel-inner\">\n");
       out.write("        <div class=\"item active\">\n");
       out.write("          <img src='");
       if (_jspx_meth_c_005furl_005f18(_jspx_page_context))
         return;
       out.write("' alt=\"Jaismeen slide\">\n");
-      out.write("          <div class=\"container\">\n");
-      out.write("            <div class=\"carousel-caption\">\n");
-      out.write("              <h1>Extended MOOC: Online Software Testing labs</h1>\n");
-      out.write("              <p>Welcome to the Online software test labs for SJSU Students!!</p>\n");
-      out.write("            </div>\n");
-      out.write("          </div>\n");
       out.write("        </div>\n");
-      out.write("        \n");
-      out.write("       \n");
+      out.write("             \n");
       out.write("      </div>\n");
-      out.write("\n");
+      out.write("      <hr>\n");
+      out.write("\t<br><br><br><br><br><br>\n");
       out.write("\n");
       out.write("    <div class=\"container marketing\">\n");
       out.write("\n");
@@ -233,27 +216,27 @@ public final class main_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("         <img class=\"img-circle\" src='");
       if (_jspx_meth_c_005furl_005f19(_jspx_page_context))
         return;
-      out.write("' height=\"50\" width=\"50\"/>\n");
+      out.write("' height=\"100\" width=\"100\"/>\n");
       out.write("          <h2>Professor</h2>\n");
-      out.write("          <p>Specially designed interface for professors to set testing labs.</p>\n");
+      out.write("          <p>Special interface for Instructors to set Test Labs.</p>\n");
       out.write("          <p><a class=\"btn btn-default\" href=\"ProfessorLogin\" role=\"button\">Login &raquo;</a></p>\n");
       out.write("        </div><!-- /.col-lg-4 -->\n");
       out.write("        <div class=\"col-lg-4\">\n");
       out.write("          <img class=\"img-circle\" src='");
       if (_jspx_meth_c_005furl_005f20(_jspx_page_context))
         return;
-      out.write("' height=\"50\" width=\"50\" alt=\"Generic placeholder image\">\n");
+      out.write("' height=\"100\" width=\"100\" alt=\"Generic placeholder image\">\n");
       out.write("          <h2>Student</h2>\n");
-      out.write("          <p>Platform for student to perform tests online</p>\n");
+      out.write("          <p>Platform for student to perform Labs online</p>\n");
       out.write("          <p><a class=\"btn btn-default\" href=\"StudentLogin\" role=\"button\">Login &raquo;</a></p>\n");
       out.write("        </div><!-- /.col-lg-4 -->\n");
       out.write("        <div class=\"col-lg-4\">\n");
       out.write("        <img class=\"img-circle\" src='");
       if (_jspx_meth_c_005furl_005f21(_jspx_page_context))
         return;
-      out.write("' height=\"50\" width=\"50\" alt=\"Generic placeholder image\">\n");
+      out.write("' height=\"100\" width=\"100\" alt=\"Generic placeholder image\">\n");
       out.write("          <h2>About Us</h2>\n");
-      out.write("          <p>MOOC inspired test labs</p>\n");
+      out.write("          <p>MOOC inspired software test labs</p>\n");
       out.write("          <p><a class=\"btn btn-default\" href=\"#\" role=\"button\">Take a look &raquo;</a></p>\n");
       out.write("        </div><!-- /.col-lg-4 -->\n");
       out.write("      </div><!-- /.row -->\n");
@@ -262,6 +245,9 @@ public final class main_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\n");
       out.write("      <!-- FOOTER -->\n");
       out.write("      <footer>\n");
+      out.write("      <br>\n");
+      out.write("      <br>\n");
+      out.write("      <br>\n");
       out.write("        <p class=\"pull-right\"><a href=\"#\">Back to top</a></p>\n");
       out.write("        <p>&copy; 2013 Company, Inc. &middot; <a href=\"#\">Privacy</a> &middot; <a href=\"#\">Terms</a></p>\n");
       out.write("      </footer>\n");
@@ -655,8 +641,8 @@ public final class main_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.apache.taglibs.standard.tag.rt.core.UrlTag _jspx_th_c_005furl_005f18 = (org.apache.taglibs.standard.tag.rt.core.UrlTag) _005fjspx_005ftagPool_005fc_005furl_0026_005fvalue_005fnobody.get(org.apache.taglibs.standard.tag.rt.core.UrlTag.class);
     _jspx_th_c_005furl_005f18.setPageContext(_jspx_page_context);
     _jspx_th_c_005furl_005f18.setParent(null);
-    // /WEB-INF/jsp/main.jsp(90,20) name = value type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
-    _jspx_th_c_005furl_005f18.setValue("/resources/pictures/pic1.JPG");
+    // /WEB-INF/jsp/main.jsp(79,20) name = value type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_c_005furl_005f18.setValue("/resources/pictures/Home.jpg");
     int _jspx_eval_c_005furl_005f18 = _jspx_th_c_005furl_005f18.doStartTag();
     if (_jspx_th_c_005furl_005f18.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
       _005fjspx_005ftagPool_005fc_005furl_0026_005fvalue_005fnobody.reuse(_jspx_th_c_005furl_005f18);
@@ -674,8 +660,8 @@ public final class main_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.apache.taglibs.standard.tag.rt.core.UrlTag _jspx_th_c_005furl_005f19 = (org.apache.taglibs.standard.tag.rt.core.UrlTag) _005fjspx_005ftagPool_005fc_005furl_0026_005fvalue_005fnobody.get(org.apache.taglibs.standard.tag.rt.core.UrlTag.class);
     _jspx_th_c_005furl_005f19.setPageContext(_jspx_page_context);
     _jspx_th_c_005furl_005f19.setParent(null);
-    // /WEB-INF/jsp/main.jsp(108,38) name = value type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
-    _jspx_th_c_005furl_005f19.setValue("/resources/pictures/pic1.JPG");
+    // /WEB-INF/jsp/main.jsp(91,38) name = value type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_c_005furl_005f19.setValue("/resources/pictures/Instructor.jpg");
     int _jspx_eval_c_005furl_005f19 = _jspx_th_c_005furl_005f19.doStartTag();
     if (_jspx_th_c_005furl_005f19.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
       _005fjspx_005ftagPool_005fc_005furl_0026_005fvalue_005fnobody.reuse(_jspx_th_c_005furl_005f19);
@@ -693,8 +679,8 @@ public final class main_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.apache.taglibs.standard.tag.rt.core.UrlTag _jspx_th_c_005furl_005f20 = (org.apache.taglibs.standard.tag.rt.core.UrlTag) _005fjspx_005ftagPool_005fc_005furl_0026_005fvalue_005fnobody.get(org.apache.taglibs.standard.tag.rt.core.UrlTag.class);
     _jspx_th_c_005furl_005f20.setPageContext(_jspx_page_context);
     _jspx_th_c_005furl_005f20.setParent(null);
-    // /WEB-INF/jsp/main.jsp(114,39) name = value type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
-    _jspx_th_c_005furl_005f20.setValue("/resources/pictures/pic2.JPG");
+    // /WEB-INF/jsp/main.jsp(97,39) name = value type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_c_005furl_005f20.setValue("/resources/pictures/Student.jpg");
     int _jspx_eval_c_005furl_005f20 = _jspx_th_c_005furl_005f20.doStartTag();
     if (_jspx_th_c_005furl_005f20.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
       _005fjspx_005ftagPool_005fc_005furl_0026_005fvalue_005fnobody.reuse(_jspx_th_c_005furl_005f20);
@@ -712,8 +698,8 @@ public final class main_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.apache.taglibs.standard.tag.rt.core.UrlTag _jspx_th_c_005furl_005f21 = (org.apache.taglibs.standard.tag.rt.core.UrlTag) _005fjspx_005ftagPool_005fc_005furl_0026_005fvalue_005fnobody.get(org.apache.taglibs.standard.tag.rt.core.UrlTag.class);
     _jspx_th_c_005furl_005f21.setPageContext(_jspx_page_context);
     _jspx_th_c_005furl_005f21.setParent(null);
-    // /WEB-INF/jsp/main.jsp(120,37) name = value type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
-    _jspx_th_c_005furl_005f21.setValue("/resources/pictures/pic3.JPG");
+    // /WEB-INF/jsp/main.jsp(103,37) name = value type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_c_005furl_005f21.setValue("/resources/pictures/About.jpg");
     int _jspx_eval_c_005furl_005f21 = _jspx_th_c_005furl_005f21.doStartTag();
     if (_jspx_th_c_005furl_005f21.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
       _005fjspx_005ftagPool_005fc_005furl_0026_005fvalue_005fnobody.reuse(_jspx_th_c_005furl_005f21);

@@ -75,6 +75,7 @@
                 <li class="active"><a href="#">Home</a></li>
                 <li><a href="FlowChart">Lab</a></li>
                 <li><a href="PracticeList">Practice Sessions</a></li>
+                <li><a href="StudentLogin">Logout</a></li>
               </ul>
             </div>
           </div>
@@ -87,6 +88,7 @@
                     <ul>
                         <li id="tabHeader_1">Create Element</li>
                         <li id="tabHeader_2">Delete Element</li>
+                         <li id="tabHeader_3">Cyclomatic Number</li>
                     </ul>
             </div>
             <div class="tabscontent">
@@ -192,6 +194,17 @@
 
                 </div>
             </div>
+             <div class="tabpage" id="tabpage_3">
+                <div id="ccElements">
+                   <br><br><br>
+                    <label class="col-lg-4 control-label">Cyclomatic Number</label>
+                    <div class="col-lg-6">
+                    <input type="text" class="form-control" id = "ccNumber" name="ccNumber">
+                	<br><br><br><br><br><br><br>
+                	</div>
+                </div>
+                <br><br><br>
+            </div>
             <br>
 
             <div class="code_area">
@@ -217,13 +230,13 @@
         
         </div>
 
-        <div id="canvas">
-             <h1>Drawing Area</h1>
-        </div>
+       
         
     </div>
    
-   
+    <div id="canvas">
+             <h1>Drawing Area</h1>
+        </div>
   
 	
 

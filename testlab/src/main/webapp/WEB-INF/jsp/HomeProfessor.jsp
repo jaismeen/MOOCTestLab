@@ -61,11 +61,7 @@
         <div class="navbar navbar-inverse navbar-static-top">
           <div class="container">
             <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
+             
               <a class="navbar-brand" href="#">ONLINE TEST LABS</a>
             </div>
             <div class="navbar-collapse collapse">
@@ -73,6 +69,7 @@
                 <li class="active"><a href="#">Home</a></li>
                 <li><a href="SetupLab">Setup Lab</a></li>
                 <li><a href="Grading">Grades</a></li>
+                <li><a href="ProfessorLogin">Logout</a></li>
 
                
               </ul>
@@ -87,57 +84,19 @@
     <!-- Carousel
     ================================================== -->
     <div id="myCarousel" class="carousel slide">
-      <!-- Indicators -->
-      <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#myCarousel" data-slide-to="1"></li>
-        <li data-target="#myCarousel" data-slide-to="2"></li>
-      </ol>
       <div class="carousel-inner">
         <div class="item active">
-          <img src="pictures/pic1.JPG" alt="First slide">
-          <div class="container">
-            <div class="carousel-caption">
-              <h1>Online Test Based Labs: MOOC</h1>
-              <p>Welcome Professor!!!.</p>
-             <!--   <p><a class="btn btn-lg btn-primary" href="#" onclick="loadTestData()" role="button">Go to Test Lab</a></p>-->
-            </div>
-          </div>
-        </div>
-        <div class="item">
-          <img src="pictures/pic2.jpg" data-src="holder.js/900x500/auto/#666:#6a6a6a/text:Second slide" alt="Second slide">
-          <div class="container">
-            <div class="carousel-caption">
-              <h1>Another example headline.</h1>
-              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
-            </div>
-          </div>
-        </div>
-        <div class="item">
-          <img src="data:image/png;base64," data-src="holder.js/900x500/auto/#555:#5a5a5a/text:Third slide" alt="Third slide">
-          <div class="container">
-            <div class="carousel-caption">
-              <h1>One more for good measure.</h1>
-              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
-            </div>
-          </div>
-        </div>
+          <img src='<c:url value="/resources/pictures/Home.jpg"/>' alt="Jaismeen slide">
+        </div>     
       </div>
-     <!--  <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
-      <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a> -->
-    </div><!-- /.carousel -->
-    <button id="btn_cookie" class="btn btn-default" type="button" onclick="get_cookie('username')">Login</button><br><br>
+      <hr>
 
-      
-
-
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
       <!-- FOOTER -->
-     <!-- <footer>
+      <footer>
         <p class="pull-right"><a href="#">Back to top</a></p>
         <p>&copy; 2013 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
-      </footer>-->
+      </footer>
 
 
     <!-- Bootstrap core JavaScript
