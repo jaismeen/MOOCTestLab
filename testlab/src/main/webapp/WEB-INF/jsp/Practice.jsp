@@ -72,7 +72,7 @@
             </div>
             <div class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
+                <li class="active"><a href="HomeStudent">Home</a></li>
                 <li><a href="FlowChart">Lab</a></li>
                 <li><a href="PracticeList">Practice Sessions</a></li>
                 <li><a href="StudentLogin">Logout</a></li>
@@ -191,8 +191,6 @@
                                     </div>
                                     <button id="delLink" class="btn btn-default" type="button" onclick="delLink()">Delete Link</button><br>
                             </div>
-
-                </div>
             </div>
              <div class="tabpage" id="tabpage_3">
                 <div id="ccElements">

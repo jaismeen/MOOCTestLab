@@ -382,12 +382,12 @@ function gradePractice()
 {
     var practice_id=get_practiceID();
     var cyclomaticNumber=document.getElementById("ccNumber");
-    alert(cyclomaticNumber.value);
+	 cyclomaticNumber=cyclomaticNumber.value;
 
   $.post (urlHolder.gradePractice, {
         assignmentName: practice_id,
         codestr: codeString,
-            cyclomaticNumber: $('#cyclomaticNumber').val()
+            cyclomaticNumber: cyclomaticNumber
         },
             function(response) {
                     alert("Score is::" + response);        

@@ -91,6 +91,7 @@
                     <ul>
                         <li id="tabHeader_1">Create Element</li>
                         <li id="tabHeader_2">Delete Element</li>
+                        <li id="tabHeader_3">Cyclomatic Number</li>
                     </ul>
             </div>
             <div class="tabscontent">
@@ -195,6 +196,17 @@
                             </div>
 
                 </div>
+            <br>
+		 <div class="tabpage" id="tabpage_3">
+                <div id="ccElements">
+                   <br><br><br>
+                    <label class="col-lg-4 control-label">Cyclomatic Number</label>
+                    <div class="col-lg-6">
+                    <input type="text" class="form-control" id = "ccNumber" name="ccNumber">
+                	<br><br><br><br><br><br><br>
+                	</div>
+                </div>
+                <br><br><br>
             </div>
             <br>
 
@@ -204,15 +216,13 @@
                 <br>
                 <button id="submit" style=" align: right" class="btn btn-default" type="button" onclick="submitSolution('0')">Submit</button>
             </div>
-        
         </div>
 
-        <div id="canvas">
-             <h1>Drawing Area</h1>
-        </div>
         
     </div>
-   
+   <div id="canvas">
+             <h1>Drawing Area</h1>
+        </div>
    
   
 	
