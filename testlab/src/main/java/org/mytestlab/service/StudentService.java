@@ -27,18 +27,77 @@ public class StudentService {
 	public String loadTestData() {
 		String ret = "";
 
-		Student amy = new Student();
-		amy.setFirstName("Amy");
-		amy.setLastName("Johnson");
-		amy.setPassword("111");
-		amy.setUsername("0002");
+		Student stu = new Student();
+		stu.setFirstName("Amy");
+		stu.setLastName("Johnson");
+		stu.setPassword("111");
+		stu.setUsername("0002");
+		studentRepository.save(stu);
+		ret += getStudentInfo("0002");
 		
-		studentRepository.save(amy);
+		stu = new Student();
+		stu.setFirstName("John");
+		stu.setLastName("Don");
+		stu.setPassword("111");
+		stu.setUsername("0003");
+		studentRepository.save(stu);
+		ret += getStudentInfo("0003");
 		
-		Student newAmy = studentRepository.findByUsername("0002");
+		stu = new Student();
+		stu.setFirstName("Richard");
+		stu.setLastName("Lee");
+		stu.setPassword("111");
+		stu.setUsername("0004");
+		studentRepository.save(stu);
+		ret += getStudentInfo("0004");
 		
-		ret = "New Amy's name: "+newAmy.getFirstName()+" "+newAmy.getLastName();
+		stu = new Student();
+		stu.setFirstName("Mary");
+		stu.setLastName("Kate");
+		stu.setPassword("111");
+		stu.setUsername("0005");
+		studentRepository.save(stu);
+		ret += getStudentInfo("0005");
+		
+		stu = new Student();
+		stu.setFirstName("Sam");
+		stu.setLastName("Washington");
+		stu.setPassword("111");
+		stu.setUsername("0006");
+		studentRepository.save(stu);
+		ret += getStudentInfo("0006");
+		
+		stu = new Student();
+		stu.setFirstName("Linda");
+		stu.setLastName("Wong");
+		stu.setPassword("111");
+		stu.setUsername("0007");
+		studentRepository.save(stu);
+		ret += getStudentInfo("0007");
+		
+		stu = new Student();
+		stu.setFirstName("Shawn");
+		stu.setLastName("Tran");
+		stu.setPassword("111");
+		stu.setUsername("0008");
+		studentRepository.save(stu);
+		ret += getStudentInfo("0008");
+		
+		stu = new Student();
+		stu.setFirstName("Alex");
+		stu.setLastName("Patel");
+		stu.setPassword("111");
+		stu.setUsername("0009");
+		studentRepository.save(stu);
+		ret += getStudentInfo("0009");
+		
 		System.out.println(ret);
+		return ret;
+	}
+	
+	private String getStudentInfo(String username) {
+		Student stu = studentRepository.findByUsername(username);		
+		String ret = "Student username: "+stu.getUsername()+", password: "+stu.getPassword()+", name: "+stu.getFirstName()+" "+stu.getLastName()+"\n";
 		
 		return ret;
 	}

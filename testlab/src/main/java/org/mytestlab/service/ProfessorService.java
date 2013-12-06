@@ -1,7 +1,6 @@
 package org.mytestlab.service;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.Set;
 
 import org.mytestlab.domain.Assignment;
@@ -122,6 +121,7 @@ public class ProfessorService {
 		for (Solution so : sols) {
 			if (so.getName().equals(sol.getName())) {
 				prof.removeSolution(so);
+				professorRepository.save(prof);
 				break;
 			}
 		}
